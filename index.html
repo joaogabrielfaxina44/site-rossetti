@@ -3,1583 +3,2160 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#08090c">
-  <title>João Gabriel Faxina (Rossetti) | Portfólio, Conquistas &amp; Universo Pessoal</title>
-  <link rel="icon" href="assets/overview/favicon.svg">
-  <link rel="stylesheet" href="tokens/tokens.css">
+  <title>JOÃO GABRIEL (ROSSETTI) — Spatial Portfolio &amp; Interactive Experience</title>
+  <meta name="description" content="Portfólio espacial e interativo de João Gabriel Faxina (Rossetti) — Medalha de Ouro Canguru de Matemática, Semifinalista DBDI 2026, Basquete High IQ, New York Knicks &amp; Palmeiras.">
+  <meta name="theme-color" content="#07090d">
+  <link rel="stylesheet" href="assets/overview/source-styles.css">
   <style>
-    /* -------------------------------------------------------------
-       AERA 01 Spatial Architecture Applied to João Gabriel's Portfolio
-       ------------------------------------------------------------- */
+    /* ==========================================================================
+       AERA 01 SPATIAL PORTFOLIO OVERRIDES — JOÃO GABRIEL FAXINA (ROSSETTI)
+       ========================================================================== */
     :root {
-      --bg: #08090c;
-      --paper: #08090c;
-      --ink: #f0f1f4;
-      --grey: #9c9da7;
-      --slate: #adb4be;
-      --blue: #5a68c9;
-      --gold: #f5c451;
+      --bg: #07090d;
+      --ink: #eef2f8;
+      --muted: #a1adbe;
+      --line: rgba(215, 228, 248, 0.16);
       --knicks-orange: #f58426;
-      --knicks-blue: #2774ae;
-      --palmeiras-green: #22c55e;
-      --line: rgba(255, 255, 255, 0.12);
-      --font-sans: Arial, Helvetica, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      --font-serif: Georgia, "Times New Roman", serif;
-      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      --container-max: 1240px;
+      --knicks-blue: #006bb6;
+      --palmeiras-green: #10b981;
+      --gold-medal: #f5c451;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    html { scroll-behavior: smooth; background: #07090d; color: #eef2f8; }
+    body { overflow-x: hidden; background: #07090d; }
 
-    html {
-      scroll-behavior: smooth;
-      background: var(--bg);
-      color: var(--ink);
-      font-family: var(--font-sans);
-      -webkit-font-smoothing: antialiased;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--ink);
-      overflow-x: hidden;
-      position: relative;
-      min-height: 100vh;
-      line-height: 1.5;
-    }
-
-    /* Ambient Spatial Background */
-    .spatial-backdrop {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 0;
-      overflow: hidden;
-    }
-    .spatial-backdrop .pov-horizon {
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 50% 115%, rgba(108, 128, 148, 0.22), transparent 58%),
-                  radial-gradient(ellipse at 15% 35%, rgba(115, 141, 164, 0.08), transparent 48%),
-                  linear-gradient(#06090e, #0e141d 70%, #08090c);
-      opacity: 0.95;
-    }
-    .spatial-backdrop .visor-atmosphere {
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 50% 45%, rgba(23, 32, 43, 0.5), transparent 70%);
-      opacity: 0.6;
-    }
-    .spatial-backdrop .spatial-haze {
-      position: absolute;
-      inset: -15% -12% -12%;
-      border-radius: 40%;
-      filter: blur(52px);
-      opacity: 0.3;
-      background: radial-gradient(ellipse at 15% 22%, rgba(150, 189, 251, 0.22), transparent 34%),
-                  radial-gradient(ellipse at 86% 45%, rgba(168, 196, 255, 0.16), transparent 37%),
-                  radial-gradient(ellipse at 65% 89%, rgba(141, 175, 239, 0.18), transparent 38%);
-      animation: spatial-air 24s ease-in-out infinite alternate;
-    }
-    @keyframes spatial-air {
-      from { transform: translate3d(-0.6%, 0.6%, 0) scale(0.99); }
-      to { transform: translate3d(0.8%, -0.6%, 0) scale(1.03); }
-    }
-
-    /* Global Container */
-    .container {
-      width: min(var(--container-max), calc(100% - 48px));
-      margin: 0 auto;
-      position: relative;
-      z-index: 10;
-    }
-
-    /* -------------------------------------------------------------
-       Header & Navigation Island
-       ------------------------------------------------------------- */
+    /* Always keep top header visible and interactive */
     .header {
-      position: fixed;
-      top: 18px;
-      left: 0;
-      right: 0;
-      z-index: 50;
-      display: flex;
-      justify-content: center;
-      pointer-events: none;
-      padding: 0 16px;
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: translateY(0) !important;
+      pointer-events: auto !important;
+      transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease;
     }
-    .nav-island {
-      pointer-events: auto;
-      height: 48px;
-      padding: 0 20px;
-      display: flex;
-      align-items: center;
-      gap: 28px;
-      background: rgba(24, 25, 28, 0.85);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      border-radius: 30px;
-      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.4), inset 0 1px rgba(255, 255, 255, 0.1);
-      transition: transform 0.3s ease;
-    }
-    .brand {
-      font-weight: 800;
-      font-size: 19px;
-      letter-spacing: -0.05em;
-      color: #fff;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-    }
-    .brand span {
-      font-size: 9px;
-      letter-spacing: 0;
-      margin-left: 4px;
-      color: var(--gold);
-    }
-    .nav-island nav {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-    .nav-island nav a {
-      color: var(--grey);
-      font-size: 13px;
-      font-weight: 450;
-      text-decoration: none;
-      padding: 8px 0;
-      position: relative;
-      transition: color 0.25s;
-    }
-    .nav-island nav a:hover {
-      color: #fff;
-    }
-    .nav-island nav a.active {
-      color: #fff;
-    }
-    .nav-island nav a.active:after {
-      content: '';
-      position: absolute;
-      bottom: 2px;
-      left: 0;
-      width: 100%;
-      height: 1px;
-      background: #fff;
-    }
-    .nav-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      font-weight: 600;
-      color: #10131c;
-      background: #edf0ff;
-      padding: 7px 15px;
-      border-radius: 20px;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.2s;
-    }
-    .nav-cta:hover {
-      background: #ffffff;
-      transform: translateY(-1px);
+    .header.hidden {
+      transform: translateY(-110%) !important;
     }
 
-    /* -------------------------------------------------------------
-       Common Section Headings
-       ------------------------------------------------------------- */
-    .section {
-      padding: 110px 0 50px;
+    /* Interactive Hero Studio (100svh sticky feel without 2500svh empty scroll) */
+    .hero.portfolio-hero {
+      height: auto !important;
+      min-height: 105svh;
       position: relative;
-      z-index: 10;
-    }
-    .section-eyebrow {
-      font-size: 10px;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: #8da2ba;
-      font-weight: 500;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 12px;
-    }
-    .live-dot {
-      display: inline-block;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: #b8ffcc;
-      box-shadow: 0 0 8px #b8ffcc;
-    }
-    .gold-dot {
-      display: inline-block;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--gold);
-      box-shadow: 0 0 8px var(--gold);
-    }
-    .section-title {
-      font-size: clamp(34px, 4.2vw, 56px);
-      font-weight: 500;
-      letter-spacing: -0.045em;
-      line-height: 1.08;
-      color: #f1f4fa;
-      margin-bottom: 16px;
-    }
-    .section-desc {
-      font-size: clamp(16px, 1.4vw, 19px);
-      line-height: 1.6;
-      color: var(--slate);
-      max-width: 680px;
-    }
-
-    /* -------------------------------------------------------------
-       Hero Section
-       ------------------------------------------------------------- */
-    .hero {
-      min-height: 92vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding-top: 130px;
-      position: relative;
-    }
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.35fr 0.65fr;
-      gap: 40px;
-      align-items: center;
-    }
-    .hero-inner {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-    }
-    .hero-title {
-      font-size: clamp(40px, 5.8vw, 80px);
-      font-weight: 550;
-      line-height: 0.98;
-      letter-spacing: -0.052em;
-      color: #f4f6fa;
-    }
-    .hero-title .highlight {
-      background: linear-gradient(135deg, #ffffff 35%, #8ba3c7 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    .hero-title .highlight-gold {
-      background: linear-gradient(135deg, #fff5d6 20%, #f5c451 65%, #d99b26 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-    .hero-serif {
-      font-family: var(--font-serif);
-      font-size: clamp(19px, 2vw, 27px);
-      color: #9ea4b5;
-      letter-spacing: -0.025em;
-      line-height: 1.4;
-      font-style: italic;
-    }
-    .hero-actions {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-top: 6px;
-    }
-    .btn-bright {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      padding: 14px 26px;
-      border-radius: 30px;
-      background: #edf0ff;
-      color: #0b0d13;
-      font-size: 14px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
-    }
-    .btn-bright:hover {
-      background: #ffffff;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(237, 240, 255, 0.22);
-    }
-    .btn-outline {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 14px 24px;
-      border-radius: 30px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      color: #e2e7f3;
-      font-size: 14px;
-      font-weight: 500;
-      text-decoration: none;
-      backdrop-filter: blur(12px);
-      transition: background 0.2s, border-color 0.2s, transform 0.2s;
-    }
-    .btn-outline:hover {
-      background: rgba(255, 255, 255, 0.1);
-      border-color: rgba(255, 255, 255, 0.35);
-      transform: translateY(-2px);
-    }
-
-    /* Hero Portrait Card */
-    .hero-portrait-card {
-      position: relative;
-      border-radius: 28px;
-      padding: 14px;
-      background: linear-gradient(145deg, rgba(26, 34, 46, 0.75), rgba(11, 15, 22, 0.92));
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.65), inset 0 1px rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(24px);
-    }
-    .hero-portrait-frame {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      border-radius: 20px;
       overflow: hidden;
-      background: #0d131c;
+      padding-bottom: 48px;
     }
-    .hero-portrait-frame img {
+    .hero.portfolio-hero .hero-pin {
+      position: relative !important;
+      height: 100svh;
+      min-height: 700px;
+    }
+    .hero.portfolio-hero .hero-wordmark {
+      opacity: 0.92;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .hero.portfolio-hero .hero-headlines {
+      opacity: 1 !important;
+      transform: none !important;
+      z-index: 4;
+      pointer-events: none;
+    }
+
+    /* Interactive 3D Portrait Showcase in Hero Center */
+    .portrait-stage-wrap {
+      position: absolute;
+      left: 50%;
+      top: 52%;
+      transform: translate(-50%, -50%);
+      width: min(400px, 76vw);
+      height: min(510px, 60svh);
+      z-index: 3;
+      perspective: 1100px;
+    }
+    .portrait-card-3d {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 30px;
+      overflow: hidden;
+      border: 1px solid rgba(220, 234, 252, 0.28);
+      background: linear-gradient(155deg, rgba(22, 30, 44, 0.9), rgba(8, 12, 18, 0.96));
+      box-shadow:
+        0 36px 90px rgba(0, 0, 0, 0.78),
+        0 0 70px rgba(145, 188, 242, 0.14),
+        inset 0 1px 0 rgba(255, 255, 255, 0.28);
+      transform-style: preserve-3d;
+      transition: transform 0.16s ease-out, box-shadow 0.35s ease, border-color 0.35s ease;
+      cursor: grab;
+      user-select: none;
+    }
+    .portrait-card-3d:active { cursor: grabbing; }
+    .portrait-card-3d img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center top;
-      transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+      object-position: center 18%;
+      display: block;
+      transition: opacity 0.45s ease, transform 0.65s cubic-bezier(0.22, 1, 0.36, 1), filter 0.45s ease;
+      filter: contrast(1.05) brightness(0.95);
     }
-    .hero-portrait-card:hover .hero-portrait-frame img {
-      transform: scale(1.03);
+    .portrait-card-3d:hover img {
+      transform: scale(1.035);
+      filter: contrast(1.08) brightness(1.02);
     }
-    .hero-portrait-overlay {
+    .portrait-card-3d::after {
+      content: "";
       position: absolute;
-      inset: auto 0 0 0;
-      padding: 28px 20px 18px;
-      background: linear-gradient(to top, rgba(6, 9, 14, 0.92) 15%, rgba(6, 9, 14, 0.45) 65%, transparent);
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(6, 9, 14, 0.12) 0%, transparent 38%, rgba(5, 8, 13, 0.92) 100%),
+        radial-gradient(circle at var(--glare-x, 50%) var(--glare-y, 30%), rgba(225, 238, 255, 0.22), transparent 55%);
+      pointer-events: none;
     }
-    .hero-portrait-badge {
+    .portrait-hud-overlay {
+      position: absolute;
+      left: 20px;
+      right: 20px;
+      bottom: 20px;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      pointer-events: none;
+    }
+    .portrait-hud-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .portrait-hud-badge {
       display: inline-flex;
       align-items: center;
       gap: 6px;
       padding: 5px 11px;
-      border-radius: 20px;
-      background: rgba(15, 21, 30, 0.8);
-      border: 1px solid rgba(245, 196, 81, 0.4);
-      color: #ffe299;
+      border-radius: 999px;
       font-size: 10px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      backdrop-filter: blur(10px);
-    }
-
-    .hero-stats-row {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      margin-top: 48px;
-      padding-top: 36px;
-      border-top: 1px solid var(--line);
-    }
-    .hero-stat-card {
-      padding: 18px 20px;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.025);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(12px);
-      transition: transform 0.25s ease, border-color 0.25s ease;
-    }
-    .hero-stat-card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(255, 255, 255, 0.22);
-    }
-    .hero-stat-num {
-      font-size: clamp(20px, 2.2vw, 28px);
       font-weight: 600;
-      letter-spacing: -0.03em;
-      color: #fff;
-      display: block;
-      margin-bottom: 4px;
-    }
-    .hero-stat-label {
-      font-size: 11px;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--grey);
+      background: rgba(9, 13, 20, 0.76);
+      border: 1px solid rgba(222, 235, 252, 0.24);
+      backdrop-filter: blur(14px);
+      color: #edf4ff;
+    }
+    .portrait-hud-badge i {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold-medal);
+      box-shadow: 0 0 8px var(--gold-medal);
+    }
+    .portrait-hud-title {
+      font-size: clamp(22px, 2.4vw, 30px);
+      font-weight: 500;
+      letter-spacing: -0.04em;
+      line-height: 1.05;
+      color: #ffffff;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    }
+    .portrait-hud-sub {
+      font-size: 12px;
+      color: #b7c5da;
+      letter-spacing: 0.02em;
     }
 
-    /* -------------------------------------------------------------
-       About Section (Spatial Window Architecture with Photo Switcher)
-       ------------------------------------------------------------- */
-    .about-card {
-      border-radius: 28px;
-      background: linear-gradient(145deg, rgba(20, 26, 33, 0.95), rgba(12, 17, 23, 0.98));
-      border: 1px solid rgba(203, 212, 223, 0.2);
-      box-shadow: 0 30px 86px rgba(0, 0, 0, 0.6), inset 0 1px rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(40px);
-      overflow: hidden;
-      display: grid;
-      grid-template-columns: 390px 1fr;
-      margin-top: 36px;
+    /* Interactive Hero Control Dock (Switch Photo, Toggle Callouts, Swap Headlines) */
+    .hero-interactive-bar {
+      position: absolute;
+      left: 50%;
+      bottom: 24px;
+      transform: translateX(-50%);
+      z-index: 6;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(12, 17, 24, 0.78);
+      border: 1px solid rgba(215, 229, 248, 0.22);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(22px);
     }
-    .about-visual {
-      background: #0f151e;
+    .hero-pill-btn {
+      border: 1px solid rgba(215, 229, 248, 0.16);
+      background: rgba(255, 255, 255, 0.04);
+      color: #cfdaea;
+      font: 500 11px/1 Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 10px 15px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .hero-pill-btn:hover,
+    .hero-pill-btn[aria-pressed="true"] {
+      color: #ffffff;
+      background: rgba(196, 219, 250, 0.16);
+      border-color: rgba(220, 236, 255, 0.55);
+      box-shadow: 0 0 20px rgba(165, 202, 250, 0.2);
+      transform: translateY(-1px);
+    }
+
+    /* Hero Optical Callout Annotations */
+    .hero-callout {
+      position: absolute;
+      z-index: 5;
+      width: min(290px, 28vw);
+      padding: 16px 18px;
+      border-radius: 20px;
+      background: linear-gradient(145deg, rgba(18, 25, 36, 0.84), rgba(9, 13, 20, 0.9));
+      border: 1px solid rgba(214, 229, 250, 0.22);
+      box-shadow: 0 22px 55px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+      backdrop-filter: blur(20px);
+      opacity: 0;
+      transform: translateY(12px) scale(0.96);
+      pointer-events: none;
+      transition: opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1), transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .hero.callouts-active .hero-callout {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+    .hero-callout small {
+      display: block;
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-medal);
+      margin-bottom: 6px;
+    }
+    .hero-callout h3 {
+      margin: 0 0 6px;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      color: #f4f7fc;
+    }
+    .hero-callout p {
+      margin: 0;
+      font-size: 12px;
+      line-height: 1.5;
+      color: #a4b2c6;
+    }
+    .hero-callout.callout-left-top { left: 5.5%; top: 22%; }
+    .hero-callout.callout-right-top { right: 5.5%; top: 24%; }
+    .hero-callout.callout-left-bottom { left: 6.5%; bottom: 16%; }
+    @media (max-width: 960px) {
+      .hero-callout { display: none; }
+    }
+
+    /* ==========================================================================
+       SECTION 2: STANDALONE INTERACTIVE ROSSETTI OS (AERA OS DESKTOP)
+       ========================================================================== */
+    .rossetti-os-section {
       position: relative;
+      min-height: 100svh;
+      padding: clamp(64px, 8vh, 100px) 4% clamp(80px, 10vh, 120px);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 36px 28px;
-      border-right: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    .photo-slot {
-      width: 100%;
-      max-width: 280px;
-      height: 330px;
-      border-radius: 20px;
+      background:
+        radial-gradient(ellipse at 50% 25%, rgba(84, 118, 162, 0.16), transparent 62%),
+        linear-gradient(180deg, #07090d 0%, #090d14 50%, #07090d 100%);
+      border-top: 1px solid rgba(214, 228, 248, 0.1);
       overflow: hidden;
-      position: relative;
-      background: linear-gradient(140deg, #1b2636, #0e1622);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55);
     }
-    .photo-slot img {
+    .rossetti-os-header {
+      text-align: center;
+      margin-bottom: clamp(24px, 3.6vh, 40px);
+      z-index: 2;
+    }
+    .rossetti-os-header .visor-eyebrow {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: #93a4bc;
+      margin-bottom: 10px;
+    }
+    .rossetti-os-header h2 {
+      margin: 0;
+      font-size: clamp(32px, 4.4vw, 60px);
+      font-weight: 450;
+      letter-spacing: -0.05em;
+      line-height: 1.04;
+      color: #f2f6fc;
+    }
+    .rossetti-os-header p {
+      margin: 10px auto 0;
+      max-width: 56ch;
+      font-size: 14px;
+      color: #96a5bb;
+    }
+
+    /* Override .spatial-home positioning so it sits naturally inside the section */
+    .rossetti-os-section .spatial-home {
+      position: relative !important;
+      inset: auto !important;
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: none !important;
+      width: min(1180px, 94vw) !important;
+      height: auto !important;
+      margin: 0 auto;
+      z-index: 2;
+    }
+    .rossetti-os-section .home-desktop {
+      position: relative;
+      width: 100%;
+      min-height: 560px;
+    }
+    .rossetti-os-section .home-window {
+      background: linear-gradient(145deg, #141a21f2, #0c1117f7);
+      border: 1px solid #cbd4df2b;
+      box-shadow: 0 30px 86px #0009, inset 0 1px #ffffff12;
+      border-radius: clamp(24px, 3.5svh, 40px);
+    }
+
+    /* ==========================================================================
+       SECTION 3: INTERACTIVE 3D COLLECTION CAROUSEL (CONQUISTAS & PAIXÕES)
+       ========================================================================== */
+    .portfolio-spectrum-section {
+      position: relative;
+      min-height: 96svh;
+      padding: clamp(64px, 8vh, 96px) 0 clamp(72px, 9vh, 110px);
+      background:
+        radial-gradient(ellipse at 50% 50%, hsl(var(--spectrum-tone, 210) 45% 22% / 0.34), transparent 68%),
+        #080b10;
+      border-top: 1px solid rgba(214, 228, 248, 0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: background 0.5s ease;
+    }
+    .portfolio-spectrum-head {
+      text-align: center;
+      padding: 0 6%;
+      z-index: 3;
+    }
+    .portfolio-spectrum-head .shop-eyebrow {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 0.24em;
+      color: #8f9cac;
+      font-weight: 500;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+    .portfolio-spectrum-head h2 {
+      margin: 0;
+      font-size: clamp(30px, 3.8vw, 52px);
+      font-weight: 450;
+      letter-spacing: -0.048em;
+      color: #f4f7fc;
+    }
+    .portfolio-spectrum-stage {
+      position: relative;
+      height: clamp(370px, 50svh, 480px);
+      width: 100%;
+      margin: 18px 0;
+      perspective: 1200px;
+      touch-action: pan-y;
+      user-select: none;
+    }
+    .portfolio-orbit-ring {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: min(86vw, 960px);
+      height: min(38svh, 300px);
+      border-radius: 50%;
+      border: 1px solid rgba(202, 222, 248, 0.14);
+      transform: translate(-50%, -50%) perspective(900px) rotateX(68deg) rotateZ(var(--orbit-rot, 0deg));
+      pointer-events: none;
+      transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .portfolio-card-3d {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: clamp(240px, 24vw, 330px);
+      height: clamp(320px, 34vw, 430px);
+      border-radius: 22px;
+      border: 1px solid rgba(205, 222, 245, 0.22);
+      background: #0b1017;
+      box-shadow: 0 26px 70px rgba(0, 0, 0, 0.65);
+      overflow: hidden;
+      padding: 0;
+      color: #ffffff;
+      text-align: left;
+      cursor: pointer;
+      transition:
+        transform 0.55s cubic-bezier(0.2, 0.75, 0.2, 1),
+        opacity 0.55s ease,
+        filter 0.55s ease,
+        border-color 0.35s ease;
+    }
+    .portfolio-card-3d:hover {
+      border-color: rgba(225, 238, 255, 0.6);
+    }
+    .portfolio-card-3d img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center 20%;
+      display: block;
+      transition: transform 0.7s cubic-bezier(0.2, 0.75, 0.2, 1);
+    }
+    .portfolio-card-3d:hover img {
+      transform: scale(1.04);
+    }
+    .portfolio-card-3d::after {
+      content: "";
       position: absolute;
-      inset: 0;
-      transition: opacity 0.35s ease, transform 0.5s ease;
+      inset: 35% 0 0;
+      background: linear-gradient(180deg, transparent, rgba(5, 8, 13, 0.94) 90%);
+      pointer-events: none;
     }
-    .photo-switcher {
-      display: flex;
-      gap: 8px;
-      margin-top: 14px;
-      width: 100%;
-      max-width: 280px;
-    }
-    .photo-switch-btn {
-      flex: 1;
-      padding: 8px 10px;
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      background: rgba(255, 255, 255, 0.04);
-      color: var(--grey);
-      font-size: 11px;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      text-align: center;
-    }
-    .photo-switch-btn.active,
-    .photo-switch-btn:hover {
-      background: rgba(237, 240, 255, 0.14);
-      border-color: rgba(237, 240, 255, 0.4);
-      color: #fff;
-    }
-
-    .about-meta-list {
-      margin-top: 20px;
-      width: 100%;
-      max-width: 280px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-    .about-meta-item {
-      display: flex;
-      justify-content: space-between;
-      font-size: 12px;
-      padding: 8px 12px;
-      background: rgba(255, 255, 255, 0.03);
-      border-radius: 8px;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-    }
-    .about-meta-item span:first-child {
-      color: var(--grey);
-    }
-    .about-meta-item span:last-child {
-      color: #fff;
-      font-weight: 500;
-    }
-
-    .about-content {
-      padding: clamp(32px, 4vw, 56px);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .about-lead {
-      font-size: clamp(22px, 2.2vw, 30px);
-      line-height: 1.3;
-      font-weight: 500;
-      color: #f2f5fb;
-      margin-bottom: 20px;
-    }
-    .about-paragraphs {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      font-size: 15.5px;
-      line-height: 1.72;
-      color: var(--slate);
-    }
-    .about-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 28px;
-    }
-    .about-pill {
-      font-size: 11px;
-      letter-spacing: 0.08em;
-      padding: 7px 14px;
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      color: #dbe5f2;
-    }
-
-    /* -------------------------------------------------------------
-       Conquistas & Marcos (Milestones Grid)
-       ------------------------------------------------------------- */
-    .achievements-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 24px;
-      margin-top: 36px;
-    }
-    .achievement-card {
-      position: relative;
-      border-radius: 24px;
-      background: linear-gradient(145deg, rgba(20, 27, 36, 0.88), rgba(10, 14, 20, 0.96));
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      overflow: hidden;
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      min-height: 340px;
-      transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
-    }
-    .achievement-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(220, 234, 255, 0.42);
-      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.5), 0 0 28px rgba(160, 195, 255, 0.14);
-    }
-    .achievement-card.gold-highlight {
-      border-color: rgba(245, 196, 81, 0.32);
-      background: linear-gradient(145deg, rgba(34, 29, 18, 0.85), rgba(12, 14, 20, 0.96));
-    }
-    .achievement-card.gold-highlight:hover {
-      border-color: rgba(245, 196, 81, 0.65);
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55), 0 0 32px rgba(245, 196, 81, 0.18);
-    }
-    .achievement-visual-banner {
-      height: 130px;
-      border-radius: 16px;
-      margin-bottom: 22px;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 24px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    .banner-gold {
-      background: radial-gradient(circle at 80% 30%, rgba(245, 196, 81, 0.35), rgba(25, 20, 10, 0.9) 70%);
-      border-color: rgba(245, 196, 81, 0.3);
-    }
-    .banner-dbdi {
-      background: radial-gradient(circle at 80% 30%, rgba(90, 104, 201, 0.4), rgba(14, 20, 34, 0.9) 70%);
-      border-color: rgba(130, 155, 255, 0.28);
-    }
-    .banner-hoops {
-      background: radial-gradient(circle at 80% 30%, rgba(245, 132, 38, 0.35), rgba(15, 24, 42, 0.92) 70%);
-      border-color: rgba(245, 132, 38, 0.3);
-    }
-    .banner-big-code {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.7);
+    .portfolio-card-tag {
+      position: absolute;
+      top: 16px;
+      left: 16px;
       z-index: 2;
-    }
-    .banner-big-stat {
-      font-size: 32px;
-      font-weight: 700;
-      letter-spacing: -0.04em;
-      color: #fff;
-      display: block;
-      margin-top: 4px;
-    }
-    .banner-emblem {
-      width: 68px;
-      height: 68px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 32px;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
-      z-index: 2;
-    }
-    .achievement-tag {
-      font-size: 10px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: #93adc8;
-      display: block;
-      margin-bottom: 8px;
+      padding: 5px 11px;
+      border-radius: 999px;
+      font-size: 9px;
       font-weight: 600;
-    }
-    .achievement-title {
-      font-size: 22px;
-      font-weight: 550;
-      color: #fff;
-      line-height: 1.22;
-      margin-bottom: 10px;
-    }
-    .achievement-desc {
-      font-size: 14px;
-      color: #9fb0c5;
-      line-height: 1.62;
-    }
-    .achievement-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 20px;
-      padding-top: 14px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      font-size: 11px;
-      color: var(--grey);
-      font-weight: 500;
-    }
-
-    /* -------------------------------------------------------------
-       Universo Pessoal, Esporte & Interesses (Lifestyle Bento Grid)
-       ------------------------------------------------------------- */
-    .interests-bento {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 22px;
-      margin-top: 36px;
-    }
-    .bento-card {
-      border-radius: 24px;
-      padding: 28px;
-      position: relative;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      background: linear-gradient(145deg, rgba(19, 25, 35, 0.88), rgba(10, 14, 20, 0.96));
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: transform 0.3s ease, border-color 0.3s ease;
-    }
-    .bento-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(255, 255, 255, 0.28);
-    }
-    .bento-span-7 { grid-column: span 7; }
-    .bento-span-5 { grid-column: span 5; }
-    .bento-span-4 { grid-column: span 4; }
-    .bento-span-8 { grid-column: span 8; }
-
-    /* Knicks Theme Card */
-    .bento-knicks {
-      background: radial-gradient(ellipse at 90% 10%, rgba(245, 132, 38, 0.26), transparent 55%),
-                  radial-gradient(ellipse at 10% 90%, rgba(0, 107, 182, 0.28), transparent 60%),
-                  linear-gradient(145deg, rgba(16, 24, 38, 0.94), rgba(9, 13, 20, 0.98));
-      border-color: rgba(245, 132, 38, 0.3);
-    }
-    /* Palmeiras Theme Card */
-    .bento-palmeiras {
-      background: radial-gradient(ellipse at 85% 15%, rgba(34, 197, 94, 0.24), transparent 55%),
-                  linear-gradient(145deg, rgba(13, 28, 22, 0.92), rgba(9, 15, 12, 0.98));
-      border-color: rgba(34, 197, 94, 0.3);
-    }
-    /* Cinema & Series Card */
-    .bento-cinema {
-      background: radial-gradient(ellipse at 80% 20%, rgba(147, 112, 219, 0.22), transparent 55%),
-                  linear-gradient(145deg, rgba(22, 20, 34, 0.92), rgba(10, 11, 18, 0.98));
-      border-color: rgba(168, 140, 255, 0.25);
-    }
-    /* Lifestyle Photo Bento */
-    .bento-photo-card {
-      padding: 14px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-      align-items: stretch;
-    }
-    .bento-photo-item {
-      position: relative;
-      border-radius: 16px;
-      overflow: hidden;
-      min-height: 260px;
-      background: #0d131c;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-    }
-    .bento-photo-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      position: absolute;
-      inset: 0;
-      transition: transform 0.5s ease;
-    }
-    .bento-photo-item:hover img {
-      transform: scale(1.05);
-    }
-    .bento-photo-caption {
-      position: absolute;
-      inset: auto 0 0 0;
-      padding: 16px 14px 12px;
-      background: linear-gradient(to top, rgba(6, 9, 14, 0.92), transparent);
-      font-size: 11px;
-      color: #e2e8f0;
-      font-weight: 500;
-    }
-
-    .bento-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 10px;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      padding: 5px 12px;
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      color: #fff;
-      width: fit-content;
-      margin-bottom: 16px;
+      background: rgba(9, 13, 20, 0.76);
+      border: 1px solid rgba(220, 234, 252, 0.24);
+      backdrop-filter: blur(12px);
+      color: #e6f0ff;
     }
-    .bento-title {
-      font-size: 24px;
-      font-weight: 550;
-      color: #fff;
-      margin-bottom: 10px;
-      letter-spacing: -0.02em;
-    }
-    .bento-text {
-      font-size: 14px;
-      line-height: 1.62;
-      color: #a8b6c8;
-    }
-    .bento-meta {
-      margin-top: 22px;
-      padding-top: 14px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      display: flex;
-      justify-content: space-between;
-      font-size: 11px;
-      color: #cbd5e1;
-      font-family: var(--font-mono);
-    }
-
-    /* -------------------------------------------------------------
-       Projetos em Destaque (Projects Showcase)
-       ------------------------------------------------------------- */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 24px;
-      margin-top: 36px;
-    }
-    .project-card {
-      border-radius: 22px;
-      background: linear-gradient(145deg, rgba(17, 24, 34, 0.85), rgba(9, 13, 19, 0.95));
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 26px;
+    .portfolio-card-caption {
+      position: absolute;
+      left: 20px;
+      right: 20px;
+      bottom: 18px;
+      z-index: 2;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
-      position: relative;
+      gap: 4px;
     }
-    .project-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(220, 234, 255, 0.45);
-      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.45), 0 0 26px rgba(180, 210, 255, 0.15);
-    }
-    .project-topline {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 16px;
-    }
-    .project-badge {
-      font-size: 10px;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: #93a9c7;
-      padding: 4px 10px;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    .project-icon {
-      color: #adbcd0;
-      font-size: 16px;
-    }
-    .project-title {
-      font-size: 22px;
+    .portfolio-card-caption strong {
+      font-size: clamp(18px, 1.8vw, 23px);
       font-weight: 500;
-      color: #fff;
-      margin-bottom: 10px;
-      line-height: 1.25;
+      letter-spacing: -0.03em;
+      color: #ffffff;
     }
-    .project-desc {
-      font-size: 14px;
-      line-height: 1.6;
-      color: var(--slate);
-      margin-bottom: 20px;
+    .portfolio-card-caption span {
+      font-size: 12px;
+      color: #b4c2d8;
     }
-    .project-techs {
+    .portfolio-spectrum-Controls {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      padding: 0 6%;
+      z-index: 3;
+    }
+    .portfolio-spectrum-mood {
+      font-size: clamp(16px, 1.6vw, 22px);
+      color: #ced8e8;
+      text-align: center;
+      max-width: 54ch;
+      margin: 0;
+      min-height: 1.5em;
+    }
+    .portfolio-spectrum-Actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 24px;
-    }
-    .project-tech {
-      font-size: 10px;
-      font-family: var(--font-mono);
-      color: #8da4be;
-      background: rgba(255, 255, 255, 0.04);
-      padding: 3px 8px;
-      border-radius: 6px;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-    }
-    .project-link {
-      display: inline-flex;
       align-items: center;
-      gap: 8px;
-      color: #e2edff;
-      font-size: 13px;
-      font-weight: 500;
-      text-decoration: none;
-      transition: gap 0.2s;
-    }
-    .project-link:hover {
+      justify-content: center;
       gap: 12px;
     }
-
-    /* -------------------------------------------------------------
-       Habilidades / Toolkit
-       ------------------------------------------------------------- */
-    .skills-categories {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      margin-top: 36px;
-    }
-    .skill-cat-card {
-      padding: 28px 24px;
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.025);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(16px);
-    }
-    .skill-cat-title {
+    .spectrum-arrow-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(215, 229, 248, 0.24);
+      background: rgba(255, 255, 255, 0.05);
+      color: #eaf2ff;
       font-size: 16px;
-      font-weight: 500;
-      color: #f1f4fa;
-      margin-bottom: 18px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      cursor: pointer;
+      transition: all 0.25s ease;
     }
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .skill-tag {
-      font-size: 12px;
-      padding: 7px 14px;
-      border-radius: 14px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      color: #cfd8e5;
-      transition: background 0.2s, border-color 0.2s, transform 0.2s;
-    }
-    .skill-tag:hover {
-      background: rgba(255, 255, 255, 0.09);
-      border-color: rgba(255, 255, 255, 0.25);
+    .spectrum-arrow-btn:hover {
+      background: rgba(215, 229, 248, 0.16);
+      border-color: rgba(225, 238, 255, 0.6);
       transform: translateY(-2px);
     }
 
-    /* -------------------------------------------------------------
-       Contato (Connection Card)
-       ------------------------------------------------------------- */
-    .contact-card {
-      border-radius: 28px;
-      background: radial-gradient(ellipse at 50% 0%, rgba(40, 60, 90, 0.35), rgba(12, 17, 23, 0.95) 70%);
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      padding: clamp(36px, 5vw, 64px);
-      text-align: center;
+    /* ==========================================================================
+       SECTION 4: IMMERSIVE CINEMA & SERIES LOUNGE (INLINE INTERACTIVE)
+       ========================================================================== */
+    .portfolio-cinema-section {
       position: relative;
+      padding: clamp(72px, 9vh, 110px) 5%;
+      background:
+        radial-gradient(ellipse at 50% 15%, rgba(113, 128, 151, 0.14), transparent 55%),
+        linear-gradient(180deg, #070a0f 0%, #040507 100%);
+      border-top: 1px solid rgba(214, 228, 248, 0.1);
+    }
+    .portfolio-cinema-wrap {
+      width: min(1220px, 92vw);
+      margin: 0 auto;
+    }
+    .portfolio-cinema-player-stage {
+      position: relative;
+      margin-top: 28px;
+      border-radius: 26px;
       overflow: hidden;
-      margin-top: 36px;
+      border: 1px solid rgba(215, 228, 248, 0.22);
+      background: #000;
+      box-shadow: 0 38px 110px rgba(0, 0, 0, 0.82);
+      aspect-ratio: 16 / 9;
+      max-height: 68svh;
+      width: 100%;
     }
-    .contact-card .section-title {
-      max-width: 700px;
-      margin: 12px auto 20px;
+    .portfolio-cinema-player-stage video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
-    .contact-card .section-desc {
-      margin: 0 auto 36px;
-      text-align: center;
+    .portfolio-cinema-overlay-info {
+      position: absolute;
+      left: 4%;
+      bottom: 88px;
+      z-index: 2;
+      pointer-events: none;
+      text-shadow: 0 4px 24px rgba(0, 0, 0, 0.9);
     }
-    .contact-buttons {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
+    .portfolio-cinema-overlay-info small {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #b8c7dc;
     }
-
-    /* -------------------------------------------------------------
-       Footer
-       ------------------------------------------------------------- */
-    .footer {
-      border-top: 1px solid var(--line);
-      padding: 60px 0 36px;
-      margin-top: 80px;
-      position: relative;
-      z-index: 10;
+    .portfolio-cinema-overlay-info h3 {
+      margin: 6px 0 4px;
+      font-size: clamp(24px, 3.2vw, 44px);
+      font-weight: 450;
+      letter-spacing: -0.04em;
+      color: #ffffff;
     }
-    .footer-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 36px;
-      flex-wrap: wrap;
-      margin-bottom: 48px;
-    }
-    .footer-brand {
-      font-size: clamp(32px, 5vw, 64px);
-      font-weight: 700;
-      letter-spacing: -0.05em;
-      background: linear-gradient(160deg, #5d6d82, #edf4fd 40%, #758eae 75%, #b6c8df);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      text-decoration: none;
-      display: inline-block;
-    }
-    .footer-links {
-      display: flex;
-      gap: 28px;
+    .portfolio-cinema-overlay-info p {
+      margin: 0;
       font-size: 13px;
+      color: #c2cfdf;
     }
-    .footer-links a {
-      color: var(--grey);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .footer-links a:hover {
-      color: #fff;
-    }
-    .footer-bottom {
+    .portfolio-cinema-bar {
+      position: absolute;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      z-index: 3;
+      width: min(860px, 92%);
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      padding-top: 24px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      gap: 12px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(9, 13, 20, 0.82);
+      border: 1px solid rgba(220, 234, 252, 0.22);
+      backdrop-filter: blur(24px);
+    }
+    .portfolio-cinema-bar button {
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.06);
+      color: #eef4fc;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .portfolio-cinema-bar button:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.45);
+    }
+    .portfolio-cinema-bar input[type="range"] {
+      flex: 1;
+      accent-color: #dceaff;
+      cursor: pointer;
+    }
+    .portfolio-cinema-time {
       font-size: 11px;
-      color: #6a7c93;
-    }
-
-    @media (max-width: 960px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-      }
-      .hero-portrait-card {
-        max-width: 380px;
-      }
-      .hero-stats-row {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .about-card {
-        grid-template-columns: 1fr;
-      }
-      .about-visual {
-        border-right: 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      }
-      .bento-span-7, .bento-span-5, .bento-span-4, .bento-span-8 {
-        grid-column: span 12;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .nav-island nav {
-        display: none;
-      }
-      .hero-stats-row {
-        grid-template-columns: 1fr;
-      }
-      .bento-photo-card {
-        grid-template-columns: 1fr;
-      }
+      color: #a9b8cd;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
     }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#spatial-os-section">Pular para o ROSSETTI OS</a>
 
-  <!-- Background Atmosférico Vivo -->
-  <div class="spatial-backdrop" aria-hidden="true">
-    <div class="pov-horizon"></div>
-    <div class="visor-atmosphere"></div>
-    <div class="spatial-haze"></div>
-  </div>
-
-  <!-- Header / Nav Island Flutuante -->
-  <header class="header">
+  <!-- ========================================================================
+       HEADER ISLAND + WEBGL2 CHROMATIC LIQUID METAL CTA
+       ======================================================================== -->
+  <header class="header" id="header" data-intro="complete">
     <div class="nav-island">
-      <a class="brand" href="#top">ROSSETTI<span>★</span></a>
-      <nav aria-label="Navegação Principal">
-        <a href="#sobre">Sobre</a>
-        <a href="#conquistas">Conquistas</a>
-        <a href="#interesses">Universo</a>
-        <a href="#projetos">Projetos</a>
-        <a href="#habilidades">Habilidades</a>
-        <a href="#contato">Contato</a>
+      <a class="brand" href="#top" aria-label="Rossetti Início">ROSSETTI<span>™</span></a>
+      <nav aria-label="Navegação principal">
+        <a href="#spatial-os-section">Rossetti OS</a>
+        <a href="#experience">Conquistas 3D</a>
+        <a href="#cinema-lounge">Cinema &amp; Séries</a>
+        <a href="#questions">Specs &amp; Bio <span>↗</span></a>
       </nav>
-      <a class="nav-cta" href="#contato">Fale Comigo ↗</a>
+    </div>
+    <div class="header-right">
+      <div id="buy-now-root">
+        <button id="buy-now" type="button" class="buy-now-button">Conectar ↗</button>
+      </div>
+      <button id="menu-toggle" aria-label="Abrir navegação" aria-controls="mobile-menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
     </div>
   </header>
 
+  <nav id="mobile-menu" aria-label="Navegação mobile" inert="">
+    <a href="#spatial-os-section">Rossetti OS <span>01</span></a>
+    <a href="#experience">Conquistas 3D <span>02</span></a>
+    <a href="#cinema-lounge">Cinema &amp; Séries <span>03</span></a>
+    <a href="#questions">Specs &amp; FAQ <span>04</span></a>
+  </nav>
+
   <main>
-    <!-- HERO SECTION -->
-    <section class="hero section" id="top">
-      <div class="container">
-        <div class="hero-grid">
-          <div class="hero-inner">
-            <div class="section-eyebrow">
-              <span class="gold-dot"></span>
-              <span>JOÃO GABRIEL FAXINA · PORTFÓLIO OFICIAL 2026</span>
-            </div>
+    <!-- ======================================================================
+         1. HERO STUDIO — 3D CHROME WORDMARK + 3D TILTING PORTRAIT + CALLOUTS
+         ====================================================================== -->
+    <section class="hero portfolio-hero callouts-active" id="top" aria-labelledby="hero-heading">
+      <div class="hero-pin">
+        <h1 id="hero-heading" class="sr-only">João Gabriel Faxina (Rossetti) — Ouro Canguru de Matemática, Semifinalista DBDI 2026, Basquete High IQ, New York Knicks &amp; Palmeiras.</h1>
 
-            <h1 class="hero-title">
-              Mente de <span class="highlight-gold">ouro</span> na matemática, visão de jogo nas <span class="highlight">quadras</span>.
-            </h1>
+        <!-- Three.js 3D Polished Chrome Wordmark mounts right inside .hero-wordmark -->
+        <div class="hero-wordmark" id="hero-wordmark">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1963.45 790.53" preserveAspectRatio="none" fill="currentColor" aria-hidden="true" focusable="false">
+            <g class="aera-letter" data-letter="a-first" transform="translate(0 0)"><path d="M401.86 0.00L519.53 790.53L309.08 790.53L298.83 648.44L225.10 648.44L212.89 790.53L0.00 790.53L104.49 0.00ZM292.97 508.30Q277.34 374.02 261.72 176.76Q230.47 403.32 222.66 508.30Z"></path></g>
+            <g class="aera-letter" data-letter="e" transform="translate(0 0)"><path d="M548.69 0.00L891.46 0.00L891.46 158.20L754.25 158.20L754.25 308.11L882.67 308.11L882.67 458.50L754.25 458.50L754.25 632.32L905.13 632.32L905.13 790.53L548.69 790.53Z"></path></g>
+            <g class="aera-letter" data-letter="r" transform="translate(0 0)"><path d="M958.21 0.00L1103.72 0.00Q1249.23 0.00 1300.74 11.23Q1352.26 22.46 1384.73 68.60Q1417.20 114.75 1417.20 215.82Q1417.20 308.11 1394.25 339.84Q1371.30 371.58 1303.92 377.93Q1364.95 393.07 1385.95 418.46Q1406.95 443.85 1412.07 465.09Q1417.20 486.33 1417.20 582.03L1417.20 790.53L1226.28 790.53L1226.28 527.83Q1226.28 464.36 1216.27 449.22Q1206.26 434.08 1163.78 434.08L1163.78 790.53L958.21 790.53ZM1163.78 135.25L1163.78 311.04Q1198.45 311.04 1212.37 301.51Q1226.28 291.99 1226.28 239.75L1226.28 196.29Q1226.28 158.69 1212.85 146.97Q1199.43 135.25 1163.78 135.25Z"></path></g>
+            <g class="aera-letter" data-letter="a-last" transform="translate(0 0)"><path d="M1845.77 0.00L1963.45 790.53L1753.00 790.53L1742.74 648.44L1669.01 648.44L1656.80 790.53L1443.91 790.53L1548.41 0.00ZM1736.88 508.30Q1721.26 374.02 1705.63 176.76Q1674.38 403.32 1666.57 508.30Z"></path></g>
+          </svg>
+        </div>
 
-            <p class="hero-serif">
-              "Medalhista de Ouro na Canguru de Matemática, Semifinalista DBDI 2026 e apaixonado por transformar estratégia em vitória."
-            </p>
-
-            <div class="hero-actions">
-              <a class="btn-bright" href="#conquistas">Explorar Conquistas ↓</a>
-              <a class="btn-outline" href="#interesses">Meu Universo &amp; Esporte ↗</a>
-            </div>
+        <!-- Rolling Split Headlines (Toggles .hero.swapped automatically or on click) -->
+        <div class="hero-headlines" aria-hidden="true">
+          <div class="headline-block headline-left">
+            <div class="headline-mask"><div class="headline-roll"><span>JOÃO GABRIEL.</span><span>OURO CANGURU 🥇</span></div></div>
+            <div class="headline-mask"><div class="headline-roll"><span>MENTE OLÍMPICA.</span><span>SEMI DBDI 2026.</span></div></div>
           </div>
+          <div class="headline-block headline-right">
+            <div class="headline-mask"><div class="headline-roll"><span>BASQUETE HIGH IQ.</span><span>NY KNICKS FAN 🏀</span></div></div>
+            <div class="headline-mask"><div class="headline-roll"><span>AVANTI PALESTRA.</span><span>SÉRIES &amp; CINEMA.</span></div></div>
+          </div>
+        </div>
 
-          <!-- Retrato Principal em Destaque no Hero -->
-          <div class="hero-portrait-card">
-            <div class="hero-portrait-frame">
-              <img src="assets/portfolio/joao-terno.jpg" alt="João Gabriel Faxina em traje de gala">
-              <div class="hero-portrait-overlay">
-                <div>
-                  <span style="font-size:11px;color:#cbd5e1;display:block;">João Gabriel Faxina</span>
-                  <strong style="font-size:16px;color:#fff;letter-spacing:-0.02em;">Rossetti · 2026</strong>
-                </div>
-                <span class="hero-portrait-badge">🥇 Ouro Canguru</span>
+        <!-- Interactive 3D-Tilting Portrait Stage -->
+        <div class="portrait-stage-wrap" id="portrait-stage-wrap">
+          <div class="portrait-card-3d" id="portrait-card-3d" tabindex="0" role="region" aria-label="Retrato 3D interativo de João Gabriel. Mova o mouse para inclinar em 3D.">
+            <img id="hero-portrait-img" src="assets/portfolio/joao-terno.jpg" alt="João Gabriel Faxina de terno escuro">
+            <div class="portrait-hud-overlay">
+              <div class="portrait-hud-badges">
+                <span class="portrait-hud-badge"><i></i> <span id="hud-mode-label">MODO GALA · OURO OLÍMPICO</span></span>
               </div>
+              <div class="portrait-hud-title" id="hud-title-text">João Gabriel Faxina</div>
+              <div class="portrait-hud-sub" id="hud-sub-text">Medalhista de Ouro Canguru · Semifinalista DBDI 2026 · Playmaker</div>
             </div>
           </div>
         </div>
 
-        <!-- Indicadores Rápidos de Destaque -->
-        <div class="hero-stats-row">
-          <div class="hero-stat-card">
-            <span class="hero-stat-num" style="color:var(--gold);">🥇 1º LUGAR</span>
-            <span class="hero-stat-label">Ouro · Canguru de Matemática</span>
-          </div>
-          <div class="hero-stat-card">
-            <span class="hero-stat-num">🏆 DBDI '26</span>
-            <span class="hero-stat-label">Semifinalista Oficial 2026</span>
-          </div>
-          <div class="hero-stat-card">
-            <span class="hero-stat-num" style="color:var(--knicks-orange);">🏀 HOOPS</span>
-            <span class="hero-stat-label">Basquete de Alto Desempenho</span>
-          </div>
-          <div class="hero-stat-card">
-            <span class="hero-stat-num" style="color:var(--palmeiras-green);">🌴 VERDÃO</span>
-            <span class="hero-stat-label">Palmeirense &amp; Knicks Fan</span>
-          </div>
-        </div>
-      </div>
-    </section>
+        <!-- Optical Callouts around the 3D Portrait -->
+        <aside class="hero-callout callout-left-top">
+          <small>01 · CONQUISTA INTERNACIONAL</small>
+          <h3>🥇 Medalha de Ouro — Canguru</h3>
+          <p>Raciocínio lógico de elite, resolução rápida de problemas complexos e precisão matemática sob pressão de tempo.</p>
+        </aside>
 
-    <!-- SOBRE MIM SECTION -->
-    <section class="section" id="sobre">
-      <div class="container">
-        <div class="section-eyebrow">
-          <span>01 / IDENTIDADE &amp; PERFIL</span>
-        </div>
-        <h2 class="section-title">Sobre Mim</h2>
-        <p class="section-desc">A união entre o raciocínio exato das olimpíadas de matemática, a leitura dinâmica do basquete e a curiosidade constante pela tecnologia e cultura.</p>
+        <aside class="hero-callout callout-right-top">
+          <small>02 · DESTAQUE NACIONAL 2026</small>
+          <h3>🏆 Semifinalista da DBDI 2026</h3>
+          <p>Visão estratégica, argumentação estruturada e tomada de decisão em cenários competitivos de alto nível.</p>
+        </aside>
 
-        <div class="about-card">
-          <!-- Galeria Interativa de Perfil com as 2 fotos reais -->
-          <div class="about-visual">
-            <div class="photo-slot" id="photo-principal-slot">
-              <img id="about-active-photo" src="assets/portfolio/joao-perfil.jpg" alt="João Gabriel Faxina">
-            </div>
+        <aside class="hero-callout callout-left-bottom">
+          <small>03 · QUADRA &amp; ARQUIBANCADA</small>
+          <h3>🏀 Basquete High IQ · Knicks &amp; Verdão</h3>
+          <p>Visão de jogo apurada em quadra, paixão pelo New York Knicks no MSG e coração Alviverde (S.E. Palmeiras).</p>
+        </aside>
 
-            <div class="photo-switcher">
-              <button type="button" class="photo-switch-btn active" onclick="switchProfilePhoto('assets/portfolio/joao-perfil.jpg', this)">
-                📸 Casual / Perfil
-              </button>
-              <button type="button" class="photo-switch-btn" onclick="switchProfilePhoto('assets/portfolio/joao-terno.jpg', this)">
-                👔 Traje Social
-              </button>
-            </div>
-
-            <div class="about-meta-list">
-              <div class="about-meta-item">
-                <span>Nome</span>
-                <span>João Gabriel Faxina</span>
-              </div>
-              <div class="about-meta-item">
-                <span>Destaques</span>
-                <span style="color:var(--gold);">Ouro Canguru &amp; DBDI '26</span>
-              </div>
-              <div class="about-meta-item">
-                <span>Esporte</span>
-                <span>Basquete (Playmaker)</span>
-              </div>
-              <div class="about-meta-item">
-                <span>Times do Coração</span>
-                <span style="color:#b8ffcc;">Palmeiras &amp; NY Knicks</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Conteúdo Biográfico -->
-          <div class="about-content">
-            <h3 class="about-lead">
-               Movido por desafios intelectuais, competição de alto nível e paixão pelo esporte.
-            </h3>
-            <div class="about-paragraphs">
-              <p>
-                Olá! Eu sou o <strong>João Gabriel Faxina</strong>. Desde cedo descobri que os problemas mais difíceis são justamente os mais interessantes de resolver. Essa mentalidade me levou a conquistar a <strong>Medalha de Ouro na Olimpíada Canguru de Matemática</strong> e a alcançar a <strong>Semifinal da DBDI 2026</strong>, competições que exigem concentração absoluta, estratégia e pensamento rápido.
-              </p>
-              <p>
-                Fora das provas e dos projetos técnicos, meu habitat natural é a <strong>quadra de basquete</strong>. Jogo em alto nível e levo para o esporte a mesma visão analítica que uso nos estudos: leitura de espaço, tomada de decisão em segundos e espírito de equipe.
-              </p>
-              <p>
-                Quando não estou resolvendo desafios lógicos ou treinando arremessos, estou acompanhando cada lance do <strong>New York Knicks</strong> na NBA, torcendo pelo <strong>Palmeiras</strong> ou maratonando grandes <strong>séries e filmes</strong>.
-              </p>
-            </div>
-
-            <div class="about-pills">
-              <span class="about-pill">🥇 Medalhista de Ouro · Canguru</span>
-              <span class="about-pill">🏆 Semifinalista DBDI 2026</span>
-              <span class="about-pill">🏀 Basquete Competitivo</span>
-              <span class="about-pill">🗽 New York Knicks</span>
-              <span class="about-pill">🌴 S.E. Palmeiras</span>
-              <span class="about-pill">🎬 Séries &amp; Cinema</span>
-            </div>
-          </div>
+        <!-- Interactive Control Bar -->
+        <div class="hero-interactive-bar" role="toolbar" aria-label="Controles interativos do Hero">
+          <button type="button" class="hero-pill-btn" id="btn-photo-suit" aria-pressed="true">📸 Foto 01: Terno</button>
+          <button type="button" class="hero-pill-btn" id="btn-photo-casual" aria-pressed="false">📸 Foto 02: Lifestyle</button>
+          <button type="button" class="hero-pill-btn" id="btn-toggle-callouts" aria-pressed="true">✦ Telemetria HUD</button>
+          <button type="button" class="hero-pill-btn" id="btn-swap-headlines">↻ Alternar Manchetes</button>
         </div>
       </div>
     </section>
 
-    <!-- CONQUISTAS & MARCOS SECTION -->
-    <section class="section" id="conquistas">
-      <div class="container">
-        <div class="section-eyebrow">
-          <span>02 / RECONHECIMENTO &amp; PERFORMANCE</span>
+    <!-- ======================================================================
+         2. ROSSETTI OS — INTERACTIVE SPATIAL DESKTOP (AERA OS EXPERIENCE)
+         ====================================================================== -->
+    <section class="rossetti-os-section" id="spatial-os-section" aria-labelledby="visor-heading">
+      <div class="rossetti-os-header">
+        <span class="visor-eyebrow">ROSSETTI OS · AMBIENTE ESPACIAL INTERATIVO</span>
+        <h2 id="visor-heading">Explore o mundo do João por dentro.</h2>
+        <p>Clique nos aplicativos abaixo, filtre por categoria no dock inferior, pesquise em tempo real ou jogue o mini-game espacial ORBIT.</p>
+      </div>
+
+      <div class="spatial-home" id="spatial-home" aria-label="Rossetti OS Desktop">
+        <div class="home-desktop">
+          <nav class="home-rail" aria-label="Atalhos rápidos">
+            <button data-home-category="all" aria-label="Todos os apps" aria-pressed="true">▣</button>
+            <button data-home-launch="browser" aria-label="Abrir Hub Knicks &amp; Palmeiras">◎</button>
+            <button data-home-launch="gallery" aria-label="Abrir Galeria de Fotos">◉</button>
+            <button data-home-launch="notes" aria-label="Abrir Notas DBDI 2026">N</button>
+          </nav>
+
+          <div class="home-window" data-app="home">
+            <header class="home-toolbar">
+              <span class="home-os-label">ROSSETTI OS</span>
+              <button id="vr-home-back" aria-label="Voltar para o início" hidden="">← Início</button>
+              <h3 id="home-window-title">Início</h3>
+              <div class="home-user">
+                <button id="vr-window-size" aria-label="Expandir janela" aria-pressed="false">↗</button>
+                <time id="home-clock">12:00</time>
+                <img src="assets/portfolio/joao-terno.jpg" alt="Avatar João Gabriel" width="36" height="36" style="object-fit:cover;border-radius:50%;">
+              </div>
+            </header>
+
+            <div class="home-utilities">
+              <label class="home-search">
+                <span aria-hidden="true">◎</span>
+                <input id="home-search" type="search" placeholder="Buscar conquista, esporte, série ou app (ex: Canguru, Knicks, Palmeiras)…" aria-label="Buscar app ou conquista" autocomplete="off">
+              </label>
+              <span class="home-status"><i class="live-dot"></i> Online · São Paulo, BR</span>
+            </div>
+
+            <div class="home-content">
+              <div class="home-row-title">
+                <h4 id="home-apps-title">Universo do João Gabriel</h4>
+                <span id="home-app-count">6 apps</span>
+              </div>
+
+              <div class="home-apps">
+                <button class="home-app" data-home-launch="desktop" data-category="work" data-name="Ouro Canguru Matemática">
+                  <span class="home-app-art home-art-desktop"><img src="assets/portfolio/joao-terno.jpg" alt="João Gabriel Medalha de Ouro"></span>
+                  <strong>Ouro Canguru 🥇</strong>
+                  <small>Matemática &amp; Lógica</small>
+                </button>
+                <button class="home-app" data-home-launch="notes" data-category="work" data-name="Semifinalista DBDI 2026 Notas">
+                  <span class="home-app-art home-art-notes"><img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/021ef67a-dea0-48ec-973a-935bfe63fc1f_original.webp" alt=""></span>
+                  <strong>DBDI 2026 🏆</strong>
+                  <small>Semifinalista &amp; Notas</small>
+                </button>
+                <button class="home-app" data-home-launch="browser" data-category="play" data-name="Basquete Knicks Palmeiras Esporte">
+                  <span class="home-app-art home-art-browser"><img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4660f202-595c-4f94-8f40-2430e9865d8b_original.webp" alt=""></span>
+                  <strong>Basquete &amp; Times 🏀</strong>
+                  <small>Quadra, Knicks &amp; Verdão</small>
+                </button>
+                <button class="home-app" data-home-launch="gallery" data-category="work" data-name="Galeria Fotos João Gabriel">
+                  <span class="home-app-art home-art-meeting"><img src="assets/portfolio/joao-perfil.jpg" alt="João Gabriel Lifestyle"></span>
+                  <strong>Galeria &amp; Fotos 📸</strong>
+                  <small>Retratos &amp; Wallpapers</small>
+                </button>
+                <button class="home-app" data-home-launch="cinema" data-category="watch" data-name="Séries Filmes Cinema">
+                  <span class="home-app-art home-art-cinema"><img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/54441c26-54a7-4879-a4ab-913dd7e193d4_original.jpg" alt=""></span>
+                  <strong>Séries &amp; Filmes 🎬</strong>
+                  <small>Cinema Pessoal</small>
+                </button>
+                <button class="home-app" data-home-launch="orbit" data-category="play" data-name="ORBIT Reflexo Basquete Game">
+                  <span class="home-app-art home-art-orbit"><img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/d6175cb4-2dae-4158-ae8b-678b40e6749f_original.jpg" alt=""></span>
+                  <strong>ORBIT Court ⚡</strong>
+                  <small>Desafio de Reflexo 5/5</small>
+                </button>
+              </div>
+
+              <p id="home-empty" hidden="">Nenhum aplicativo encontrado. Tente "Canguru", "Knicks", "Cinema" ou outra categoria.</p>
+
+              <div class="home-row-title home-recent-title">
+                <h4>Destaques em Evidência</h4>
+                <span>Acesso Rápido</span>
+              </div>
+
+              <div class="home-recent">
+                <button class="home-feature home-feature-work" data-home-launch="desktop">
+                  <img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/6d0ccd71-4f28-4f7c-a19f-847d7565fe9f_original.jpg" alt="">
+                  <span>
+                    <small>CONQUISTA OLÍMPICA</small>
+                    <strong>Medalha de Ouro no Canguru de Matemática.</strong>
+                    <em>Abrir Workspace <span>↗</span></em>
+                  </span>
+                </button>
+                <button class="home-feature home-feature-watch" data-home-launch="cinema">
+                  <img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/54441c26-54a7-4879-a4ab-913dd7e193d4_original.jpg" alt="">
+                  <span>
+                    <small>CULTURA &amp; TELONA</small>
+                    <strong>Fã de grandes séries, filmes e narrativas épicas.</strong>
+                    <em>Abrir Cinema <span>↗</span></em>
+                  </span>
+                </button>
+                <button class="home-feature home-feature-play" data-home-launch="orbit">
+                  <img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/d6175cb4-2dae-4158-ae8b-678b40e6749f_original.jpg" alt="">
+                  <span>
+                    <small>VISÃO DE QUADRA</small>
+                    <strong>Teste sua velocidade e reflexo no desafio ORBIT.</strong>
+                    <em>Jogar ORBIT <span>↗</span></em>
+                  </span>
+                </button>
+              </div>
+            </div>
+
+            <!-- SUB-APPLICATIONS INSIDE ROSSETTI OS -->
+            <div class="home-app-surface" id="home-app-surface" hidden="">
+              <!-- 1. Desktop / Canguru de Matemática Workspace -->
+              <section class="vr-app-panel" id="vr-desktop" aria-label="Workspace Canguru de Matemática" hidden="">
+                <div class="vr-workspace-art">
+                  <img src="assets/portfolio/joao-terno.jpg" alt="João Gabriel Faxina" style="object-position:center 18%;">
+                  <div>
+                    <span class="visor-eyebrow">🥇 MEDALHA DE OURO · CANGURU DE MATEMÁTICA</span>
+                    <h4>Onde a lógica encontra<br>a criatividade.</h4>
+                    <button data-local-app="notes">Abrir Notas da DBDI 2026 ↗</button>
+                  </div>
+                </div>
+                <div class="vr-workspace-tools">
+                  <span class="visor-eyebrow">METAS &amp; ROTINA DE ALTA PERFORMANCE</span>
+                  <label class="vr-project-label" for="vr-project">Foco atual do projeto</label>
+                  <input id="vr-project" maxlength="80" value="Olimpíadas de Matemática + DBDI 2026 + Treino de Quadra">
+                  <div class="vr-tasks">
+                    <label><input type="checkbox" data-vr-task="0" checked> Conquistar Medalha de Ouro no Canguru de Matemática 🥇</label>
+                    <label><input type="checkbox" data-vr-task="1" checked> Classificar para a Semifinal da DBDI 2026 🏆</label>
+                    <label><input type="checkbox" data-vr-task="2" checked> Dominar os fundamentos e visão de jogo no Basquete 🏀</label>
+                  </div>
+                  <span id="vr-task-status" class="vr-muted">3 de 3 concluídas</span>
+                  <button id="vr-focus" aria-pressed="false">Ativar Modo Foco Total</button>
+                </div>
+              </section>
+
+              <!-- 2. Notes / DBDI 2026 Caderno Estratégico -->
+              <section class="vr-app-panel" id="vr-notes" aria-label="Caderno Estratégico DBDI 2026" hidden="">
+                <div class="vr-app-subhead">
+                  <span>CADERNO ESTRATÉGICO · SEMIFINALISTA DBDI 2026</span>
+                  <span id="vr-notes-status" role="status">Salvo neste dispositivo</span>
+                </div>
+                <label class="sr-only" for="vr-note">Suas anotações</label>
+                <textarea id="vr-note" placeholder="Escreva uma ideia, tática de jogo ou nota para o João…" spellcheck="true"></textarea>
+                <div class="vr-note-footer">
+                  <span id="vr-word-count">0 palavras</span>
+                  <button id="vr-download-note">Baixar nota (.txt) ↓</button>
+                </div>
+              </section>
+
+              <!-- 3. Browser / Hub Basquete, New York Knicks & Palmeiras -->
+              <section class="vr-app-panel" id="vr-browser" aria-label="Hub Esportivo Knicks e Palmeiras" hidden="">
+                <div class="vr-browser-heading">
+                  <span class="visor-eyebrow">🏀 BASQUETE · 🗽 NEW YORK KNICKS · 🌴 S.E. PALMEIRAS</span>
+                  <h4>Paixão dentro e fora das quadras.</h4>
+                  <p>Além de jogar basquete muito bem com leitura rápida de quadra, acompanho de perto o New York Knicks na NBA e sou Palmeirense raiz. Adicione ou abra links favoritos abaixo:</p>
+                </div>
+                <form id="vr-bookmark-form">
+                  <label class="sr-only" for="vr-bookmark-url">URL do site</label>
+                  <input id="vr-bookmark-url" type="text" inputmode="url" placeholder="Adicionar site favorito, ex: nba.com/knicks" required="">
+                  <button type="submit">Salvar Favorito</button>
+                </form>
+                <p id="vr-bookmark-error" role="status"></p>
+                <div class="vr-bookmarks" id="vr-bookmarks"></div>
+              </section>
+
+              <!-- 4. Gallery / Fotos Pessoais & Wallpapers -->
+              <section class="vr-app-panel" id="vr-gallery" aria-label="Galeria de Fotos do João" hidden="">
+                <div class="vr-gallery-image">
+                  <img id="vr-gallery-image" src="assets/portfolio/joao-terno.jpg" alt="João Gabriel de terno" style="object-position:center 20%;">
+                  <div>
+                    <h4 id="vr-gallery-title">João Gabriel — Modo Gala</h4>
+                    <a id="vr-download-wallpaper" href="assets/portfolio/joao-terno.jpg" download="joao-gabriel-terno.jpg">Baixar imagem ↓</a>
+                  </div>
+                </div>
+                <div class="vr-gallery-choices">
+                  <button data-wallpaper="suit" aria-pressed="true"><img src="assets/portfolio/joao-terno.jpg" alt="">Foto 01 · Terno</button>
+                  <button data-wallpaper="casual" aria-pressed="false"><img src="assets/portfolio/joao-perfil.jpg" alt="">Foto 02 · Lifestyle</button>
+                  <button data-wallpaper="aurora" aria-pressed="false"><img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/19ebb5f4-a6fb-4b58-bc5d-65a8199bf7f5_original.webp" alt="">Aurora Espacial</button>
+                </div>
+              </section>
+
+              <!-- 5. Cinema Player inside OS -->
+              <section class="vr-app-panel" id="vr-cinema" aria-label="Cinema Player" hidden="">
+                <video id="vr-cinema-video" src="assets/overview/assets/d8j0ntlcm91z4.cloudfront.net/user_3BJWPvMvEq6NnWomWUpPdVMx6Ys/hf_20260920_194148_ec79c9d5-4fe4-4d9b-9ca1-68750614cef2.mp4" poster="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/21da8985-e507-434c-88df-71d0a42c9621_original.webp" controls="" playsinline="" preload="metadata" aria-label="Sala de Cinema do João"></video>
+                <div class="vr-cinema-caption">
+                  <div>
+                    <h4>Sessão Privada · Sci-Fi &amp; Séries</h4>
+                    <span>Curadoria de Filmes &amp; Séries do João Gabriel</span>
+                  </div>
+                  <button id="vr-cinema-wide" aria-pressed="false">Expandir tela ↗</button>
+                </div>
+              </section>
+
+              <!-- 6. ORBIT Mini-Game -->
+              <section class="vr-app-panel" id="vr-orbit" aria-label="Mini-game espacial ORBIT" hidden="">
+                <img class="vr-orbit-wallpaper" src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/19ebb5f4-a6fb-4b58-bc5d-65a8199bf7f5_original.webp" alt="">
+                <div class="vr-orbit-intro" id="vr-orbit-intro">
+                  <span class="visor-eyebrow">TREINO DE VISÃO PERIFÉRICA &amp; BASQUETE</span>
+                  <h4>ORBIT COURT</h4>
+                  <p>Cinco sinais luminosos na quadra espacial.<br>Clique em cada ponto o mais rápido possível para testar seus reflexos de armador.</p>
+                  <button id="vr-orbit-start">Iniciar Desafio ↗</button>
+                </div>
+                <div class="vr-orbit-field" id="vr-orbit-field" hidden="">
+                  <span id="vr-orbit-score">0 / 5 sinais</span>
+                  <button data-vr-signal="0" aria-label="Capturar sinal 1"></button>
+                  <button data-vr-signal="1" aria-label="Capturar sinal 2"></button>
+                  <button data-vr-signal="2" aria-label="Capturar sinal 3"></button>
+                  <button data-vr-signal="3" aria-label="Capturar sinal 4"></button>
+                  <button data-vr-signal="4" aria-label="Capturar sinal 5"></button>
+                </div>
+                <div class="vr-orbit-intro" id="vr-orbit-complete" hidden="">
+                  <span class="visor-eyebrow">5 DE 5 · CLUTCH TIME!</span>
+                  <h4>Reflexo de Elite.</h4>
+                  <p>Visão de quadra digna do Madison Square Garden.</p>
+                  <button id="vr-orbit-restart">Jogar novamente ↺</button>
+                </div>
+              </section>
+            </div>
+          </div>
+
+          <nav class="home-dock" aria-label="Categorias do Rossetti OS">
+            <button data-home-category="all" aria-pressed="true">Todos</button>
+            <button data-home-category="work" aria-pressed="false">Conquistas</button>
+            <button data-home-category="watch" aria-pressed="false">Séries &amp; Filmes</button>
+            <button data-home-category="play" aria-pressed="false">Esporte &amp; Games</button>
+          </nav>
+          <div class="home-grabber" aria-hidden="true"><i></i><span></span></div>
         </div>
-        <h2 class="section-title">Marcos &amp; Conquistas</h2>
-        <p class="section-desc">Resultados construídos com treino, raciocínio rápido e dedicação dentro e fora das competições acadêmicas e esportivas.</p>
-
-        <div class="achievements-grid">
-          
-          <!-- Card de Conquista 1: Canguru de Matemática -->
-          <article class="achievement-card gold-highlight">
-            <div>
-              <div class="achievement-visual-banner banner-gold" id="achievement-slot-1">
-                <div>
-                  <span class="banner-big-code">KANGOUROU SANS FRONTIÈRES</span>
-                  <span class="banner-big-stat" style="color:var(--gold);">OURO 🥇</span>
-                </div>
-                <div class="banner-emblem" style="border-color:rgba(245,196,81,0.5);color:var(--gold);">
-                  ∑
-                </div>
-              </div>
-              <span class="achievement-tag" style="color:var(--gold);">Olimpíada Internacional · Premiação Máxima</span>
-              <h3 class="achievement-title">Medalha de Ouro no Canguru de Matemática</h3>
-              <p class="achievement-desc">
-                Conquista do 1º lugar (Medalha de Ouro) no Concurso Canguru de Matemática Brasil — a maior competição internacional da área. Destaque pela excelência em lógica, geometria, álgebra e resolução ágil de problemas complexos.
-              </p>
-            </div>
-            <div class="achievement-footer">
-              <span>Concurso Internacional de Matemática</span>
-              <span style="color:var(--gold);">Medalhista de Ouro ★</span>
-            </div>
-          </article>
-
-          <!-- Card de Conquista 2: Semifinalista DBDI 2026 -->
-          <article class="achievement-card">
-            <div>
-              <div class="achievement-visual-banner banner-dbdi" id="achievement-slot-2">
-                <div>
-                  <span class="banner-big-code">EDIÇÃO OFICIAL · 2026</span>
-                  <span class="banner-big-stat">TOP SEMI</span>
-                </div>
-                <div class="banner-emblem">
-                  🏆
-                </div>
-              </div>
-              <span class="achievement-tag">Competição Nacional &amp; Estratégia · 2026</span>
-              <h3 class="achievement-title">Semifinalista da DBDI 2026</h3>
-              <p class="achievement-desc">
-                Classificação de destaque até a fase Semifinal da DBDI 2026, superando baterias eliminatórias de alta exigência com argumentação sólida, visão analítica, criatividade e trabalho sob pressão.
-              </p>
-            </div>
-            <div class="achievement-footer">
-              <span>Temporada 2026</span>
-              <span style="color:#b8d4ff;">Semifinalista Oficial ↗</span>
-            </div>
-          </article>
-
-          <!-- Card de Conquista 3: Basquete de Alto Nível -->
-          <article class="achievement-card">
-            <div>
-              <div class="achievement-visual-banner banner-hoops" id="achievement-slot-3">
-                <div>
-                  <span class="banner-big-code">HIGH IQ &amp; COURT VISION</span>
-                  <span class="banner-big-stat" style="color:var(--knicks-orange);">CLUTCH</span>
-                </div>
-                <div class="banner-emblem" style="border-color:rgba(245,132,38,0.4);">
-                  🏀
-                </div>
-              </div>
-              <span class="achievement-tag" style="color:#f5a65b;">Esporte &amp; Alta Performance nas Quadras</span>
-              <h3 class="achievement-title">Destaque no Basquete Competitivo</h3>
-              <p class="achievement-desc">
-                Jogador de alto rendimento com forte controle de bola, precisão nos arremessos de perímetro, infiltração rápida e visão tática coletiva. Inspirado no ritmo intenso da NBA e do New York Knicks.
-              </p>
-            </div>
-            <div class="achievement-footer">
-              <span>Atleta de Quadra</span>
-              <span style="color:var(--knicks-orange);">Playmaker &amp; Scorer 🏀</span>
-            </div>
-          </article>
-
-        </div>
+        <p class="sr-only" id="home-announcement" role="status"></p>
       </div>
     </section>
 
-    <!-- UNIVERSO PESSOAL & INTERESSES (BENTO GRID) -->
-    <section class="section" id="interesses">
-      <div class="container">
-        <div class="section-eyebrow">
-          <span>03 / ESTILO DE VIDA &amp; PAIXÕES</span>
-        </div>
-        <h2 class="section-title">Meu Universo Fora de Série</h2>
-        <p class="section-desc">As paixões, times e referências culturais que fazem parte do meu dia a dia e inspiram minha forma de pensar.</p>
-
-        <div class="interests-bento">
-          <!-- Knicks Card -->
-          <div class="bento-card bento-knicks bento-span-7">
-            <div>
-              <span class="bento-pill" style="border-color:rgba(245,132,38,0.45);color:#ffd2a8;">
-                🏀 NBA · NEW YORK KNICKS
-              </span>
-              <h3 class="bento-title">Fã Incondicional do New York Knicks</h3>
-              <p class="bento-text">
-                Acompanho de perto a temporada da NBA vibrando com cada jogo no Madison Square Garden. A garra, a defesa implacável e a mentalidade <em>clutch</em> dos Knicks são minha maior referência quando entro em quadra para jogar basquete.
-              </p>
-            </div>
-            <div class="bento-meta">
-              <span>#NewYorkForever</span>
-              <span style="color:var(--knicks-orange);">MSG · Orange &amp; Blue Skies</span>
-            </div>
-          </div>
-
-          <!-- Palmeiras Card -->
-          <div class="bento-card bento-palmeiras bento-span-5">
-            <div>
-              <span class="bento-pill" style="border-color:rgba(34,197,94,0.45);color:#bbf7d0;">
-                🌴 FUTEBOL · S.E. PALMEIRAS
-              </span>
-              <h3 class="bento-title">Palmeirense Raiz — Avanti Palestra!</h3>
-              <p class="bento-text">
-                Torcedor apaixonado pelo Maior Campeão do Brasil. A história da Academia, as viradas históricas no Allianz Parque e a cultura de nunca desistir até o apito final fazem parte da minha identidade.
-              </p>
-            </div>
-            <div class="bento-meta">
-              <span>Sociedade Esportiva Palmeiras</span>
-              <span style="color:var(--palmeiras-green);">Defesa que Ninguém Passa ★</span>
-            </div>
-          </div>
-
-          <!-- Cinema & Séries Card -->
-          <div class="bento-card bento-cinema bento-span-5">
-            <div>
-              <span class="bento-pill" style="border-color:rgba(168,140,255,0.4);color:#e2d4ff;">
-                🎬 CULTURA POP · SÉRIES &amp; FILMES
-              </span>
-              <h3 class="bento-title">Maratonista de Séries &amp; Cinema</h3>
-              <p class="bento-text">
-                Adoro mergulhar em boas histórias, analisar roteiros inteligentes, reviravoltas, ficção científica, ação e produções cinematográficas. O cinema e as séries são minha fonte favorita de criatividade e repertório.
-              </p>
-            </div>
-            <div class="bento-meta">
-              <span>Storytelling &amp; Cinema</span>
-              <span style="color:#c4b5fd;">Sci-Fi · Suspense · Drama</span>
-            </div>
-          </div>
-
-          <!-- Dual Photo Lifestyle Card -->
-          <div class="bento-card bento-photo-card bento-span-7">
-            <div class="bento-photo-item">
-              <img src="assets/portfolio/joao-terno.jpg" alt="João Gabriel em evento formal">
-              <div class="bento-photo-caption">
-                ✨ Momentos Especiais &amp; Conquistas
-              </div>
-            </div>
-            <div class="bento-photo-item">
-              <img src="assets/portfolio/joao-perfil.jpg" alt="João Gabriel no dia a dia">
-              <div class="bento-photo-caption">
-                ⚡ Estilo &amp; Dia a Dia
-              </div>
-            </div>
-          </div>
-        </div>
+    <!-- ======================================================================
+         3. INTERACTIVE 3D SPECTRUM CAROUSEL — CONQUISTAS & INTERESSES
+         ====================================================================== -->
+    <section class="portfolio-spectrum-section" id="experience" data-active="0" aria-labelledby="spectrum-heading">
+      <div class="portfolio-spectrum-head">
+        <span class="shop-eyebrow">GALERIA ESPACIAL 3D · ARRASTE OU USE AS SETAS</span>
+        <h2 id="spectrum-heading">Conquistas, Esporte &amp; Identidade.</h2>
       </div>
-    </section>
 
-    <!-- PROJETOS SECTION -->
-    <section class="section" id="projetos">
-      <div class="container">
-        <div class="section-eyebrow">
-          <span>04 / LABORATÓRIO &amp; CRIAÇÕES</span>
-        </div>
-        <h2 class="section-title">Projetos &amp; Iniciativas</h2>
-        <p class="section-desc">Experimentos técnicos, sistemas de design e estudos onde aplico lógica matemática, tecnologia e análise esportiva.</p>
+      <div class="portfolio-spectrum-stage" id="portfolio-spectrum-stage" role="region" aria-label="Carrossel 3D de Conquistas e Interesses">
+        <div class="portfolio-orbit-ring" id="portfolio-orbit-ring" aria-hidden="true"></div>
 
-        <div class="projects-grid">
-          <!-- Projeto 1 -->
-          <article class="project-card">
-            <div>
-              <div class="project-topline">
-                <span class="project-badge">Engenharia &amp; Web</span>
-                <span class="project-icon">↗</span>
-              </div>
-              <h3 class="project-title">AERA 01 Spatial Design System</h3>
-              <p class="project-desc">Extração e engenharia reversa de um sistema de design espacial de última geração com WebGL, Three.js e tokens DTCG que servem de motor visual para este portfólio.</p>
-              <div class="project-techs">
-                <span class="project-tech">WebGL2</span>
-                <span class="project-tech">Three.js</span>
-                <span class="project-tech">CSS Spatial</span>
-                <span class="project-tech">Design Tokens</span>
-              </div>
-            </div>
-            <a class="project-link" href="design-system.html" target="_blank">Explorar Catálogo Técnico <span>↗</span></a>
-          </article>
-
-          <!-- Projeto 2 -->
-          <article class="project-card">
-            <div>
-              <div class="project-topline">
-                <span class="project-badge" style="color:var(--gold);border-color:rgba(245,196,81,0.3);">Matemática Olímpica</span>
-                <span class="project-icon">∑</span>
-              </div>
-              <h3 class="project-title">Arsenal Lógico · Canguru &amp; DBDI</h3>
-              <p class="project-desc">Repertório de resoluções estratégicas, padrões combinatórios, geometria plana e métodos de decisão rápida desenvolvidos durante a preparação para o Ouro na Canguru e a DBDI 2026.</p>
-              <div class="project-techs">
-                <span class="project-tech">Raciocínio Lógico</span>
-                <span class="project-tech">Combinatória</span>
-                <span class="project-tech">Teoria dos Jogos</span>
-              </div>
-            </div>
-            <a class="project-link" href="#conquistas">Ver Marcos Conquistados <span>↗</span></a>
-          </article>
-
-          <!-- Projeto 3 -->
-          <article class="project-card">
-            <div>
-              <div class="project-topline">
-                <span class="project-badge" style="color:var(--knicks-orange);border-color:rgba(245,132,38,0.3);">Sports Analytics</span>
-                <span class="project-icon">🏀</span>
-              </div>
-              <h3 class="project-title">Hoops IQ &amp; Knicks Lab</h3>
-              <p class="project-desc">Estudo tático de espaçamento de quadra, eficiência de arremessos e leitura de <em>pick-and-roll</em> aplicando conceitos matemáticos e estatísticos ao basquete moderno da NBA.</p>
-              <div class="project-techs">
-                <span class="project-tech">Estatística Esportiva</span>
-                <span class="project-tech">Visão de Jogo</span>
-                <span class="project-tech">NBA Analytics</span>
-              </div>
-            </div>
-            <a class="project-link" href="#interesses">Explorar Universo Esportivo <span>↗</span></a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- HABILIDADES SECTION -->
-    <section class="section" id="habilidades">
-      <div class="container">
-        <div class="section-eyebrow">
-          <span>05 / COMPETÊNCIAS &amp; REPERTÓRIO</span>
-        </div>
-        <h2 class="section-title">Habilidades &amp; Toolkit</h2>
-        <p class="section-desc">As ferramentas mentais, técnicas e esportivas que utilizo para encarar qualquer desafio.</p>
-
-        <div class="skills-categories">
-          <!-- Categoria 1 -->
-          <div class="skill-cat-card">
-            <h3 class="skill-cat-title">🧠 Matemática &amp; Estratégia</h3>
-            <div class="skill-tags">
-              <span class="skill-tag">Matemática Olímpica (Ouro Canguru)</span>
-              <span class="skill-tag">Raciocínio Lógico Avançado</span>
-              <span class="skill-tag">Resolução de Problemas (DBDI '26)</span>
-              <span class="skill-tag">Geometria &amp; Combinatória</span>
-              <span class="skill-tag">Análise Estatística</span>
-            </div>
-          </div>
-
-          <!-- Categoria 2 -->
-          <div class="skill-cat-card">
-            <h3 class="skill-cat-title">🏀 Esporte &amp; Alta Performance</h3>
-            <div class="skill-tags">
-              <span class="skill-tag">Basquete Competitivo</span>
-              <span class="skill-tag">Visão de Quadra (Court Vision)</span>
-              <span class="skill-tag">Tomada de Decisão Sob Pressão</span>
-              <span class="skill-tag">Liderança &amp; Jogo Coletivo</span>
-              <span class="skill-tag">Disciplina Tática</span>
-            </div>
-          </div>
-
-          <!-- Categoria 3 -->
-          <div class="skill-cat-card">
-            <h3 class="skill-cat-title">💻 Tecnologia &amp; Criatividade</h3>
-            <div class="skill-tags">
-              <span class="skill-tag">Desenvolvimento Web (HTML/CSS/JS)</span>
-              <span class="skill-tag">Design Systems Espaciais</span>
-              <span class="skill-tag">Git &amp; GitHub</span>
-              <span class="skill-tag">Repertório Cinematográfico</span>
-              <span class="skill-tag">Aprendizado Rápido</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTATO SECTION -->
-    <section class="section" id="contato">
-      <div class="container">
-        <div class="contact-card">
-          <span class="section-eyebrow" style="justify-content:center;">
-            <span class="live-dot"></span>
-            <span>CONEXÃO DIRETA</span>
+        <!-- Card 0: Ouro Canguru -->
+        <button type="button" class="portfolio-card-3d" data-story="0" aria-label="Medalha de Ouro no Canguru de Matemática">
+          <span class="portfolio-card-tag">01 · OLIMPÍADA INTERNACIONAL</span>
+          <img src="assets/portfolio/joao-terno.jpg" alt="João Gabriel Faxina — Ouro Canguru">
+          <span class="portfolio-card-caption">
+            <strong>🥇 Ouro no Canguru</strong>
+            <span>Medalhista de Ouro em Matemática</span>
           </span>
-          <h2 class="section-title">Vamos trocar uma ideia sobre projetos, matemática ou basquete?</h2>
-          <p class="section-desc">Estou sempre aberto a novas amizades, desafios acadêmicos, projetos de tecnologia ou uma boa partida na quadra.</p>
+        </button>
 
-          <div class="contact-buttons">
-            <a class="btn-bright" href="mailto:joaogabrielfaxina44@gmail.com">Enviar E-mail <span>↗</span></a>
-            <a class="btn-outline" href="https://github.com/joaogabrielfaxina44" target="_blank" rel="noopener noreferrer">Acessar Meu GitHub <span>↗</span></a>
+        <!-- Card 1: Semifinalista DBDI 2026 -->
+        <button type="button" class="portfolio-card-3d" data-story="1" aria-label="Semifinalista da DBDI 2026">
+          <span class="portfolio-card-tag">02 · COMPETIÇÃO NACIONAL</span>
+          <img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/6d0ccd71-4f28-4f7c-a19f-847d7565fe9f_original.jpg" alt="Semifinalista DBDI 2026">
+          <span class="portfolio-card-caption">
+            <strong>🏆 Semifinalista DBDI 2026</strong>
+            <span>Estratégia, Debate &amp; Alta Performance</span>
+          </span>
+        </button>
+
+        <!-- Card 2: Basquete High IQ -->
+        <button type="button" class="portfolio-card-3d" data-story="2" aria-label="Jogo Basquete Muito Bem">
+          <span class="portfolio-card-tag">03 · ESPORTE &amp; PERFORMANCE</span>
+          <img src="assets/portfolio/joao-perfil.jpg" alt="João Gabriel — Basquete High IQ">
+          <span class="portfolio-card-caption">
+            <strong>🏀 Basquete High IQ</strong>
+            <span>Playmaking, Arremesso &amp; Clutch Time</span>
+          </span>
+        </button>
+
+        <!-- Card 3: New York Knicks Fan -->
+        <button type="button" class="portfolio-card-3d" data-story="3" aria-label="Fã do New York Knicks">
+          <span class="portfolio-card-tag">04 · NBA · MADISON SQUARE GARDEN</span>
+          <img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/d6175cb4-2dae-4158-ae8b-678b40e6749f_original.jpg" alt="New York Knicks">
+          <span class="portfolio-card-caption">
+            <strong>🗽 New York Knicks</strong>
+            <span>Orange &amp; Blue Skies · Go New York!</span>
+          </span>
+        </button>
+
+        <!-- Card 4: Palmeirense -->
+        <button type="button" class="portfolio-card-3d" data-story="4" aria-label="Torcedor do Palmeiras">
+          <span class="portfolio-card-tag">05 · FUTEBOL · FAMÍLIA PALESTRA</span>
+          <img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/19ebb5f4-a6fb-4b58-bc5d-65a8199bf7f5_original.webp" alt="Sociedade Esportiva Palmeiras">
+          <span class="portfolio-card-caption">
+            <strong>🌴 S.E. Palmeiras</strong>
+            <span>Avanti Palestra · Maior Campeão do Brasil</span>
+          </span>
+        </button>
+
+        <!-- Card 5: Séries & Filmes -->
+        <button type="button" class="portfolio-card-3d" data-story="5" aria-label="Séries e Filmes">
+          <span class="portfolio-card-tag">06 · CULTURA &amp; STORYTELLING</span>
+          <img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/21da8985-e507-434c-88df-71d0a42c9621_original.webp" alt="Cinema, Séries e Filmes">
+          <span class="portfolio-card-caption">
+            <strong>🎬 Séries &amp; Filmes</strong>
+            <span>Sci-Fi, Suspense &amp; Grandes Roteiros</span>
+          </span>
+        </button>
+      </div>
+
+      <div class="portfolio-spectrum-Controls">
+        <p class="portfolio-spectrum-mood" id="portfolio-spectrum-mood">
+          Raciocínio lógico premiado com Ouro no maior concurso internacional de Matemática.
+        </p>
+
+        <div class="portfolio-spectrum-Actions">
+          <button type="button" class="spectrum-arrow-btn" id="spectrum-prev" aria-label="Card anterior">←</button>
+          <div id="spectrum-cta-host">
+            <button type="button" class="buy-now-button" id="story-open-perspective" style="padding:12px 22px;font-size:13px;">
+              Inspecionar Conquista ↗
+            </button>
+          </div>
+          <button type="button" class="spectrum-arrow-btn" id="spectrum-next" aria-label="Próximo card">→</button>
+        </div>
+
+        <div class="spectrum-navigation" style="position:relative;bottom:auto;left:auto;right:auto;width:min(760px,90vw);margin-top:8px;">
+          <span class="spectrum-hint">ARRASTE OU CLIQUE NOS CARDS</span>
+          <div class="spectrum-ticks" role="group" aria-label="Escolher card">
+            <button data-tick="0" aria-label="Ouro Canguru" aria-pressed="true"><i style="height:28px;"></i></button>
+            <button data-tick="1" aria-label="Semifinalista DBDI 2026" aria-pressed="false"><i style="height:8px;"></i></button>
+            <button data-tick="2" aria-label="Basquete High IQ" aria-pressed="false"><i style="height:8px;"></i></button>
+            <button data-tick="3" aria-label="New York Knicks" aria-pressed="false"><i style="height:8px;"></i></button>
+            <button data-tick="4" aria-label="Palmeiras" aria-pressed="false"><i style="height:8px;"></i></button>
+            <button data-tick="5" aria-label="Séries e Filmes" aria-pressed="false"><i style="height:8px;"></i></button>
+          </div>
+          <span class="spectrum-count"><span id="spectrum-current">01</span> / 06</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         4. IMMERSIVE CINEMA & SERIES LOUNGE (STREAMING + LIVE VIDEO PLAYER)
+         ====================================================================== -->
+    <section class="portfolio-cinema-section" id="cinema-lounge" aria-labelledby="cinema-heading">
+      <div class="portfolio-cinema-wrap">
+        <header class="aera-cinema-header" style="margin-bottom:28px;">
+          <div>
+            <span>CURADORIA CULTURAL · SÉRIES &amp; FILMES</span>
+            <h2 id="cinema-heading" style="margin-top:10px;">Onde grandes histórias ganham vida.</h2>
+          </div>
+          <span class="aera-cinema-time">CINEMA LOUNGE · 4K HDR</span>
+        </header>
+
+        <div class="aera-services-heading">
+          <span>Plataformas favoritas para maratonar</span>
+          <small>Clique em um serviço ou título abaixo para alternar a sessão no player</small>
+        </div>
+
+        <nav class="aera-services" aria-label="Plataformas de Streaming">
+          <button type="button" class="aera-service netflix" data-cinema-select="0">
+            <span class="aera-service-brand">
+              <img src="assets/overview/netflix.svg" alt="Netflix" class="aera-service-logo">
+            </span>
+            <span>Séries de Suspense, Sci-Fi &amp; Documentários da NBA <i>↗</i></span>
+          </button>
+          <button type="button" class="aera-service prime" data-cinema-select="1">
+            <span class="aera-service-brand">
+              <img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/29e6e101-5c68-46f2-a2cd-80121e118fcf_original.webp" alt="Prime Video" class="aera-service-logo">
+            </span>
+            <span>Clássicos do Cinema, Ação &amp; Transmissões da NBA <i>↗</i></span>
+          </button>
+          <button type="button" class="aera-service disney" data-cinema-select="2">
+            <span class="aera-service-brand">
+              <img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/7ca58d8f-5fbc-4ea8-a4c7-dcf8bfd455ed_original.webp" alt="Disney+" class="aera-service-logo">
+            </span>
+            <span>Sagas Épicas, Universo Cinematográfico &amp; Esportes <i>↗</i></span>
+          </button>
+        </nav>
+
+        <div class="aera-cinema-grid" id="cinema-cards-grid">
+          <button type="button" class="aera-cinema-card is-selected" data-cinema-select="0">
+            <img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/21da8985-e507-434c-88df-71d0a42c9621_original.webp" alt="Sci-Fi &amp; Horizontes">
+            <span>
+              <small>01 / FAVORITO SCI-FI</small>
+              <strong>Interestelar &amp; Cosmos</strong>
+              <em>Física, paradoxos temporais e fotografia épica</em>
+            </span>
+            <i aria-hidden="true">▷</i>
+          </button>
+          <button type="button" class="aera-cinema-card" data-cinema-select="1">
+            <img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/021ef67a-dea0-48ec-973a-935bfe63fc1f_original.webp" alt="Estratégia &amp; Drama">
+            <span>
+              <small>02 / SÉRIES DE MENTE AFIADA</small>
+              <strong>Estratégia &amp; Mind Games</strong>
+              <em>Roteiros inteligentes onde cada detalhe importa</em>
+            </span>
+            <i aria-hidden="true">▷</i>
+          </button>
+          <button type="button" class="aera-cinema-card" data-cinema-select="2">
+            <img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/19ebb5f4-a6fb-4b58-bc5d-65a8199bf7f5_original.webp" alt="Documentários Esportivos">
+            <span>
+              <small>03 / BASQUETE &amp; GLÓRIA</small>
+              <strong>Noites no Garden &amp; Palestra</strong>
+              <em>A mentalidade vencedora dos grandes campeões</em>
+            </span>
+            <i aria-hidden="true">▷</i>
+          </button>
+        </div>
+
+        <!-- Embedded Interactive Video Player Stage -->
+        <div class="portfolio-cinema-player-stage" id="cinema-stage-box">
+          <video id="lounge-video" muted playsinline preload="metadata" poster="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/21da8985-e507-434c-88df-71d0a42c9621_original.webp">
+            <source src="assets/overview/assets/d8j0ntlcm91z4.cloudfront.net/user_3BJWPvMvEq6NnWomWUpPdVMx6Ys/hf_20260920_194148_ec79c9d5-4fe4-4d9b-9ca1-68750614cef2.mp4" type="video/mp4">
+          </video>
+          <div class="portfolio-cinema-overlay-info">
+            <small id="lounge-video-tag">NETFLIX · SESSÃO EM DESTAQUE</small>
+            <h3 id="lounge-video-title">Interestelar &amp; Horizontes</h3>
+            <p id="lounge-video-desc">Narrativas cinematográficas que combinam ciência, emoção e visão de futuro.</p>
+          </div>
+          <div class="portfolio-cinema-bar" role="group" aria-label="Controles do player de vídeo">
+            <button type="button" id="lounge-play-btn">▶ Play</button>
+            <input type="range" id="lounge-seek" min="0" max="1000" value="0" aria-label="Posição do vídeo">
+            <span class="portfolio-cinema-time"><span id="lounge-elapsed">0:00</span> / <span id="lounge-duration">0:19</span></span>
+            <button type="button" id="lounge-mute-btn">Som: Off</button>
+            <button type="button" id="lounge-full-btn" aria-label="Tela cheia">⛶</button>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         5. INTERACTIVE SPECS & FAQ ACCORDION (.questions)
+         ====================================================================== -->
+    <section class="questions" id="questions" aria-labelledby="questions-title">
+      <div class="questions-head">
+        <span>FICHA TÉCNICA &amp; PERGUNTAS</span>
+        <h2 id="questions-title">Tudo sobre<br>João Gabriel.</h2>
+      </div>
+      <div class="question-list">
+        <details open="">
+          <summary>Como foi conquistar a Medalha de Ouro no Canguru de Matemática?</summary>
+          <p>O Canguru de Matemática é a maior competição internacional da área no mundo. Conquistar a <strong>Medalha de Ouro 🥇</strong> exigiu combinar velocidade de raciocínio, visão geométrica e resolução criativa sob pressão de tempo — habilidades que levo para todas as áreas da minha vida.</p>
+        </details>
+        <details>
+          <summary>O que representa ser Semifinalista da DBDI 2026?</summary>
+          <p>Chegar à <strong>Semifinal da DBDI 2026 🏆</strong> é o resultado de preparação intensa, pensamento crítico, capacidade analítica e trabalho de alto nível diante de desafios reais e competitivos.</p>
+        </details>
+        <details>
+          <summary>Qual é o estilo de jogo do João no Basquete?</summary>
+          <p>Jogo basquete muito bem com foco em <strong>visão de quadra (Court Vision), leitura rápida de defesa, criação de jogadas e arremesso calibrado</strong>. A matemática e a geometria ajudam até nos ângulos de passe e infiltração!</p>
+        </details>
+        <details>
+          <summary>Por que New York Knicks e Palmeiras?</summary>
+          <p>Na NBA, sou fã apaixonado do <strong>New York Knicks 🗽🏀</strong> — a energia única do Madison Square Garden, a garra na defesa e a tradição de Nova York. E no futebol, sou <strong>Palmeirense 🌴💚</strong> de coração: Família Palestra, Academia de Futebol e mentalidade vencedora.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         6. CLOSING LAUNCH INVITATION
+         ====================================================================== -->
+    <section class="launch-close" id="explore" aria-labelledby="final-cta-title" style="height:auto;min-height:78svh;padding:90px 6%;display:grid;place-items:center;">
+      <div class="final-cta-copy" style="opacity:1;transform:none;">
+        <span class="eyebrow">JOÃO GABRIEL FAXINA · ROSSETTI EDITION</span>
+        <h2 id="final-cta-title">Pronto para o<br>próximo grande jogo.</h2>
+        <p class="final-cta-description">
+          Ouro no Canguru de Matemática · Semifinalista DBDI 2026 · Basquete High IQ.<br>
+          Vamos trocar uma ideia sobre projetos, esportes, séries ou tecnologia.
+        </p>
+        <div id="final-cta-metal-host" style="display:inline-block;">
+          <button class="bright-button" id="preview-pairing" type="button">Iniciar Conexão Direta <span>↗</span></button>
+        </div>
+        <p class="final-cta-price">Status Atual <span>Disponível para Novos Desafios · 2026</span></p>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-top">
-        <div>
-          <a class="footer-brand" href="#top">ROSSETTI<span>★</span></a>
-          <p style="font-size:12px;color:var(--grey);margin-top:8px;">João Gabriel Faxina · Medalhista de Ouro Canguru · Semifinalista DBDI 2026</p>
-        </div>
-
-        <nav class="footer-links" aria-label="Links do Rodapé">
-          <a href="#sobre">Sobre</a>
-          <a href="#conquistas">Conquistas</a>
-          <a href="#interesses">Universo</a>
-          <a href="#projetos">Projetos</a>
-          <a href="design-system.html" target="_blank">Design System Spec ↗</a>
-          <a href="#contato">Contato</a>
-        </nav>
+  <!-- ========================================================================
+       GIANT METALLIC FOOTER
+       ======================================================================== -->
+  <footer class="final-footer">
+    <div class="footer-grid">
+      <div class="footer-manifesto">
+        <span class="eyebrow">ROSSETTI / PORTFÓLIO ESPACIAL</span>
+        <h2>Mente analítica.<br>Espírito competitivo.</h2>
+        <p>Construído sobre o Design System AERA 01 com WebGL2 &amp; Three.js.</p>
       </div>
-
-      <div class="footer-bottom">
-        <span>© 2026 João Gabriel Faxina (Rossetti). Todos os direitos reservados.</span>
-        <span>Construído sobre a arquitetura espacial AERA 01 · Avanti Palestra &amp; Go Knicks!</span>
-      </div>
+      <nav class="footer-column" aria-label="Navegação do Portfólio">
+        <h3>Explorar</h3>
+        <a href="#top">Estúdio 3D &amp; Fotos <span>↗</span></a>
+        <a href="#spatial-os-section">Rossetti OS <span>↗</span></a>
+        <a href="#experience">Carrossel 3D de Conquistas <span>↗</span></a>
+        <a href="#cinema-lounge">Cinema &amp; Séries <span>↗</span></a>
+      </nav>
+      <nav class="footer-column" aria-label="Destaques do João">
+        <h3>Conquistas &amp; Paixões</h3>
+        <button type="button" data-footer-story="0">🥇 Ouro Canguru de Matemática <span>↗</span></button>
+        <button type="button" data-footer-story="1">🏆 Semifinalista DBDI 2026 <span>↗</span></button>
+        <button type="button" data-footer-story="2">🏀 Basquete &amp; NY Knicks <span>↗</span></button>
+        <button type="button" data-footer-story="4">🌴 S.E. Palmeiras <span>↗</span></button>
+      </nav>
+    </div>
+    <div class="footer-signoff">
+      <span>OURO CANGURU · DBDI 2026 · KNICKS · PALMEIRAS</span>
+      <a class="back-top" href="#top">Voltar ao topo <span>↑</span></a>
+    </div>
+    <div class="footer-brand-mask">
+      <a class="footer-brand" href="#top" aria-label="ROSSETTI, voltar ao topo" style="font-size:17.5vw;">ROSSETTI<span>™</span></a>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 João Gabriel Faxina (Rossetti)</span>
+      <span>Design System AERA 01 · Interactive Spatial Edition.</span>
     </div>
   </footer>
 
-  <script>
-    // Troca interativa entre as 2 fotos reais do João Gabriel na seção Sobre Mim
-    function switchProfilePhoto(src, btnElement) {
-      const img = document.getElementById('about-active-photo');
-      if (img) {
-        img.style.opacity = '0.25';
-        setTimeout(() => {
-          img.src = src;
-          img.style.opacity = '1';
-        }, 160);
+  <!-- ========================================================================
+       DIALOG 1: STORY / ACHIEVEMENT INSPECTOR MODAL (#story-dialog)
+       ======================================================================== -->
+  <dialog id="story-dialog" aria-labelledby="dialog-title">
+    <button class="dialog-close" id="close-story" aria-label="Fechar detalhes">Fechar <span>×</span></button>
+    <div class="dialog-picture"><img id="dialog-image" src="assets/portfolio/joao-terno.jpg" alt=""></div>
+    <div class="dialog-copy">
+      <span id="dialog-count">01 / 06</span>
+      <h2 id="dialog-title">Medalha de Ouro — Canguru</h2>
+      <div class="shop-price-row">
+        <div><strong id="dialog-badge">🥇 OURO INTERNACIONAL</strong></div>
+        <span class="shop-finish" id="dialog-category">Matemática &amp; Lógica</span>
+      </div>
+      <p id="dialog-description"></p>
+      <div class="dialog-actions">
+        <button id="previous-story" aria-label="Conquista anterior">←</button>
+        <button id="next-story" aria-label="Próxima conquista">→</button>
+        <a href="#spatial-os-section" id="dialog-explore">Abrir no Rossetti OS ↗</a>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ========================================================================
+       DIALOG 2: INTERACTIVE CONNECTION / PAIRING MODAL (#pair-dialog)
+       ======================================================================== -->
+  <dialog class="pair-dialog" id="pair-dialog" aria-labelledby="pair-title">
+    <button class="dialog-close" id="close-pair" aria-label="Fechar janela de conexão">Fechar <span>×</span></button>
+    <span class="eyebrow">ROSSETTI LINK / CONEXÃO DIRETA</span>
+    <h2 id="pair-title">Vamos criar ou jogar<br>algo incrível.</h2>
+    <p class="pair-intro">Escolha o assunto principal e o canal para conectar com João Gabriel Faxina:</p>
+    <fieldset>
+      <legend>Assunto</legend>
+      <div class="pair-options">
+        <button type="button" data-topic="Projetos &amp; Olimpíadas" aria-pressed="true"><span>🥇</span>Projetos &amp; DBDI</button>
+        <button type="button" data-topic="Basquete, Knicks &amp; Verdão" aria-pressed="false"><span>🏀</span>Esportes &amp; Resenha</button>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Canal Preferido</legend>
+      <div class="pair-options">
+        <button type="button" data-channel="GitHub" aria-pressed="true">GitHub</button>
+        <button type="button" data-channel="Rossetti OS" aria-pressed="false">Deixar Nota no OS</button>
+      </div>
+    </fieldset>
+    <div class="pair-confirmation">
+      <span>CÓDIGO DE PASSE · MSG &amp; ALLIANZ</span>
+      <strong id="pair-code-display">026 001</strong>
+      <p id="pair-summary-text">Assunto: Projetos &amp; Olimpíadas · Canal: GitHub</p>
+    </div>
+    <button class="bright-button" id="confirm-pair" type="button">Confirmar Conexão <span>↗</span></button>
+    <p class="pair-note">Você será direcionado para o canal escolhido ou para o bloco de notas interativo do Rossetti OS.</p>
+  </dialog>
+
+  <!-- ========================================================================
+       STANDALONE WEBGL2 LIQUID METAL & THREE.JS CHROME WORDMARK BUNDLES
+       ======================================================================== -->
+  <script type="module" src="assets/overview/metal-fx-standalone.js"></script>
+  <script type="module" src="assets/overview/chrome-wordmark-standalone.js"></script>
+
+  <!-- ========================================================================
+       PORTFOLIO INTERACTIVE ENGINE (3D HERO, ROSSETTI OS, 3D CAROUSEL, CINEMA)
+       ======================================================================== -->
+  <script type="module">
+    const $ = s => document.querySelector(s);
+    const $$ = s => Array.from(document.querySelectorAll(s));
+    const clamp = (v, min = 0, max = 1) => Math.max(min, Math.min(max, v));
+    const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
+
+    /* ------------------------------------------------------------------------
+       1. MOUNT WEBGL2 LIQUID METAL BUTTONS + THREE.JS 3D CHROME WORDMARK
+       ------------------------------------------------------------------------ */
+    function initWebGLComponents() {
+      // Mount Three.js 3D Chrome Wordmark in Hero
+      const wordmarkHost = $('#hero-wordmark');
+      let chromeController = null;
+      if (wordmarkHost && typeof window.mountAeraChromeWordmark === 'function') {
+        try {
+          chromeController = window.mountAeraChromeWordmark(wordmarkHost);
+          let startTime = performance.now();
+          let lastTime = startTime;
+          function tickChrome(now) {
+            const dt = Math.min(0.05, (now - lastTime) / 1000 || 0.016);
+            lastTime = now;
+            const elapsed = (now - startTime) / 1000;
+            // Animate letters rising in during the first 1.8s, then stay at [1,1,1,1] with live hover tilt
+            const letters = [0, 1, 2, 3].map(i => {
+              const t = clamp((elapsed - 0.1 - i * 0.22) / 0.55);
+              return t * t * (3 - 2 * t);
+            });
+            chromeController.update(letters, elapsed, reduceMotion.matches, true, dt, true);
+            requestAnimationFrame(tickChrome);
+          }
+          requestAnimationFrame(tickChrome);
+          window.addEventListener('resize', () => chromeController?.resize());
+        } catch (err) {
+          console.warn('Chrome wordmark fallback active:', err);
+        }
       }
-      document.querySelectorAll('.photo-switch-btn').forEach(btn => btn.classList.remove('active'));
-      if (btnElement) btnElement.classList.add('active');
+
+      // Mount WebGL2 Liquid Metal Buttons (Chromatic / Gold / Silver)
+      if (typeof window.mountAeraMetalFx === 'function') {
+        // Header CTA
+        const navRoot = $('#buy-now-root');
+        const navBtn = $('#buy-now');
+        if (navRoot && navBtn) {
+          window.mountAeraMetalFx(navRoot, {
+            children: navBtn,
+            preset: 'chromatic',
+            variant: 'button',
+            theme: 'dark',
+            strength: 0.92,
+            ringCssPx: 1.8,
+            glowGain: 0.72,
+            borderRadius: 26,
+            enableBend: true,
+            className: 'buy-now-metal'
+          });
+        }
+
+        // 3D Carousel CTA (Gold Medal Finish)
+        const specHost = $('#spectrum-cta-host');
+        const specBtn = $('#story-open-perspective');
+        if (specHost && specBtn) {
+          window.mountAeraMetalFx(specHost, {
+            children: specBtn,
+            preset: 'gold',
+            variant: 'button',
+            theme: 'dark',
+            strength: 0.9,
+            ringCssPx: 1.8,
+            glowGain: 0.7,
+            borderRadius: 26,
+            enableBend: true
+          });
+        }
+
+        // Closing CTA (Silver Chrome Finish)
+        const finalHost = $('#final-cta-metal-host');
+        const finalBtn = $('#preview-pairing');
+        if (finalHost && finalBtn) {
+          window.mountAeraMetalFx(finalHost, {
+            children: finalBtn,
+            preset: 'chromatic',
+            variant: 'button',
+            theme: 'dark',
+            strength: 0.95,
+            ringCssPx: 2.0,
+            glowGain: 0.8,
+            borderRadius: 30,
+            enableBend: true
+          });
+        }
+      }
     }
 
-    // Smooth highlight on navigation scroll
-    (function() {
-      const sections = document.querySelectorAll('section[id]');
-      const navLinks = document.querySelectorAll('.nav-island nav a');
+    if (document.readyState === 'complete') {
+      initWebGLComponents();
+    } else {
+      window.addEventListener('load', initWebGLComponents, { once: true });
+    }
 
-      window.addEventListener('scroll', () => {
-        let current = '';
-        const scrollY = window.pageYOffset;
-        sections.forEach(section => {
-          const sectionTop = section.offsetTop - 130;
-          const sectionHeight = section.offsetHeight;
-          if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-            current = section.getAttribute('id');
+    /* ------------------------------------------------------------------------
+       2. INTERACTIVE HERO STUDIO (3D PORTRAIT TILT, PHOTO SWITCH, HEADLINES)
+       ------------------------------------------------------------------------ */
+    const heroEl = $('#top');
+    const portraitCard = $('#portrait-card-3d');
+    const portraitImg = $('#hero-portrait-img');
+    const hudModeLabel = $('#hud-mode-label');
+    const hudTitleText = $('#hud-title-text');
+    const hudSubText = $('#hud-sub-text');
+    const btnSuit = $('#btn-photo-suit');
+    const btnCasual = $('#btn-photo-casual');
+    const btnCallouts = $('#btn-toggle-callouts');
+    const btnSwapHeadlines = $('#btn-swap-headlines');
+
+    // Interactive 3D Mouse Tilt & Glare on Portrait Card
+    if (portraitCard) {
+      portraitCard.addEventListener('pointermove', e => {
+        if (reduceMotion.matches) return;
+        const rect = portraitCard.getBoundingClientRect();
+        const nx = (e.clientX - rect.left) / rect.width;
+        const ny = (e.clientY - rect.top) / rect.height;
+        const rotY = (nx - 0.5) * 22;
+        const rotX = (0.5 - ny) * 18;
+        portraitCard.style.transform = `rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg) scale3d(1.02, 1.02, 1.02)`;
+        portraitCard.style.setProperty('--glare-x', `${(nx * 100).toFixed(1)}%`);
+        portraitCard.style.setProperty('--glare-y', `${(ny * 100).toFixed(1)}%`);
+      });
+      portraitCard.addEventListener('pointerleave', () => {
+        portraitCard.style.transform = 'rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+      });
+    }
+
+    function setHeroPhoto(mode) {
+      if (mode === 'suit') {
+        portraitImg.src = 'assets/portfolio/joao-terno.jpg';
+        portraitImg.alt = 'João Gabriel Faxina de terno escuro';
+        hudModeLabel.textContent = 'MODO GALA · OURO OLÍMPICO';
+        hudTitleText.textContent = 'João Gabriel Faxina';
+        hudSubText.textContent = 'Medalhista de Ouro Canguru · Semifinalista DBDI 2026 · Playmaker';
+        btnSuit.setAttribute('aria-pressed', 'true');
+        btnCasual.setAttribute('aria-pressed', 'false');
+      } else {
+        portraitImg.src = 'assets/portfolio/joao-perfil.jpg';
+        portraitImg.alt = 'João Gabriel Faxina em retrato casual';
+        hudModeLabel.textContent = 'MODO LIFESTYLE · BASQUETE & CULTURA';
+        hudTitleText.textContent = 'Rossetti · High IQ';
+        hudSubText.textContent = 'Basquete em Alto Nível · New York Knicks Fan 🗽 · Palmeirense 🌴';
+        btnSuit.setAttribute('aria-pressed', 'false');
+        btnCasual.setAttribute('aria-pressed', 'true');
+      }
+    }
+
+    btnSuit?.addEventListener('click', () => setHeroPhoto('suit'));
+    btnCasual?.addEventListener('click', () => setHeroPhoto('casual'));
+    portraitCard?.addEventListener('click', () => {
+      const isSuit = btnSuit?.getAttribute('aria-pressed') === 'true';
+      setHeroPhoto(isSuit ? 'casual' : 'suit');
+    });
+
+    btnCallouts?.addEventListener('click', () => {
+      const active = heroEl.classList.toggle('callouts-active');
+      btnCallouts.setAttribute('aria-pressed', String(active));
+    });
+
+    btnSwapHeadlines?.addEventListener('click', () => {
+      heroEl.classList.toggle('swapped');
+    });
+
+    // Auto-roll headlines every 5.5 seconds
+    setInterval(() => {
+      if (!reduceMotion.matches && !document.hidden) {
+        heroEl.classList.toggle('swapped');
+      }
+    }, 5500);
+
+    /* ------------------------------------------------------------------------
+       3. ROSSETTI OS — INTERACTIVE SPATIAL DESKTOP + GAZE + MINI-APPS
+       ------------------------------------------------------------------------ */
+    (() => {
+      const home = $('#spatial-home');
+      if (!home) return;
+      const q = s => home.querySelector(s);
+      const qa = s => [...home.querySelectorAll(s)];
+
+      // Inject AERA Spatial Icons & Gaze Highlight
+      const paths = {
+        desktop: '<rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/>',
+        browser: '<circle cx="12" cy="12" r="9"/><path d="m16 8-2.5 5.5L8 16l2.5-5.5L16 8Z"/>',
+        notes: '<rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/>',
+        gallery: '<rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8" cy="8" r="1"/><path d="m5 18 5-6 3 3 3-4 3 7"/>',
+        cinema: '<path d="m8 4 12 8-12 8V4Z"/>',
+        orbit: '<circle cx="12" cy="12" r="7"/><ellipse cx="12" cy="12" rx="12" ry="4" transform="rotate(-35 12 12)"/>',
+        home: '<path d="m3 11 9-8 9 8M5 10v11h5v-7h4v7h5V10"/>',
+        work: '<rect x="3" y="7" width="18" height="14" rx="3"/><path d="M8 7V4h8v3M3 12c6 4 12 4 18 0M10 13v3h4v-3"/>',
+        watch: '<circle cx="12" cy="12" r="10"/><path d="m9 7 8 5-8 5V7Z"/>',
+        play: '<path d="M8 5h8c4 0 5 6 6 13 0 3-3 3-6-1H8c-3 4-6 4-6 1C3 11 4 5 8 5Z"/><path d="M6 10h5M8.5 7.5v5M16 9h.01M18 12h.01"/>',
+        search: '<circle cx="10.5" cy="10.5" r="7.5"/><path d="m16 16 5 5"/>'
+      };
+      function makeIcon(name, cls = 'spatial-icon') {
+        const span = document.createElement('span');
+        span.className = cls;
+        span.setAttribute('aria-hidden', 'true');
+        span.innerHTML = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">${paths[name] || paths.desktop}</svg>`;
+        return span;
+      }
+      for (const btn of qa('.home-dock button')) {
+        btn.prepend(makeIcon(btn.dataset.homeCategory === 'all' ? 'home' : btn.dataset.homeCategory));
+      }
+      q('.home-search > span')?.replaceChildren(makeIcon('search'));
+
+      const appCards = qa('.home-app');
+      function highlightCard(target) {
+        for (const item of appCards) item.toggleAttribute('data-spatial-highlight', item === target);
+      }
+      highlightCard(appCards[0]);
+      for (const c of appCards) {
+        c.addEventListener('pointerenter', () => highlightCard(c));
+        c.addEventListener('focus', () => highlightCard(c));
+      }
+
+      const win = q('.home-window');
+      const searchInput = q('#home-search');
+      const content = q('.home-content');
+      const utilities = q('.home-utilities');
+      const surface = q('#home-app-surface');
+      const backBtn = q('#vr-home-back');
+      const cinemaVid = q('#vr-cinema-video');
+
+      const appTitles = {
+        desktop: 'Ouro Canguru de Matemática 🥇',
+        notes: 'Semifinalista DBDI 2026 · Notas 🏆',
+        browser: 'Hub Esportivo · Knicks & Palmeiras 🏀',
+        gallery: 'Galeria de Fotos · João Gabriel 📸',
+        cinema: 'Sala de Cinema · Séries & Filmes 🎬',
+        orbit: 'ORBIT Court · Desafio de Reflexo ⚡'
+      };
+      const catTitles = {
+        all: 'Universo do João Gabriel',
+        work: 'Conquistas Acadêmicas & Fotos',
+        watch: 'Séries, Filmes & Cultura',
+        play: 'Basquete, Times & Games'
+      };
+
+      let currentCat = 'all';
+      let currentApp = 'home';
+      let expanded = false;
+
+      function filterApps() {
+        const query = searchInput.value.trim().toLowerCase();
+        let count = 0;
+        appCards.forEach(card => {
+          const match = (currentCat === 'all' || card.dataset.category === currentCat) &&
+                        (card.textContent.toLowerCase().includes(query) || (card.dataset.name || '').toLowerCase().includes(query));
+          card.hidden = !match;
+          if (match) count++;
+        });
+        q('#home-app-count').textContent = `${count} app${count === 1 ? '' : 's'}`;
+        q('#home-empty').hidden = count > 0;
+        q('#home-window-title').textContent = currentCat === 'all' ? 'Início' : catTitles[currentCat];
+        q('#home-apps-title').textContent = catTitles[currentCat] || 'Universo do João Gabriel';
+      }
+
+      function setExpanded(state) {
+        expanded = state;
+        home.classList.toggle('app-expanded', expanded);
+        q('#vr-window-size').setAttribute('aria-pressed', String(expanded));
+        q('#vr-window-size').textContent = expanded ? '↙' : '↗';
+        q('#vr-cinema-wide').setAttribute('aria-pressed', String(expanded));
+        q('#vr-cinema-wide').textContent = expanded ? 'Restaurar tela ↙' : 'Expandir tela ↗';
+      }
+
+      function openApp(appKey) {
+        if (!appTitles[appKey]) return;
+        currentApp = appKey;
+        win.dataset.app = appKey;
+        utilities.hidden = true;
+        content.hidden = true;
+        surface.hidden = false;
+        backBtn.hidden = false;
+        q('.home-os-label').hidden = true;
+        qa('.vr-app-panel').forEach(p => { p.hidden = p.id !== `vr-${appKey}`; });
+        q('#home-window-title').textContent = appTitles[appKey];
+        if (appKey !== 'cinema') cinemaVid?.pause();
+      }
+
+      function goHome() {
+        currentApp = 'home';
+        win.dataset.app = 'home';
+        utilities.hidden = false;
+        content.hidden = false;
+        surface.hidden = true;
+        backBtn.hidden = true;
+        q('.home-os-label').hidden = false;
+        cinemaVid?.pause();
+        home.classList.remove('vr-focused');
+        setExpanded(false);
+        filterApps();
+      }
+
+      qa('[data-home-category]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          currentCat = btn.dataset.homeCategory;
+          qa('[data-home-category]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.homeCategory === currentCat)));
+          goHome();
+        });
+      });
+
+      searchInput.addEventListener('input', filterApps);
+      qa('[data-home-launch]').forEach(btn => btn.addEventListener('click', () => openApp(btn.dataset.homeLaunch)));
+      qa('[data-local-app]').forEach(btn => btn.addEventListener('click', () => openApp(btn.dataset.localApp)));
+      backBtn.addEventListener('click', goHome);
+      q('#vr-window-size').addEventListener('click', () => setExpanded(!expanded));
+      q('#vr-cinema-wide').addEventListener('click', () => setExpanded(!expanded));
+
+      // Workspace Checklist & Focus Mode
+      function updateTasks() {
+        const done = qa('[data-vr-task]').filter(t => t.checked).length;
+        q('#vr-task-status').textContent = `${done} de 3 concluídas`;
+      }
+      qa('[data-vr-task]').forEach(t => t.addEventListener('change', updateTasks));
+      updateTasks();
+
+      q('#vr-focus').addEventListener('click', () => {
+        const f = home.classList.toggle('vr-focused');
+        q('#vr-focus').setAttribute('aria-pressed', String(f));
+        q('#vr-focus').textContent = f ? 'Sair do Modo Foco' : 'Ativar Modo Foco Total';
+        setExpanded(f);
+      });
+
+      // DBDI 2026 Notes Editor
+      const noteArea = q('#vr-note');
+      noteArea.value = '🏆 Estratégia DBDI 2026 & Canguru de Matemática:\n- Estruturar argumentos com dados precisos e raciocínio lógico.\n- Aplicar visão de armador de basquete para antecipar cenários.\n- Manter foco total nos momentos decisivos (Clutch Time).';
+      function updateWordCount() {
+        const words = noteArea.value.trim() ? noteArea.value.trim().split(/\s+/).length : 0;
+        q('#vr-word-count').textContent = `${words} palavra${words === 1 ? '' : 's'}`;
+      }
+      noteArea.addEventListener('input', updateWordCount);
+      updateWordCount();
+
+      q('#vr-download-note').addEventListener('click', () => {
+        const blob = new Blob([noteArea.value], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'notas-joao-gabriel-dbdi2026.txt';
+        a.click();
+        setTimeout(() => URL.revokeObjectURL(url), 1000);
+      });
+
+      // Sports & Math Bookmarks in Browser App
+      let bookmarks = [
+        { name: '🏀 New York Knicks (NBA Oficial)', url: 'https://www.nba.com/knicks' },
+        { name: '🌴 Sociedade Esportiva Palmeiras', url: 'https://www.palmeiras.com.br/' },
+        { name: '🥇 Concurso Canguru de Matemática Brasil', url: 'https://www.cangurudematematica.org.br/' },
+        { name: '🎬 IMDb Top 250 Filmes & Séries', url: 'https://www.imdb.com/chart/top/' }
+      ];
+      function renderBookmarks() {
+        const container = q('#vr-bookmarks');
+        container.replaceChildren();
+        bookmarks.forEach((b, idx) => {
+          const row = document.createElement('div');
+          const link = document.createElement('a');
+          const del = document.createElement('button');
+          link.href = b.url;
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
+          link.textContent = `${b.name} ↗`;
+          del.type = 'button';
+          del.textContent = '×';
+          del.setAttribute('aria-label', `Remover ${b.name}`);
+          del.addEventListener('click', () => {
+            bookmarks.splice(idx, 1);
+            renderBookmarks();
+          });
+          row.append(link, del);
+          container.append(row);
+        });
+      }
+      renderBookmarks();
+
+      q('#vr-bookmark-form').addEventListener('submit', e => {
+        e.preventDefault();
+        const input = q('#vr-bookmark-url');
+        try {
+          const raw = input.value.trim();
+          const u = new URL(/^[a-z][a-z\d+.-]*:/i.test(raw) ? raw : `https://${raw}`);
+          bookmarks.push({ name: u.hostname.replace(/^www\./, ''), url: u.href });
+          renderBookmarks();
+          input.value = '';
+          q('#vr-bookmark-error').textContent = 'Favorito adicionado ao Hub!';
+        } catch {
+          q('#vr-bookmark-error').textContent = 'Digite um endereço válido (ex: nba.com).';
+        }
+      });
+
+      // Photo Gallery App inside OS
+      const galleryPhotos = {
+        suit: {
+          src: 'assets/portfolio/joao-terno.jpg',
+          title: 'João Gabriel — Modo Gala (Medalha de Ouro & Eventos)',
+          dl: 'joao-gabriel-terno.jpg'
+        },
+        casual: {
+          src: 'assets/portfolio/joao-perfil.jpg',
+          title: 'João Gabriel — Modo Lifestyle & Basquete High IQ',
+          dl: 'joao-gabriel-lifestyle.jpg'
+        },
+        aurora: {
+          src: 'assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/19ebb5f4-a6fb-4b58-bc5d-65a8199bf7f5_original.webp',
+          title: 'Aurora Alviverde · AERA Spatial Wallpaper',
+          dl: 'rossetti-aurora.webp'
+        }
+      };
+      qa('[data-wallpaper]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const key = btn.dataset.wallpaper;
+          const item = galleryPhotos[key];
+          if (!item) return;
+          q('#vr-gallery-image').src = item.src;
+          q('#vr-gallery-title').textContent = item.title;
+          q('#vr-download-wallpaper').href = item.src;
+          q('#vr-download-wallpaper').download = item.dl;
+          qa('[data-wallpaper]').forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
+        });
+      });
+
+      // ORBIT Spatial Mini-Game
+      let signalsFound = new Set();
+      function startOrbitGame() {
+        signalsFound = new Set();
+        q('#vr-orbit-intro').hidden = true;
+        q('#vr-orbit-complete').hidden = true;
+        q('#vr-orbit-field').hidden = false;
+        q('#vr-orbit-score').textContent = '0 / 5 sinais';
+        qa('[data-vr-signal]').forEach(btn => {
+          btn.disabled = false;
+          btn.classList.remove('collected');
+        });
+      }
+      q('#vr-orbit-start').addEventListener('click', startOrbitGame);
+      q('#vr-orbit-restart').addEventListener('click', startOrbitGame);
+      qa('[data-vr-signal]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          if (signalsFound.has(btn.dataset.vrSignal)) return;
+          signalsFound.add(btn.dataset.vrSignal);
+          btn.disabled = true;
+          btn.classList.add('collected');
+          q('#vr-orbit-score').textContent = `${signalsFound.size} / 5 sinais`;
+          if (signalsFound.size >= 5) {
+            q('#vr-orbit-field').hidden = true;
+            q('#vr-orbit-complete').hidden = false;
           }
         });
+      });
 
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === '#' + current) {
-            link.classList.add('active');
+      // Live OS Clock
+      function updateClock() {
+        const now = new Date();
+        q('#home-clock').textContent = now.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+      }
+      updateClock();
+      setInterval(updateClock, 30000);
+    })();
+
+    /* ------------------------------------------------------------------------
+       4. INTERACTIVE 3D SPECTRUM CAROUSEL + MODAL STORY INSPECTOR
+       ------------------------------------------------------------------------ */
+    const storiesData = [
+      {
+        title: 'Medalha de Ouro — Canguru de Matemática',
+        badge: '🥇 OURO INTERNACIONAL',
+        category: 'Olimpíada de Matemática & Lógica',
+        mood: 'Raciocínio lógico premiado com Ouro no maior concurso internacional de Matemática.',
+        tone: 42,
+        image: 'assets/portfolio/joao-terno.jpg',
+        appTarget: 'desktop',
+        copy: 'Conquistar a Medalha de Ouro no Canguru de Matemática representa excelência em resolução criativa de problemas, geometria espacial, combinatória e tomada de decisão rápida sob pressão.'
+      },
+      {
+        title: 'Semifinalista da DBDI 2026',
+        badge: '🏆 TOP SEMIFINALISTA 2026',
+        category: 'Estratégia, Argumentação & Liderança',
+        mood: 'Visão estratégica e execução de alto nível entre os melhores competidores de 2026.',
+        tone: 208,
+        image: 'assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/6d0ccd71-4f28-4f7c-a19f-847d7565fe9f_original.jpg',
+        appTarget: 'notes',
+        copy: 'Classificado entre os semifinalistas da DBDI 2026, unindo preparação rigorosa, capacidade analítica e comunicação clara para defender ideias e solucionar casos complexos.'
+      },
+      {
+        title: 'Basquete em Alto Nível (High IQ)',
+        badge: '🏀 PLAYMAKER & CLUTCH',
+        category: 'Esporte de Quadra & Performance',
+        mood: 'Visão de quadra apurada, leitura de defesa, arremesso calibrado e mentalidade vencedora.',
+        tone: 24,
+        image: 'assets/portfolio/joao-perfil.jpg',
+        appTarget: 'orbit',
+        copy: 'Na quadra, o jogo combina técnica apurada, controle de bola, passes precisos e leitura rápida dos espaços. A mesma lógica da matemática aplicada em tempo real a cada posse de bola.'
+      },
+      {
+        title: 'New York Knicks Fan — NBA',
+        badge: '🗽 ORANGE & BLUE SKIES',
+        category: 'NBA · Madison Square Garden',
+        mood: 'A energia inigualável de Nova York e a tradição do Madison Square Garden.',
+        tone: 215,
+        image: 'assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/d6175cb4-2dae-4158-ae8b-678b40e6749f_original.jpg',
+        appTarget: 'browser',
+        copy: 'Torcedor apaixonado do New York Knicks. Admirador do basquete intenso, da defesa implacável e das noites históricas na Mecca do Basquete em Nova York.'
+      },
+      {
+        title: 'Palmeirense — Avanti Palestra',
+        badge: '🌴 MAIOR CAMPEÃO DO BRASIL',
+        category: 'Sociedade Esportiva Palmeiras',
+        mood: 'Defesa que ninguém passa, linha atacante de raça: coração Alviverde imponente.',
+        tone: 152,
+        image: 'assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/19ebb5f4-a6fb-4b58-bc5d-65a8199bf7f5_original.webp',
+        appTarget: 'browser',
+        copy: 'Palmeirense de coração! Acompanhando cada campeonato, Libertadores e conquistas históricas do Verdão no Allianz Parque.'
+      },
+      {
+        title: 'Séries, Filmes & Grandes Roteiros',
+        badge: '🎬 CINEMA & STORYTELLING',
+        category: 'Cultura Pop, Sci-Fi & Suspense',
+        mood: 'Fascinado por grandes produções cinematográficas, ficção científica e séries inteligentes.',
+        tone: 265,
+        image: 'assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/21da8985-e507-434c-88df-71d0a42c9621_original.webp',
+        appTarget: 'cinema',
+        copy: 'Maratonar séries intrigantes e assistir a grandes filmes é uma das minhas formas favoritas de inspiração, analisando roteiros, reviravoltas e fotografia.'
+      }
+    ];
+
+    const spectrumSection = $('#experience');
+    const spectrumStage = $('#portfolio-spectrum-stage');
+    const orbitRing = $('#portfolio-orbit-ring');
+    const cards3D = $$('.portfolio-card-3d');
+    const ticks = $$('[data-tick]');
+    const moodText = $('#portfolio-spectrum-mood');
+    const countLabel = $('#spectrum-current');
+    let activeCardIndex = 0;
+
+    function layout3DCards(index) {
+      activeCardIndex = (index + storiesData.length) % storiesData.length;
+      const item = storiesData[activeCardIndex];
+
+      spectrumSection.dataset.active = String(activeCardIndex);
+      spectrumSection.style.setProperty('--spectrum-tone', String(item.tone));
+      if (orbitRing) {
+        orbitRing.style.setProperty('--orbit-rot', `${activeCardIndex * 28}deg`);
+      }
+
+      const isMobile = window.innerWidth <= 700;
+      const spreadX = isMobile ? 165 : 275;
+
+      cards3D.forEach((card, i) => {
+        let diff = i - activeCardIndex;
+        // Wrap around for smooth circular feel
+        if (diff > storiesData.length / 2) diff -= storiesData.length;
+        if (diff < -storiesData.length / 2) diff += storiesData.length;
+
+        const abs = Math.abs(diff);
+        const tx = diff * spreadX;
+        const tz = -abs * 145;
+        const ry = diff * -18;
+        const scale = Math.max(0.68, 1 - abs * 0.14);
+        const opacity = abs > 2 ? 0 : Math.max(0.25, 1 - abs * 0.34);
+
+        card.style.transform = `translate3d(calc(-50% + ${tx}px), -50%, ${tz}px) rotateY(${ry}deg) scale(${scale})`;
+        card.style.zIndex = String(20 - Math.round(abs * 4));
+        card.style.opacity = String(opacity);
+        card.style.filter = abs === 0 ? 'brightness(1.04)' : `brightness(${Math.max(0.5, 0.85 - abs * 0.15)})`;
+        card.style.pointerEvents = abs > 2 ? 'none' : 'auto';
+      });
+
+      ticks.forEach((t, i) => {
+        const isCurrent = i === activeCardIndex;
+        t.setAttribute('aria-pressed', String(isCurrent));
+        const bar = t.querySelector('i');
+        if (bar) {
+          const d = Math.abs(i - activeCardIndex);
+          bar.style.height = `${d === 0 ? 28 : d === 1 ? 15 : 7}px`;
+        }
+      });
+
+      countLabel.textContent = `0${activeCardIndex + 1}`;
+      moodText.textContent = item.mood;
+    }
+
+    layout3DCards(0);
+    window.addEventListener('resize', () => layout3DCards(activeCardIndex));
+
+    $('#spectrum-prev')?.addEventListener('click', () => layout3DCards(activeCardIndex - 1));
+    $('#spectrum-next')?.addEventListener('click', () => layout3DCards(activeCardIndex + 1));
+    ticks.forEach(t => t.addEventListener('click', () => layout3DCards(+t.dataset.tick)));
+
+    // Drag / Swipe support on 3D Carousel Stage
+    let dragStart = null;
+    spectrumStage?.addEventListener('pointerdown', e => {
+      dragStart = { x: e.clientX, moved: false };
+    });
+    spectrumStage?.addEventListener('pointermove', e => {
+      if (!dragStart) return;
+      const dx = e.clientX - dragStart.x;
+      if (Math.abs(dx) > 48) {
+        dragStart.moved = true;
+        layout3DCards(activeCardIndex + (dx < 0 ? 1 : -1));
+        dragStart = null;
+      }
+    });
+    window.addEventListener('pointerup', () => { dragStart = null; });
+
+    // Story Modal Inspector (#story-dialog)
+    const storyDialog = $('#story-dialog');
+    let modalIndex = 0;
+
+    function populateStoryModal(idx) {
+      modalIndex = (idx + storiesData.length) % storiesData.length;
+      const s = storiesData[modalIndex];
+      $('#dialog-count').textContent = `0${modalIndex + 1} / 0${storiesData.length}`;
+      $('#dialog-title').textContent = s.title;
+      $('#dialog-badge').textContent = s.badge;
+      $('#dialog-category').textContent = s.category;
+      $('#dialog-description').textContent = s.copy;
+      $('#dialog-image').src = s.image;
+      $('#dialog-image').alt = s.title;
+      const exploreBtn = $('#dialog-explore');
+      if (exploreBtn) {
+        exploreBtn.onclick = e => {
+          e.preventDefault();
+          storyDialog.close();
+          $('#spatial-os-section')?.scrollIntoView({ behavior: 'smooth' });
+          document.querySelector(`.home-app[data-home-launch="${s.appTarget}"]`)?.click();
+        };
+      }
+    }
+
+    function openStoryModal(idx) {
+      populateStoryModal(idx);
+      storyDialog.showModal();
+    }
+
+    cards3D.forEach(card => {
+      card.addEventListener('click', () => {
+        const idx = +card.dataset.story;
+        if (idx !== activeCardIndex) {
+          layout3DCards(idx);
+        } else {
+          openStoryModal(idx);
+        }
+      });
+    });
+
+    $('#story-open-perspective')?.addEventListener('click', () => openStoryModal(activeCardIndex));
+    $$('[data-footer-story]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const idx = +btn.dataset.footerStory;
+        layout3DCards(idx);
+        openStoryModal(idx);
+      });
+    });
+
+    $('#close-story')?.addEventListener('click', () => storyDialog.close());
+    $('#previous-story')?.addEventListener('click', () => populateStoryModal(modalIndex - 1));
+    $('#next-story')?.addEventListener('click', () => populateStoryModal(modalIndex + 1));
+    storyDialog?.addEventListener('click', e => {
+      if (e.target === storyDialog) storyDialog.close();
+    });
+
+    /* ------------------------------------------------------------------------
+       5. IMMERSIVE CINEMA LOUNGE PLAYER CONTROLS & SERVICE SWITCHER
+       ------------------------------------------------------------------------ */
+    const cinemaItems = [
+      {
+        tag: 'NETFLIX · SCI-FI & SUSPENSE',
+        title: 'Interestelar & Horizontes',
+        desc: 'Narrativas cinematográficas que combinam física, paradoxos temporais e fotografia épica.',
+        poster: 'assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/21da8985-e507-434c-88df-71d0a42c9621_original.webp',
+        startTime: 0
+      },
+      {
+        tag: 'PRIME VIDEO · MENTE ESTRATÉGICA',
+        title: 'Estratégia & Mind Games',
+        desc: 'Séries e filmes onde o raciocínio rápido e a leitura de cenário definem o vencedor.',
+        poster: 'assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/021ef67a-dea0-48ec-973a-935bfe63fc1f_original.webp',
+        startTime: 6
+      },
+      {
+        tag: 'DISNEY+ & ESPN · ESPORTES & GLÓRIA',
+        title: 'Noites no Garden & Palestra',
+        desc: 'A emoção das grandes decisões do basquete na NBA e do futebol campeão.',
+        poster: 'assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/19ebb5f4-a6fb-4b58-bc5d-65a8199bf7f5_original.webp',
+        startTime: 12
+      }
+    ];
+
+    const loungeVideo = $('#lounge-video');
+    const loungePlayBtn = $('#lounge-play-btn');
+    const loungeSeek = $('#lounge-seek');
+    const loungeElapsed = $('#lounge-elapsed');
+    const loungeDuration = $('#lounge-duration');
+    const loungeMuteBtn = $('#lounge-mute-btn');
+    const loungeFullBtn = $('#lounge-full-btn');
+    const loungeStage = $('#cinema-stage-box');
+
+    const formatTime = s => `${Math.floor((s || 0) / 60)}:${String(Math.floor((s || 0) % 60)).padStart(2, '0')}`;
+
+    $$('[data-cinema-select]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const idx = +btn.dataset.cinemaSelect;
+        const info = cinemaItems[idx] || cinemaItems[0];
+        $('#lounge-video-tag').textContent = info.tag;
+        $('#lounge-video-title').textContent = info.title;
+        $('#lounge-video-desc').textContent = info.desc;
+        $$('.aera-cinema-card').forEach((c, i) => c.classList.toggle('is-selected', i === idx));
+        if (loungeVideo) {
+          loungeVideo.poster = info.poster;
+          if (Number.isFinite(loungeVideo.duration)) {
+            loungeVideo.currentTime = Math.min(info.startTime, loungeVideo.duration - 1);
           }
+          loungeVideo.play().catch(() => {});
+        }
+      });
+    });
+
+    if (loungeVideo) {
+      const syncCinemaUI = () => {
+        const dur = Number.isFinite(loungeVideo.duration) ? loungeVideo.duration : 19;
+        loungeElapsed.textContent = formatTime(loungeVideo.currentTime);
+        loungeDuration.textContent = formatTime(dur);
+        if (!loungeSeek.matches(':active') && dur > 0) {
+          loungeSeek.value = String(Math.round((loungeVideo.currentTime / dur) * 1000));
+        }
+        loungePlayBtn.textContent = loungeVideo.paused ? '▶ Play' : '⏸ Pause';
+      };
+
+      ['timeupdate', 'loadedmetadata', 'play', 'pause', 'ended'].forEach(ev => {
+        loungeVideo.addEventListener(ev, syncCinemaUI);
+      });
+
+      loungePlayBtn?.addEventListener('click', () => {
+        if (loungeVideo.paused) loungeVideo.play().catch(() => {});
+        else loungeVideo.pause();
+      });
+
+      loungeSeek?.addEventListener('input', () => {
+        if (Number.isFinite(loungeVideo.duration)) {
+          loungeVideo.currentTime = (+loungeSeek.value / 1000) * loungeVideo.duration;
+        }
+      });
+
+      loungeMuteBtn?.addEventListener('click', () => {
+        loungeVideo.muted = !loungeVideo.muted;
+        loungeMuteBtn.textContent = loungeVideo.muted ? 'Som: Off' : 'Som: On';
+      });
+
+      loungeFullBtn?.addEventListener('click', () => {
+        if (document.fullscreenElement) document.exitFullscreen?.();
+        else loungeStage?.requestFullscreen?.().catch(() => {});
+      });
+    }
+
+    /* ------------------------------------------------------------------------
+       6. CONNECTION / PAIRING MODAL (#pair-dialog) & MOBILE MENU
+       ------------------------------------------------------------------------ */
+    const pairDialog = $('#pair-dialog');
+    let selectedTopic = 'Projetos & Olimpíadas';
+    let selectedChannel = 'GitHub';
+
+    function updatePairSummary() {
+      $('#pair-summary-text').textContent = `Assunto: ${selectedTopic} · Canal: ${selectedChannel}`;
+      $('#pair-code-display').textContent = selectedTopic.includes('Esportes') ? '007 026' : '026 001';
+    }
+
+    $('#buy-now-root')?.addEventListener('click', () => pairDialog?.showModal());
+    $('#preview-pairing')?.addEventListener('click', () => pairDialog?.showModal());
+    $('#close-pair')?.addEventListener('click', () => pairDialog?.close());
+    pairDialog?.addEventListener('click', e => {
+      if (e.target === pairDialog) pairDialog.close();
+    });
+
+    $$('[data-topic]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        selectedTopic = btn.dataset.topic;
+        $$('[data-topic]').forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
+        updatePairSummary();
+      });
+    });
+
+    $$('[data-channel]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        selectedChannel = btn.dataset.channel;
+        $$('[data-channel]').forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
+        updatePairSummary();
+      });
+    });
+
+    $('#confirm-pair')?.addEventListener('click', () => {
+      pairDialog?.close();
+      if (selectedChannel === 'GitHub') {
+        window.open('https://github.com/joaogabrielfaxina44', '_blank', 'noopener');
+      } else {
+        $('#spatial-os-section')?.scrollIntoView({ behavior: 'smooth' });
+        document.querySelector('.home-app[data-home-launch="notes"]')?.click();
+      }
+    });
+
+    // Mobile Menu Toggle
+    const menuToggle = $('#menu-toggle');
+    const mobileMenu = $('#mobile-menu');
+    menuToggle?.addEventListener('click', () => {
+      const open = !mobileMenu.classList.contains('open');
+      mobileMenu.classList.toggle('open', open);
+      mobileMenu.inert = !open;
+      menuToggle.setAttribute('aria-expanded', String(open));
+    });
+    $$('#mobile-menu a').forEach(a => {
+      a.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        mobileMenu.inert = true;
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    /* ------------------------------------------------------------------------
+       7. WORD-BY-WORD BLUR-TO-FOCUS CHAPTER TITLES (AUTHENTIC AERA EFFECT)
+       ------------------------------------------------------------------------ */
+    (() => {
+      const style = document.createElement('style');
+      style.textContent = `
+        .aera-chapter-title .aera-title-word {
+          display: inline-block;
+          opacity: 0;
+          filter: blur(8px);
+          transform: translateY(0.12em);
+          transition: opacity 0.9s cubic-bezier(0.22, 0.65, 0.2, 1),
+                      filter 1.1s cubic-bezier(0.22, 0.65, 0.2, 1),
+                      transform 1.1s cubic-bezier(0.22, 0.65, 0.2, 1);
+          transition-delay: calc(var(--word-order) * 60ms);
+        }
+        .aera-chapter-title.title-in-focus .aera-title-word {
+          opacity: 1;
+          filter: blur(0);
+          transform: translateY(0);
+        }
+      `;
+      document.head.appendChild(style);
+
+      const titles = $$('#visor-heading, #spectrum-heading, #cinema-heading, #questions-title, #final-cta-title, .footer-manifesto h2');
+      titles.forEach(title => {
+        let idx = 0;
+        [...title.childNodes].forEach(node => {
+          if (node.nodeType !== Node.TEXT_NODE || !node.textContent.trim()) return;
+          const frag = document.createDocumentFragment();
+          node.textContent.split(/(\s+)/).forEach(word => {
+            if (!word.trim()) {
+              frag.append(document.createTextNode(word));
+              return;
+            }
+            const span = document.createElement('span');
+            span.className = 'aera-title-word';
+            span.textContent = word;
+            span.style.setProperty('--word-order', idx++);
+            frag.append(span);
+          });
+          node.replaceWith(frag);
         });
-      }, { passive: true });
+        title.classList.add('aera-chapter-title');
+      });
+
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          entry.target.classList.toggle('title-in-focus', entry.isIntersecting);
+        });
+      }, { threshold: 0.15 });
+      titles.forEach(t => io.observe(t));
     })();
   </script>
 </body>
