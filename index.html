@@ -4,12 +4,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#08090c">
-  <title>João Gabriel | Portfólio &amp; Trajetória</title>
+  <title>João Gabriel Faxina (Rossetti) | Portfólio, Conquistas &amp; Universo Pessoal</title>
   <link rel="icon" href="assets/overview/favicon.svg">
   <link rel="stylesheet" href="tokens/tokens.css">
   <style>
     /* -------------------------------------------------------------
-       AERA 01 Spatial Architecture Applied to Personal Portfolio
+       AERA 01 Spatial Architecture Applied to João Gabriel's Portfolio
        ------------------------------------------------------------- */
     :root {
       --bg: #08090c;
@@ -18,6 +18,10 @@
       --grey: #9c9da7;
       --slate: #adb4be;
       --blue: #5a68c9;
+      --gold: #f5c451;
+      --knicks-orange: #f58426;
+      --knicks-blue: #2774ae;
+      --palmeiras-green: #22c55e;
       --line: rgba(255, 255, 255, 0.12);
       --font-sans: Arial, Helvetica, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       --font-serif: Georgia, "Times New Roman", serif;
@@ -114,7 +118,7 @@
       padding: 0 20px;
       display: flex;
       align-items: center;
-      gap: 32px;
+      gap: 28px;
       background: rgba(24, 25, 28, 0.85);
       backdrop-filter: blur(24px);
       -webkit-backdrop-filter: blur(24px);
@@ -125,7 +129,7 @@
     }
     .brand {
       font-weight: 800;
-      font-size: 20px;
+      font-size: 19px;
       letter-spacing: -0.05em;
       color: #fff;
       text-decoration: none;
@@ -136,12 +140,12 @@
       font-size: 9px;
       letter-spacing: 0;
       margin-left: 4px;
-      color: var(--blue);
+      color: var(--gold);
     }
     .nav-island nav {
       display: flex;
       align-items: center;
-      gap: 22px;
+      gap: 20px;
     }
     .nav-island nav a {
       color: var(--grey);
@@ -172,10 +176,10 @@
       align-items: center;
       gap: 6px;
       font-size: 12px;
-      font-weight: 500;
+      font-weight: 600;
       color: #10131c;
       background: #edf0ff;
-      padding: 7px 14px;
+      padding: 7px 15px;
       border-radius: 20px;
       text-decoration: none;
       transition: background 0.2s, transform 0.2s;
@@ -189,7 +193,7 @@
        Common Section Headings
        ------------------------------------------------------------- */
     .section {
-      padding: 120px 0 60px;
+      padding: 110px 0 50px;
       position: relative;
       z-index: 10;
     }
@@ -212,6 +216,14 @@
       background: #b8ffcc;
       box-shadow: 0 0 8px #b8ffcc;
     }
+    .gold-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 8px var(--gold);
+    }
     .section-title {
       font-size: clamp(34px, 4.2vw, 56px);
       font-weight: 500;
@@ -231,38 +243,49 @@
        Hero Section
        ------------------------------------------------------------- */
     .hero {
-      min-height: 90vh;
+      min-height: 92vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       padding-top: 130px;
       position: relative;
     }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 0.65fr;
+      gap: 40px;
+      align-items: center;
+    }
     .hero-inner {
       display: flex;
       flex-direction: column;
-      gap: 28px;
-      max-width: 980px;
+      gap: 24px;
     }
     .hero-title {
-      font-size: clamp(44px, 6.8vw, 92px);
+      font-size: clamp(40px, 5.8vw, 80px);
       font-weight: 550;
-      line-height: 0.96;
-      letter-spacing: -0.055em;
+      line-height: 0.98;
+      letter-spacing: -0.052em;
       color: #f4f6fa;
     }
     .hero-title .highlight {
-      background: linear-gradient(135deg, #ffffff 40%, #8ba3c7 100%);
+      background: linear-gradient(135deg, #ffffff 35%, #8ba3c7 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .hero-title .highlight-gold {
+      background: linear-gradient(135deg, #fff5d6 20%, #f5c451 65%, #d99b26 100%);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
     }
     .hero-serif {
       font-family: var(--font-serif);
-      font-size: clamp(20px, 2.2vw, 30px);
+      font-size: clamp(19px, 2vw, 27px);
       color: #9ea4b5;
-      letter-spacing: -0.035em;
-      line-height: 1.35;
+      letter-spacing: -0.025em;
+      line-height: 1.4;
       font-style: italic;
     }
     .hero-actions {
@@ -270,7 +293,7 @@
       align-items: center;
       gap: 16px;
       flex-wrap: wrap;
-      margin-top: 8px;
+      margin-top: 6px;
     }
     .btn-bright {
       display: inline-flex;
@@ -281,14 +304,14 @@
       background: #edf0ff;
       color: #0b0d13;
       font-size: 14px;
-      font-weight: 500;
+      font-weight: 600;
       text-decoration: none;
       transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
     }
     .btn-bright:hover {
       background: #ffffff;
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(237, 240, 255, 0.2);
+      box-shadow: 0 8px 24px rgba(237, 240, 255, 0.22);
     }
     .btn-outline {
       display: inline-flex;
@@ -311,9 +334,61 @@
       transform: translateY(-2px);
     }
 
+    /* Hero Portrait Card */
+    .hero-portrait-card {
+      position: relative;
+      border-radius: 28px;
+      padding: 14px;
+      background: linear-gradient(145deg, rgba(26, 34, 46, 0.75), rgba(11, 15, 22, 0.92));
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.65), inset 0 1px rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(24px);
+    }
+    .hero-portrait-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #0d131c;
+    }
+    .hero-portrait-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .hero-portrait-card:hover .hero-portrait-frame img {
+      transform: scale(1.03);
+    }
+    .hero-portrait-overlay {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 28px 20px 18px;
+      background: linear-gradient(to top, rgba(6, 9, 14, 0.92) 15%, rgba(6, 9, 14, 0.45) 65%, transparent);
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .hero-portrait-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 11px;
+      border-radius: 20px;
+      background: rgba(15, 21, 30, 0.8);
+      border: 1px solid rgba(245, 196, 81, 0.4);
+      color: #ffe299;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      backdrop-filter: blur(10px);
+    }
+
     .hero-stats-row {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       gap: 16px;
       margin-top: 48px;
       padding-top: 36px;
@@ -321,28 +396,33 @@
     }
     .hero-stat-card {
       padding: 18px 20px;
-      border-radius: 16px;
+      border-radius: 18px;
       background: rgba(255, 255, 255, 0.025);
       border: 1px solid rgba(255, 255, 255, 0.08);
       backdrop-filter: blur(12px);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+    .hero-stat-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(255, 255, 255, 0.22);
     }
     .hero-stat-num {
-      font-size: clamp(22px, 2.5vw, 32px);
-      font-weight: 500;
-      letter-spacing: -0.04em;
+      font-size: clamp(20px, 2.2vw, 28px);
+      font-weight: 600;
+      letter-spacing: -0.03em;
       color: #fff;
       display: block;
       margin-bottom: 4px;
     }
     .hero-stat-label {
       font-size: 11px;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--grey);
     }
 
     /* -------------------------------------------------------------
-       About Section (Spatial Window Architecture)
+       About Section (Spatial Window Architecture with Photo Switcher)
        ------------------------------------------------------------- */
     .about-card {
       border-radius: 28px;
@@ -352,7 +432,7 @@
       backdrop-filter: blur(40px);
       overflow: hidden;
       display: grid;
-      grid-template-columns: 360px 1fr;
+      grid-template-columns: 390px 1fr;
       margin-top: 36px;
     }
     .about-visual {
@@ -362,58 +442,63 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 40px 24px;
+      padding: 36px 28px;
       border-right: 1px solid rgba(255, 255, 255, 0.08);
     }
     .photo-slot {
-      width: 220px;
-      height: 270px;
+      width: 100%;
+      max-width: 280px;
+      height: 330px;
       border-radius: 20px;
       overflow: hidden;
       position: relative;
       background: linear-gradient(140deg, #1b2636, #0e1622);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55);
     }
     .photo-slot img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center 20%;
       position: absolute;
       inset: 0;
+      transition: opacity 0.35s ease, transform 0.5s ease;
     }
-    .photo-placeholder-icon {
-      font-size: 32px;
-      color: rgba(255, 255, 255, 0.3);
-      margin-bottom: 12px;
-    }
-    .photo-slot-tag {
-      font-size: 11px;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: #9cb5d6;
-      position: relative;
-      z-index: 2;
-    }
-    .photo-slot-note {
-      font-size: 9px;
-      color: var(--grey);
-      margin-top: 6px;
-      position: relative;
-      z-index: 2;
-    }
-    .about-meta-list {
-      margin-top: 24px;
+    .photo-switcher {
+      display: flex;
+      gap: 8px;
+      margin-top: 14px;
       width: 100%;
+      max-width: 280px;
+    }
+    .photo-switch-btn {
+      flex: 1;
+      padding: 8px 10px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--grey);
+      font-size: 11px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+    .photo-switch-btn.active,
+    .photo-switch-btn:hover {
+      background: rgba(237, 240, 255, 0.14);
+      border-color: rgba(237, 240, 255, 0.4);
+      color: #fff;
+    }
+
+    .about-meta-list {
+      margin-top: 20px;
+      width: 100%;
+      max-width: 280px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 8px;
     }
     .about-meta-item {
       display: flex;
@@ -439,9 +524,9 @@
       justify-content: center;
     }
     .about-lead {
-      font-size: clamp(20px, 2vw, 28px);
-      line-height: 1.35;
-      font-weight: 450;
+      font-size: clamp(22px, 2.2vw, 30px);
+      line-height: 1.3;
+      font-weight: 500;
       color: #f2f5fb;
       margin-bottom: 20px;
     }
@@ -449,8 +534,8 @@
       display: flex;
       flex-direction: column;
       gap: 16px;
-      font-size: 15px;
-      line-height: 1.7;
+      font-size: 15.5px;
+      line-height: 1.72;
       color: var(--slate);
     }
     .about-pills {
@@ -461,7 +546,7 @@
     }
     .about-pill {
       font-size: 11px;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
       padding: 7px 14px;
       border-radius: 20px;
       background: rgba(255, 255, 255, 0.05);
@@ -474,83 +559,245 @@
        ------------------------------------------------------------- */
     .achievements-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 24px;
       margin-top: 36px;
     }
     .achievement-card {
       position: relative;
-      border-radius: 20px;
-      background: linear-gradient(145deg, rgba(20, 27, 36, 0.8), rgba(10, 14, 20, 0.9));
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 24px;
+      background: linear-gradient(145deg, rgba(20, 27, 36, 0.88), rgba(10, 14, 20, 0.96));
+      border: 1px solid rgba(255, 255, 255, 0.12);
       overflow: hidden;
-      padding: 24px;
+      padding: 28px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      min-height: 260px;
+      min-height: 340px;
       transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
     }
     .achievement-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(220, 234, 255, 0.4);
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4), 0 0 24px rgba(160, 195, 255, 0.12);
+      transform: translateY(-5px);
+      border-color: rgba(220, 234, 255, 0.42);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.5), 0 0 28px rgba(160, 195, 255, 0.14);
     }
-    .achievement-card-photo-placeholder {
-      height: 110px;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px dashed rgba(255, 255, 255, 0.15);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 18px;
+    .achievement-card.gold-highlight {
+      border-color: rgba(245, 196, 81, 0.32);
+      background: linear-gradient(145deg, rgba(34, 29, 18, 0.85), rgba(12, 14, 20, 0.96));
+    }
+    .achievement-card.gold-highlight:hover {
+      border-color: rgba(245, 196, 81, 0.65);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55), 0 0 32px rgba(245, 196, 81, 0.18);
+    }
+    .achievement-visual-banner {
+      height: 130px;
+      border-radius: 16px;
+      margin-bottom: 22px;
       position: relative;
       overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
-    .achievement-card-photo-placeholder img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      position: absolute;
-      inset: 0;
+    .banner-gold {
+      background: radial-gradient(circle at 80% 30%, rgba(245, 196, 81, 0.35), rgba(25, 20, 10, 0.9) 70%);
+      border-color: rgba(245, 196, 81, 0.3);
     }
-    .achievement-card-photo-placeholder span {
-      font-size: 10px;
-      letter-spacing: 0.14em;
-      color: #8da4be;
+    .banner-dbdi {
+      background: radial-gradient(circle at 80% 30%, rgba(90, 104, 201, 0.4), rgba(14, 20, 34, 0.9) 70%);
+      border-color: rgba(130, 155, 255, 0.28);
+    }
+    .banner-hoops {
+      background: radial-gradient(circle at 80% 30%, rgba(245, 132, 38, 0.35), rgba(15, 24, 42, 0.92) 70%);
+      border-color: rgba(245, 132, 38, 0.3);
+    }
+    .banner-big-code {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.7);
+      z-index: 2;
+    }
+    .banner-big-stat {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      color: #fff;
+      display: block;
+      margin-top: 4px;
+    }
+    .banner-emblem {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
+      z-index: 2;
     }
     .achievement-tag {
       font-size: 10px;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: #7f99b8;
+      color: #93adc8;
       display: block;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
+      font-weight: 600;
     }
     .achievement-title {
-      font-size: 20px;
-      font-weight: 500;
+      font-size: 22px;
+      font-weight: 550;
       color: #fff;
-      line-height: 1.25;
-      margin-bottom: 8px;
+      line-height: 1.22;
+      margin-bottom: 10px;
     }
     .achievement-desc {
-      font-size: 13px;
-      color: #92a2b7;
-      line-height: 1.55;
+      font-size: 14px;
+      color: #9fb0c5;
+      line-height: 1.62;
     }
     .achievement-footer {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 16px;
-      padding-top: 12px;
+      margin-top: 20px;
+      padding-top: 14px;
       border-top: 1px solid rgba(255, 255, 255, 0.08);
       font-size: 11px;
       color: var(--grey);
+      font-weight: 500;
+    }
+
+    /* -------------------------------------------------------------
+       Universo Pessoal, Esporte & Interesses (Lifestyle Bento Grid)
+       ------------------------------------------------------------- */
+    .interests-bento {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 22px;
+      margin-top: 36px;
+    }
+    .bento-card {
+      border-radius: 24px;
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: linear-gradient(145deg, rgba(19, 25, 35, 0.88), rgba(10, 14, 20, 0.96));
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    .bento-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 255, 255, 0.28);
+    }
+    .bento-span-7 { grid-column: span 7; }
+    .bento-span-5 { grid-column: span 5; }
+    .bento-span-4 { grid-column: span 4; }
+    .bento-span-8 { grid-column: span 8; }
+
+    /* Knicks Theme Card */
+    .bento-knicks {
+      background: radial-gradient(ellipse at 90% 10%, rgba(245, 132, 38, 0.26), transparent 55%),
+                  radial-gradient(ellipse at 10% 90%, rgba(0, 107, 182, 0.28), transparent 60%),
+                  linear-gradient(145deg, rgba(16, 24, 38, 0.94), rgba(9, 13, 20, 0.98));
+      border-color: rgba(245, 132, 38, 0.3);
+    }
+    /* Palmeiras Theme Card */
+    .bento-palmeiras {
+      background: radial-gradient(ellipse at 85% 15%, rgba(34, 197, 94, 0.24), transparent 55%),
+                  linear-gradient(145deg, rgba(13, 28, 22, 0.92), rgba(9, 15, 12, 0.98));
+      border-color: rgba(34, 197, 94, 0.3);
+    }
+    /* Cinema & Series Card */
+    .bento-cinema {
+      background: radial-gradient(ellipse at 80% 20%, rgba(147, 112, 219, 0.22), transparent 55%),
+                  linear-gradient(145deg, rgba(22, 20, 34, 0.92), rgba(10, 11, 18, 0.98));
+      border-color: rgba(168, 140, 255, 0.25);
+    }
+    /* Lifestyle Photo Bento */
+    .bento-photo-card {
+      padding: 14px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      align-items: stretch;
+    }
+    .bento-photo-item {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      min-height: 260px;
+      background: #0d131c;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .bento-photo-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      position: absolute;
+      inset: 0;
+      transition: transform 0.5s ease;
+    }
+    .bento-photo-item:hover img {
+      transform: scale(1.05);
+    }
+    .bento-photo-caption {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 16px 14px 12px;
+      background: linear-gradient(to top, rgba(6, 9, 14, 0.92), transparent);
+      font-size: 11px;
+      color: #e2e8f0;
+      font-weight: 500;
+    }
+
+    .bento-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 10px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      color: #fff;
+      width: fit-content;
+      margin-bottom: 16px;
+    }
+    .bento-title {
+      font-size: 24px;
+      font-weight: 550;
+      color: #fff;
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+    .bento-text {
+      font-size: 14px;
+      line-height: 1.62;
+      color: #a8b6c8;
+    }
+    .bento-meta {
+      margin-top: 22px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: #cbd5e1;
+      font-family: var(--font-mono);
     }
 
     /* -------------------------------------------------------------
@@ -566,7 +813,7 @@
       border-radius: 22px;
       background: linear-gradient(145deg, rgba(17, 24, 34, 0.85), rgba(9, 13, 19, 0.95));
       border: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 24px;
+      padding: 26px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -767,15 +1014,17 @@
       font-size: 11px;
       color: #6a7c93;
     }
-    .footer-bottom a {
-      color: #8da4c0;
-      text-decoration: none;
-    }
-    .footer-bottom a:hover {
-      color: #fff;
-    }
 
-    @media (max-width: 800px) {
+    @media (max-width: 960px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-portrait-card {
+        max-width: 380px;
+      }
+      .hero-stats-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
       .about-card {
         grid-template-columns: 1fr;
       }
@@ -783,14 +1032,19 @@
         border-right: 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       }
-      .nav-island {
-        gap: 16px;
-        padding: 0 14px;
+      .bento-span-7, .bento-span-5, .bento-span-4, .bento-span-8 {
+        grid-column: span 12;
       }
+    }
+
+    @media (max-width: 640px) {
       .nav-island nav {
         display: none;
       }
       .hero-stats-row {
+        grid-template-columns: 1fr;
+      }
+      .bento-photo-card {
         grid-template-columns: 1fr;
       }
     }
@@ -808,10 +1062,11 @@
   <!-- Header / Nav Island Flutuante -->
   <header class="header">
     <div class="nav-island">
-      <a class="brand" href="#top">ROSSETTI<span>™</span></a>
+      <a class="brand" href="#top">ROSSETTI<span>★</span></a>
       <nav aria-label="Navegação Principal">
         <a href="#sobre">Sobre</a>
         <a href="#conquistas">Conquistas</a>
+        <a href="#interesses">Universo</a>
         <a href="#projetos">Projetos</a>
         <a href="#habilidades">Habilidades</a>
         <a href="#contato">Contato</a>
@@ -823,37 +1078,60 @@
   <main>
     <!-- HERO SECTION -->
     <section class="hero section" id="top">
-      <div class="container hero-inner">
-        <div class="section-eyebrow">
-          <span class="live-dot"></span>
-          <span>PORTFÓLIO &amp; TRAJETÓRIA · 2026</span>
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-inner">
+            <div class="section-eyebrow">
+              <span class="gold-dot"></span>
+              <span>JOÃO GABRIEL FAXINA · PORTFÓLIO OFICIAL 2026</span>
+            </div>
+
+            <h1 class="hero-title">
+              Mente de <span class="highlight-gold">ouro</span> na matemática, visão de jogo nas <span class="highlight">quadras</span>.
+            </h1>
+
+            <p class="hero-serif">
+              "Medalhista de Ouro na Canguru de Matemática, Semifinalista DBDI 2026 e apaixonado por transformar estratégia em vitória."
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn-bright" href="#conquistas">Explorar Conquistas ↓</a>
+              <a class="btn-outline" href="#interesses">Meu Universo &amp; Esporte ↗</a>
+            </div>
+          </div>
+
+          <!-- Retrato Principal em Destaque no Hero -->
+          <div class="hero-portrait-card">
+            <div class="hero-portrait-frame">
+              <img src="assets/portfolio/joao-terno.jpg" alt="João Gabriel Faxina em traje de gala">
+              <div class="hero-portrait-overlay">
+                <div>
+                  <span style="font-size:11px;color:#cbd5e1;display:block;">João Gabriel Faxina</span>
+                  <strong style="font-size:16px;color:#fff;letter-spacing:-0.02em;">Rossetti · 2026</strong>
+                </div>
+                <span class="hero-portrait-badge">🥇 Ouro Canguru</span>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <h1 class="hero-title">
-          Construindo soluções onde <span class="highlight">engenharia</span>, <span class="highlight">design</span> &amp; <span class="highlight">impacto</span> se encontram.
-        </h1>
-
-        <p class="hero-serif">
-          "A curiosidade técnica e a dedicação para transformar ideias complexas em realidade."
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn-bright" href="#conquistas">Ver Conquistas &amp; Trajetória ↓</a>
-          <a class="btn-outline" href="#sobre">Conhecer Mais ↗</a>
-        </div>
-
+        <!-- Indicadores Rápidos de Destaque -->
         <div class="hero-stats-row">
           <div class="hero-stat-card">
-            <span class="hero-stat-num">01 / FOCO</span>
-            <span class="hero-stat-label">Inovação &amp; Engenharia</span>
+            <span class="hero-stat-num" style="color:var(--gold);">🥇 1º LUGAR</span>
+            <span class="hero-stat-label">Ouro · Canguru de Matemática</span>
           </div>
           <div class="hero-stat-card">
-            <span class="hero-stat-num">02 / MÉTODO</span>
-            <span class="hero-stat-label">Rigor &amp; Alta Fidelidade</span>
+            <span class="hero-stat-num">🏆 DBDI '26</span>
+            <span class="hero-stat-label">Semifinalista Oficial 2026</span>
           </div>
           <div class="hero-stat-card">
-            <span class="hero-stat-num">03 / OBJETIVO</span>
-            <span class="hero-stat-label">Crescimento Contínuo</span>
+            <span class="hero-stat-num" style="color:var(--knicks-orange);">🏀 HOOPS</span>
+            <span class="hero-stat-label">Basquete de Alto Desempenho</span>
+          </div>
+          <div class="hero-stat-card">
+            <span class="hero-stat-num" style="color:var(--palmeiras-green);">🌴 VERDÃO</span>
+            <span class="hero-stat-label">Palmeirense &amp; Knicks Fan</span>
           </div>
         </div>
       </div>
@@ -863,18 +1141,25 @@
     <section class="section" id="sobre">
       <div class="container">
         <div class="section-eyebrow">
-          <span>01 / IDENTIDADE</span>
+          <span>01 / IDENTIDADE &amp; PERFIL</span>
         </div>
         <h2 class="section-title">Sobre Mim</h2>
-        <p class="section-desc">Uma síntese da minha visão, valores e do que me move a buscar novos conhecimentos todos os dias.</p>
+        <p class="section-desc">A união entre o raciocínio exato das olimpíadas de matemática, a leitura dinâmica do basquete e a curiosidade constante pela tecnologia e cultura.</p>
 
         <div class="about-card">
-          <!-- Slot para a Foto que o usuário vai enviar -->
+          <!-- Galeria Interativa de Perfil com as 2 fotos reais -->
           <div class="about-visual">
             <div class="photo-slot" id="photo-principal-slot">
-              <div class="photo-placeholder-icon">👤</div>
-              <span class="photo-slot-tag">[Foto Principal Aqui]</span>
-              <span class="photo-slot-note">Aguardando envio das suas fotos</span>
+              <img id="about-active-photo" src="assets/portfolio/joao-perfil.jpg" alt="João Gabriel Faxina">
+            </div>
+
+            <div class="photo-switcher">
+              <button type="button" class="photo-switch-btn active" onclick="switchProfilePhoto('assets/portfolio/joao-perfil.jpg', this)">
+                📸 Casual / Perfil
+              </button>
+              <button type="button" class="photo-switch-btn" onclick="switchProfilePhoto('assets/portfolio/joao-terno.jpg', this)">
+                👔 Traje Social
+              </button>
             </div>
 
             <div class="about-meta-list">
@@ -883,12 +1168,16 @@
                 <span>João Gabriel Faxina</span>
               </div>
               <div class="about-meta-item">
-                <span>Área</span>
-                <span>Tecnologia &amp; Engenharia</span>
+                <span>Destaques</span>
+                <span style="color:var(--gold);">Ouro Canguru &amp; DBDI '26</span>
               </div>
               <div class="about-meta-item">
-                <span>Status</span>
-                <span style="color:#b8ffcc;">Disponível para Projetos</span>
+                <span>Esporte</span>
+                <span>Basquete (Playmaker)</span>
+              </div>
+              <div class="about-meta-item">
+                <span>Times do Coração</span>
+                <span style="color:#b8ffcc;">Palmeiras &amp; NY Knicks</span>
               </div>
             </div>
           </div>
@@ -896,22 +1185,27 @@
           <!-- Conteúdo Biográfico -->
           <div class="about-content">
             <h3 class="about-lead">
-              Apaixonado por resolver problemas difíceis e criar experiências com alto nível de excelência.
+               Movido por desafios intelectuais, competição de alto nível e paixão pelo esporte.
             </h3>
             <div class="about-paragraphs">
               <p>
-                Olá! Sou o João Gabriel. Minha trajetória é guiada por uma busca constante de aprendizado e pela vontade de construir coisas que realmente façam a diferença. Acredito no poder da tecnologia quando combinada com disciplina, boa arquitetura e foco no usuário.
+                Olá! Eu sou o <strong>João Gabriel Faxina</strong>. Desde cedo descobri que os problemas mais difíceis são justamente os mais interessantes de resolver. Essa mentalidade me levou a conquistar a <strong>Medalha de Ouro na Olimpíada Canguru de Matemática</strong> e a alcançar a <strong>Semifinal da DBDI 2026</strong>, competições que exigem concentração absoluta, estratégia e pensamento rápido.
               </p>
               <p>
-                Aqui você encontrará um resumo dos meus principais projetos, reconhecimentos e conquistas que marcaram minha jornada até agora.
+                Fora das provas e dos projetos técnicos, meu habitat natural é a <strong>quadra de basquete</strong>. Jogo em alto nível e levo para o esporte a mesma visão analítica que uso nos estudos: leitura de espaço, tomada de decisão em segundos e espírito de equipe.
+              </p>
+              <p>
+                Quando não estou resolvendo desafios lógicos ou treinando arremessos, estou acompanhando cada lance do <strong>New York Knicks</strong> na NBA, torcendo pelo <strong>Palmeiras</strong> ou maratonando grandes <strong>séries e filmes</strong>.
               </p>
             </div>
 
             <div class="about-pills">
-              <span class="about-pill">Engenharia de Software</span>
-              <span class="about-pill">Resolução de Problemas</span>
-              <span class="about-pill">Inovação Aplicada</span>
-              <span class="about-pill">Liderança de Projetos</span>
+              <span class="about-pill">🥇 Medalhista de Ouro · Canguru</span>
+              <span class="about-pill">🏆 Semifinalista DBDI 2026</span>
+              <span class="about-pill">🏀 Basquete Competitivo</span>
+              <span class="about-pill">🗽 New York Knicks</span>
+              <span class="about-pill">🌴 S.E. Palmeiras</span>
+              <span class="about-pill">🎬 Séries &amp; Cinema</span>
             </div>
           </div>
         </div>
@@ -922,78 +1216,165 @@
     <section class="section" id="conquistas">
       <div class="container">
         <div class="section-eyebrow">
-          <span>02 / RECONHECIMENTO &amp; TRAJETÓRIA</span>
+          <span>02 / RECONHECIMENTO &amp; PERFORMANCE</span>
         </div>
         <h2 class="section-title">Marcos &amp; Conquistas</h2>
-        <p class="section-desc">Momentos importantes, prêmios, desafios superados e realizações que consolidam minha trajetória.</p>
+        <p class="section-desc">Resultados construídos com treino, raciocínio rápido e dedicação dentro e fora das competições acadêmicas e esportivas.</p>
 
-        <!-- Grade de Conquistas (Pronta para plugar fotos e textos que o usuário vai enviar) -->
         <div class="achievements-grid">
           
-          <!-- Card de Conquista 1 -->
-          <article class="achievement-card">
+          <!-- Card de Conquista 1: Canguru de Matemática -->
+          <article class="achievement-card gold-highlight">
             <div>
-              <div class="achievement-card-photo-placeholder" id="achievement-slot-1">
-                <span>📷 [Espaço para Foto 1]</span>
+              <div class="achievement-visual-banner banner-gold" id="achievement-slot-1">
+                <div>
+                  <span class="banner-big-code">KANGOUROU SANS FRONTIÈRES</span>
+                  <span class="banner-big-stat" style="color:var(--gold);">OURO 🥇</span>
+                </div>
+                <div class="banner-emblem" style="border-color:rgba(245,196,81,0.5);color:var(--gold);">
+                  ∑
+                </div>
               </div>
-              <span class="achievement-tag">Destaque Principal</span>
-              <h3 class="achievement-title">[Título da Conquista 1]</h3>
-              <p class="achievement-desc">Espaço reservado para descrever a sua conquista, competição, prêmio ou marco acadêmico/profissional.</p>
+              <span class="achievement-tag" style="color:var(--gold);">Olimpíada Internacional · Premiação Máxima</span>
+              <h3 class="achievement-title">Medalha de Ouro no Canguru de Matemática</h3>
+              <p class="achievement-desc">
+                Conquista do 1º lugar (Medalha de Ouro) no Concurso Canguru de Matemática Brasil — a maior competição internacional da área. Destaque pela excelência em lógica, geometria, álgebra e resolução ágil de problemas complexos.
+              </p>
             </div>
             <div class="achievement-footer">
-              <span>Ano / Edição</span>
-              <span>Reconhecimento ↗</span>
+              <span>Concurso Internacional de Matemática</span>
+              <span style="color:var(--gold);">Medalhista de Ouro ★</span>
             </div>
           </article>
 
-          <!-- Card de Conquista 2 -->
+          <!-- Card de Conquista 2: Semifinalista DBDI 2026 -->
           <article class="achievement-card">
             <div>
-              <div class="achievement-card-photo-placeholder" id="achievement-slot-2">
-                <span>📷 [Espaço para Foto 2]</span>
+              <div class="achievement-visual-banner banner-dbdi" id="achievement-slot-2">
+                <div>
+                  <span class="banner-big-code">EDIÇÃO OFICIAL · 2026</span>
+                  <span class="banner-big-stat">TOP SEMI</span>
+                </div>
+                <div class="banner-emblem">
+                  🏆
+                </div>
               </div>
-              <span class="achievement-tag">Competição / Desafio</span>
-              <h3 class="achievement-title">[Título da Conquista 2]</h3>
-              <p class="achievement-desc">Detalhes sobre o desafio superado, resultado obtido e o aprendizado gerado nessa experiência.</p>
+              <span class="achievement-tag">Competição Nacional &amp; Estratégia · 2026</span>
+              <h3 class="achievement-title">Semifinalista da DBDI 2026</h3>
+              <p class="achievement-desc">
+                Classificação de destaque até a fase Semifinal da DBDI 2026, superando baterias eliminatórias de alta exigência com argumentação sólida, visão analítica, criatividade e trabalho sob pressão.
+              </p>
             </div>
             <div class="achievement-footer">
-              <span>Ano / Edição</span>
-              <span>Reconhecimento ↗</span>
+              <span>Temporada 2026</span>
+              <span style="color:#b8d4ff;">Semifinalista Oficial ↗</span>
             </div>
           </article>
 
-          <!-- Card de Conquista 3 -->
+          <!-- Card de Conquista 3: Basquete de Alto Nível -->
           <article class="achievement-card">
             <div>
-              <div class="achievement-card-photo-placeholder" id="achievement-slot-3">
-                <span>📷 [Espaço para Foto 3]</span>
+              <div class="achievement-visual-banner banner-hoops" id="achievement-slot-3">
+                <div>
+                  <span class="banner-big-code">HIGH IQ &amp; COURT VISION</span>
+                  <span class="banner-big-stat" style="color:var(--knicks-orange);">CLUTCH</span>
+                </div>
+                <div class="banner-emblem" style="border-color:rgba(245,132,38,0.4);">
+                  🏀
+                </div>
               </div>
-              <span class="achievement-tag">Projeto / Certificação</span>
-              <h3 class="achievement-title">[Título da Conquista 3]</h3>
-              <p class="achievement-desc">Certificação de destaque, publicação, menção honrosa ou projeto especial premiado.</p>
+              <span class="achievement-tag" style="color:#f5a65b;">Esporte &amp; Alta Performance nas Quadras</span>
+              <h3 class="achievement-title">Destaque no Basquete Competitivo</h3>
+              <p class="achievement-desc">
+                Jogador de alto rendimento com forte controle de bola, precisão nos arremessos de perímetro, infiltração rápida e visão tática coletiva. Inspirado no ritmo intenso da NBA e do New York Knicks.
+              </p>
             </div>
             <div class="achievement-footer">
-              <span>Ano / Edição</span>
-              <span>Reconhecimento ↗</span>
+              <span>Atleta de Quadra</span>
+              <span style="color:var(--knicks-orange);">Playmaker &amp; Scorer 🏀</span>
             </div>
           </article>
 
-          <!-- Card de Conquista 4 -->
-          <article class="achievement-card">
-            <div>
-              <div class="achievement-card-photo-placeholder" id="achievement-slot-4">
-                <span>📷 [Espaço para Foto 4]</span>
-              </div>
-              <span class="achievement-tag">Liderança &amp; Impacto</span>
-              <h3 class="achievement-title">[Título da Conquista 4]</h3>
-              <p class="achievement-desc">Outra realização marcante que você queira destacar em seu portfólio.</p>
-            </div>
-            <div class="achievement-footer">
-              <span>Ano / Edição</span>
-              <span>Reconhecimento ↗</span>
-            </div>
-          </article>
+        </div>
+      </div>
+    </section>
 
+    <!-- UNIVERSO PESSOAL & INTERESSES (BENTO GRID) -->
+    <section class="section" id="interesses">
+      <div class="container">
+        <div class="section-eyebrow">
+          <span>03 / ESTILO DE VIDA &amp; PAIXÕES</span>
+        </div>
+        <h2 class="section-title">Meu Universo Fora de Série</h2>
+        <p class="section-desc">As paixões, times e referências culturais que fazem parte do meu dia a dia e inspiram minha forma de pensar.</p>
+
+        <div class="interests-bento">
+          <!-- Knicks Card -->
+          <div class="bento-card bento-knicks bento-span-7">
+            <div>
+              <span class="bento-pill" style="border-color:rgba(245,132,38,0.45);color:#ffd2a8;">
+                🏀 NBA · NEW YORK KNICKS
+              </span>
+              <h3 class="bento-title">Fã Incondicional do New York Knicks</h3>
+              <p class="bento-text">
+                Acompanho de perto a temporada da NBA vibrando com cada jogo no Madison Square Garden. A garra, a defesa implacável e a mentalidade <em>clutch</em> dos Knicks são minha maior referência quando entro em quadra para jogar basquete.
+              </p>
+            </div>
+            <div class="bento-meta">
+              <span>#NewYorkForever</span>
+              <span style="color:var(--knicks-orange);">MSG · Orange &amp; Blue Skies</span>
+            </div>
+          </div>
+
+          <!-- Palmeiras Card -->
+          <div class="bento-card bento-palmeiras bento-span-5">
+            <div>
+              <span class="bento-pill" style="border-color:rgba(34,197,94,0.45);color:#bbf7d0;">
+                🌴 FUTEBOL · S.E. PALMEIRAS
+              </span>
+              <h3 class="bento-title">Palmeirense Raiz — Avanti Palestra!</h3>
+              <p class="bento-text">
+                Torcedor apaixonado pelo Maior Campeão do Brasil. A história da Academia, as viradas históricas no Allianz Parque e a cultura de nunca desistir até o apito final fazem parte da minha identidade.
+              </p>
+            </div>
+            <div class="bento-meta">
+              <span>Sociedade Esportiva Palmeiras</span>
+              <span style="color:var(--palmeiras-green);">Defesa que Ninguém Passa ★</span>
+            </div>
+          </div>
+
+          <!-- Cinema & Séries Card -->
+          <div class="bento-card bento-cinema bento-span-5">
+            <div>
+              <span class="bento-pill" style="border-color:rgba(168,140,255,0.4);color:#e2d4ff;">
+                🎬 CULTURA POP · SÉRIES &amp; FILMES
+              </span>
+              <h3 class="bento-title">Maratonista de Séries &amp; Cinema</h3>
+              <p class="bento-text">
+                Adoro mergulhar em boas histórias, analisar roteiros inteligentes, reviravoltas, ficção científica, ação e produções cinematográficas. O cinema e as séries são minha fonte favorita de criatividade e repertório.
+              </p>
+            </div>
+            <div class="bento-meta">
+              <span>Storytelling &amp; Cinema</span>
+              <span style="color:#c4b5fd;">Sci-Fi · Suspense · Drama</span>
+            </div>
+          </div>
+
+          <!-- Dual Photo Lifestyle Card -->
+          <div class="bento-card bento-photo-card bento-span-7">
+            <div class="bento-photo-item">
+              <img src="assets/portfolio/joao-terno.jpg" alt="João Gabriel em evento formal">
+              <div class="bento-photo-caption">
+                ✨ Momentos Especiais &amp; Conquistas
+              </div>
+            </div>
+            <div class="bento-photo-item">
+              <img src="assets/portfolio/joao-perfil.jpg" alt="João Gabriel no dia a dia">
+              <div class="bento-photo-caption">
+                ⚡ Estilo &amp; Dia a Dia
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -1002,10 +1383,10 @@
     <section class="section" id="projetos">
       <div class="container">
         <div class="section-eyebrow">
-          <span>03 / PRODUÇÃO TÉCNICA</span>
+          <span>04 / LABORATÓRIO &amp; CRIAÇÕES</span>
         </div>
-        <h2 class="section-title">Projetos em Destaque</h2>
-        <p class="section-desc">Aplicações, sistemas e experimentos desenvolvidos com foco em performance, clareza e solidez técnica.</p>
+        <h2 class="section-title">Projetos &amp; Iniciativas</h2>
+        <p class="section-desc">Experimentos técnicos, sistemas de design e estudos onde aplico lógica matemática, tecnologia e análise esportiva.</p>
 
         <div class="projects-grid">
           <!-- Projeto 1 -->
@@ -1015,52 +1396,52 @@
                 <span class="project-badge">Engenharia &amp; Web</span>
                 <span class="project-icon">↗</span>
               </div>
-              <h3 class="project-title">AERA 01 Design System</h3>
-              <p class="project-desc">Extração completa e catalogação de um sistema de design espacial de ponta, incluindo renderização 3D WebGL e shaders interativos.</p>
+              <h3 class="project-title">AERA 01 Spatial Design System</h3>
+              <p class="project-desc">Extração e engenharia reversa de um sistema de design espacial de última geração com WebGL, Three.js e tokens DTCG que servem de motor visual para este portfólio.</p>
               <div class="project-techs">
-                <span class="project-tech">WebGL</span>
+                <span class="project-tech">WebGL2</span>
                 <span class="project-tech">Three.js</span>
                 <span class="project-tech">CSS Spatial</span>
                 <span class="project-tech">Design Tokens</span>
               </div>
             </div>
-            <a class="project-link" href="design-system.html" target="_blank">Explorar Catálogo <span>↗</span></a>
+            <a class="project-link" href="design-system.html" target="_blank">Explorar Catálogo Técnico <span>↗</span></a>
           </article>
 
           <!-- Projeto 2 -->
           <article class="project-card">
             <div>
               <div class="project-topline">
-                <span class="project-badge">Em Desenvolvimento</span>
-                <span class="project-icon">↗</span>
+                <span class="project-badge" style="color:var(--gold);border-color:rgba(245,196,81,0.3);">Matemática Olímpica</span>
+                <span class="project-icon">∑</span>
               </div>
-              <h3 class="project-title">[Nome do Seu Projeto 2]</h3>
-              <p class="project-desc">Espaço reservado para o seu projeto pessoal, software, aplicativo ou pesquisa que você queira exibir.</p>
+              <h3 class="project-title">Arsenal Lógico · Canguru &amp; DBDI</h3>
+              <p class="project-desc">Repertório de resoluções estratégicas, padrões combinatórios, geometria plana e métodos de decisão rápida desenvolvidos durante a preparação para o Ouro na Canguru e a DBDI 2026.</p>
               <div class="project-techs">
-                <span class="project-tech">Python</span>
-                <span class="project-tech">Automação</span>
-                <span class="project-tech">APIs</span>
+                <span class="project-tech">Raciocínio Lógico</span>
+                <span class="project-tech">Combinatória</span>
+                <span class="project-tech">Teoria dos Jogos</span>
               </div>
             </div>
-            <a class="project-link" href="#projetos">Ver Repositório <span>↗</span></a>
+            <a class="project-link" href="#conquistas">Ver Marcos Conquistados <span>↗</span></a>
           </article>
 
           <!-- Projeto 3 -->
           <article class="project-card">
             <div>
               <div class="project-topline">
-                <span class="project-badge">Destaque</span>
-                <span class="project-icon">↗</span>
+                <span class="project-badge" style="color:var(--knicks-orange);border-color:rgba(245,132,38,0.3);">Sports Analytics</span>
+                <span class="project-icon">🏀</span>
               </div>
-              <h3 class="project-title">[Nome do Seu Projeto 3]</h3>
-              <p class="project-desc">Outro trabalho relevante, trabalho de conclusão, projeto acadêmico ou ferramenta aberta que você criou.</p>
+              <h3 class="project-title">Hoops IQ &amp; Knicks Lab</h3>
+              <p class="project-desc">Estudo tático de espaçamento de quadra, eficiência de arremessos e leitura de <em>pick-and-roll</em> aplicando conceitos matemáticos e estatísticos ao basquete moderno da NBA.</p>
               <div class="project-techs">
-                <span class="project-tech">Arquitetura</span>
-                <span class="project-tech">Full-Stack</span>
-                <span class="project-tech">Inovação</span>
+                <span class="project-tech">Estatística Esportiva</span>
+                <span class="project-tech">Visão de Jogo</span>
+                <span class="project-tech">NBA Analytics</span>
               </div>
             </div>
-            <a class="project-link" href="#projetos">Ver Detalhes <span>↗</span></a>
+            <a class="project-link" href="#interesses">Explorar Universo Esportivo <span>↗</span></a>
           </article>
         </div>
       </div>
@@ -1070,45 +1451,45 @@
     <section class="section" id="habilidades">
       <div class="container">
         <div class="section-eyebrow">
-          <span>04 / COMPETÊNCIAS</span>
+          <span>05 / COMPETÊNCIAS &amp; REPERTÓRIO</span>
         </div>
         <h2 class="section-title">Habilidades &amp; Toolkit</h2>
-        <p class="section-desc">Tecnologias, metodologias e competências que aplico na construção dos meus projetos.</p>
+        <p class="section-desc">As ferramentas mentais, técnicas e esportivas que utilizo para encarar qualquer desafio.</p>
 
         <div class="skills-categories">
           <!-- Categoria 1 -->
           <div class="skill-cat-card">
-            <h3 class="skill-cat-title">💻 Desenvolvimento &amp; Código</h3>
+            <h3 class="skill-cat-title">🧠 Matemática &amp; Estratégia</h3>
             <div class="skill-tags">
-              <span class="skill-tag">JavaScript / TypeScript</span>
-              <span class="skill-tag">Python</span>
-              <span class="skill-tag">HTML5 &amp; CSS3 Moderno</span>
-              <span class="skill-tag">Estruturas de Dados</span>
-              <span class="skill-tag">APIs &amp; Integrações</span>
+              <span class="skill-tag">Matemática Olímpica (Ouro Canguru)</span>
+              <span class="skill-tag">Raciocínio Lógico Avançado</span>
+              <span class="skill-tag">Resolução de Problemas (DBDI '26)</span>
+              <span class="skill-tag">Geometria &amp; Combinatória</span>
+              <span class="skill-tag">Análise Estatística</span>
             </div>
           </div>
 
           <!-- Categoria 2 -->
           <div class="skill-cat-card">
-            <h3 class="skill-cat-title">⚙️ Engenharia &amp; Ferramentas</h3>
+            <h3 class="skill-cat-title">🏀 Esporte &amp; Alta Performance</h3>
             <div class="skill-tags">
-              <span class="skill-tag">Git &amp; GitHub</span>
-              <span class="skill-tag">Automação de Tarefas</span>
-              <span class="skill-tag">Modelagem 3D &amp; WebGL</span>
-              <span class="skill-tag">Design Systems</span>
-              <span class="skill-tag">Otimização de Performance</span>
+              <span class="skill-tag">Basquete Competitivo</span>
+              <span class="skill-tag">Visão de Quadra (Court Vision)</span>
+              <span class="skill-tag">Tomada de Decisão Sob Pressão</span>
+              <span class="skill-tag">Liderança &amp; Jogo Coletivo</span>
+              <span class="skill-tag">Disciplina Tática</span>
             </div>
           </div>
 
           <!-- Categoria 3 -->
           <div class="skill-cat-card">
-            <h3 class="skill-cat-title">🎯 Competências Pessoais</h3>
+            <h3 class="skill-cat-title">💻 Tecnologia &amp; Criatividade</h3>
             <div class="skill-tags">
-              <span class="skill-tag">Pensamento Crítico</span>
-              <span class="skill-tag">Aprendizado Autônomo</span>
-              <span class="skill-tag">Comunicação Clara</span>
-              <span class="skill-tag">Trabalho em Equipe</span>
-              <span class="skill-tag">Foco em Resultados</span>
+              <span class="skill-tag">Desenvolvimento Web (HTML/CSS/JS)</span>
+              <span class="skill-tag">Design Systems Espaciais</span>
+              <span class="skill-tag">Git &amp; GitHub</span>
+              <span class="skill-tag">Repertório Cinematográfico</span>
+              <span class="skill-tag">Aprendizado Rápido</span>
             </div>
           </div>
         </div>
@@ -1121,14 +1502,14 @@
         <div class="contact-card">
           <span class="section-eyebrow" style="justify-content:center;">
             <span class="live-dot"></span>
-            <span>VAMOS CONVERSAR?</span>
+            <span>CONEXÃO DIRETA</span>
           </span>
-          <h2 class="section-title">Pronto para criar algo extraordinário juntos?</h2>
-          <p class="section-desc">Estou sempre aberto a novas conexões, projetos desafiadores e oportunidades de colaboração.</p>
+          <h2 class="section-title">Vamos trocar uma ideia sobre projetos, matemática ou basquete?</h2>
+          <p class="section-desc">Estou sempre aberto a novas amizades, desafios acadêmicos, projetos de tecnologia ou uma boa partida na quadra.</p>
 
           <div class="contact-buttons">
             <a class="btn-bright" href="mailto:joaogabrielfaxina44@gmail.com">Enviar E-mail <span>↗</span></a>
-            <a class="btn-outline" href="https://github.com/joaogabrielfaxina44" target="_blank" rel="noopener noreferrer">Meu GitHub <span>↗</span></a>
+            <a class="btn-outline" href="https://github.com/joaogabrielfaxina44" target="_blank" rel="noopener noreferrer">Acessar Meu GitHub <span>↗</span></a>
           </div>
         </div>
       </div>
@@ -1140,13 +1521,14 @@
     <div class="container">
       <div class="footer-top">
         <div>
-          <a class="footer-brand" href="#top">ROSSETTI<span>™</span></a>
-          <p style="font-size:12px;color:var(--grey);margin-top:8px;">João Gabriel Faxina · Portfólio Pessoal</p>
+          <a class="footer-brand" href="#top">ROSSETTI<span>★</span></a>
+          <p style="font-size:12px;color:var(--grey);margin-top:8px;">João Gabriel Faxina · Medalhista de Ouro Canguru · Semifinalista DBDI 2026</p>
         </div>
 
         <nav class="footer-links" aria-label="Links do Rodapé">
           <a href="#sobre">Sobre</a>
           <a href="#conquistas">Conquistas</a>
+          <a href="#interesses">Universo</a>
           <a href="#projetos">Projetos</a>
           <a href="design-system.html" target="_blank">Design System Spec ↗</a>
           <a href="#contato">Contato</a>
@@ -1154,13 +1536,27 @@
       </div>
 
       <div class="footer-bottom">
-        <span>© 2026 João Gabriel Faxina. Todos os direitos reservados.</span>
-        <span>Inspirado na arquitetura espacial do AERA Design System.</span>
+        <span>© 2026 João Gabriel Faxina (Rossetti). Todos os direitos reservados.</span>
+        <span>Construído sobre a arquitetura espacial AERA 01 · Avanti Palestra &amp; Go Knicks!</span>
       </div>
     </div>
   </footer>
 
   <script>
+    // Troca interativa entre as 2 fotos reais do João Gabriel na seção Sobre Mim
+    function switchProfilePhoto(src, btnElement) {
+      const img = document.getElementById('about-active-photo');
+      if (img) {
+        img.style.opacity = '0.25';
+        setTimeout(() => {
+          img.src = src;
+          img.style.opacity = '1';
+        }, 160);
+      }
+      document.querySelectorAll('.photo-switch-btn').forEach(btn => btn.classList.remove('active'));
+      if (btnElement) btnElement.classList.add('active');
+    }
+
     // Smooth highlight on navigation scroll
     (function() {
       const sections = document.querySelectorAll('section[id]');
@@ -1170,7 +1566,7 @@
         let current = '';
         const scrollY = window.pageYOffset;
         sections.forEach(section => {
-          const sectionTop = section.offsetTop - 120;
+          const sectionTop = section.offsetTop - 130;
           const sectionHeight = section.offsetHeight;
           if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
             current = section.getAttribute('id');
