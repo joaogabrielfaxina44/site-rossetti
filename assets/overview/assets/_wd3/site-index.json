@@ -1,0 +1,1538 @@
+{
+ "version": 1,
+ "tool": "wd3 0.1.0",
+ "captureId": "aera-headset-original.aura.build-18adabb3",
+ "capturedAt": "2026-11-02T23:11:17+00:00",
+ "entry": {
+  "url": "https://aera-headset-original.aura.build/",
+  "path": "/",
+  "search": "",
+  "file": "assets/aera-headset-original.aura.build/index.html",
+  "contentType": "text/html; charset=utf-8"
+ },
+ "blocked": [
+  "^https?://([^/?#]+\\.)?(google\\-analytics\\.com|analytics\\.google\\.com|googletagmanager\\.com|googleadservices\\.com|doubleclick\\.net|googlesyndication\\.com|googleoptimize\\.com|connect\\.facebook\\.net|bat\\.bing\\.com|snap\\.licdn\\.com|px\\.ads\\.linkedin\\.com|analytics\\.tiktok\\.com|ct\\.pinterest\\.com|static\\.ads\\-twitter\\.com|analytics\\.twitter\\.com|tr\\.snapchat\\.com|sc\\-static\\.net|mc\\.yandex\\.ru|hotjar\\.com|hotjar\\.io|clarity\\.ms|cdn\\.segment\\.com|api\\.segment\\.io|cdn\\.mxpnl\\.com|api\\-js\\.mixpanel\\.com|api\\.mixpanel\\.com|api\\.amplitude\\.com|api2\\.amplitude\\.com|api\\-secure\\.amplitude\\.com|api\\-sr\\.amplitude\\.com|sr\\-client\\-cfg\\.amplitude\\.com|plausible\\.io|cloud\\.umami\\.is|analytics\\.umami\\.is|static\\.cloudflareinsights\\.com|cloudflareinsights\\.com|vitals\\.vercel\\-insights\\.com|browser\\-intake\\-datadoghq\\.com|browser\\-intake\\-datadoghq\\.eu|js\\-agent\\.newrelic\\.com|bam\\.nr\\-data\\.net|bam\\-cell\\.nr\\-data\\.net|fullstory\\.com|script\\.crazyegg\\.com|mouseflow\\.com|smartlook\\.com|heapanalytics\\.com|i\\.posthog\\.com|stats\\.wp\\.com|pixel\\.wp\\.com|promotekit\\.com|ingest\\.sentry\\.io|ingest\\.us\\.sentry\\.io|ingest\\.de\\.sentry\\.io|widget\\.intercom\\.io|js\\.intercomcdn\\.com|api\\-iam\\.intercom\\.io|js\\.hs\\-scripts\\.com|js\\.hs\\-analytics\\.net|js\\.hs\\-banner\\.com|js\\.hscollectedforms\\.net|js\\.usemessages\\.com|track\\.hubspot\\.com|client\\.crisp\\.chat|embed\\.tawk\\.to|js\\.driftt\\.com|static\\.zdassets\\.com|ekr\\.zdassets\\.com|cdn\\.cookielaw\\.org|geolocation\\.onetrust\\.com|consent\\.cookiebot\\.com|consentcdn\\.cookiebot\\.com|app\\.usercentrics\\.eu|api\\.usercentrics\\.eu|cdn\\.iubenda\\.com|cmp\\.osano\\.com|cdn\\.termly\\.io)(:\\d+)?([/?#]|$)",
+  "/rpc/increment_shared_code_views",
+  "^https?://(umami|analytics|stats|plausible)\\.[^/]+/(api/send|api/collect|api/event|script\\.js)",
+  "/g/c(ollect)?\\?v=2&",
+  "sentry\\.io/api/\\d+/(envelope|store)",
+  "/api/meta-capi",
+  "^https?://(leadtracker|tracking|track|events?|collect)\\.[^/]+/",
+  "^https?://a\\.vturb\\.com/",
+  "facebook\\.com/tr[/?]",
+  "/_vercel/(speed-)?insights/",
+  "/cdn-cgi/rum",
+  "/cdn-cgi/challenge-platform/",
+  "google\\.com/(pagead|ads)/"
+ ],
+ "volatileParams": [
+  "v",
+  "_rsc",
+  "dpl",
+  "_",
+  "t",
+  "ts",
+  "timestamp",
+  "cb",
+  "cachebust",
+  "cacheBust",
+  "nocache",
+  "rnd",
+  "rand",
+  "random",
+  "_t"
+ ],
+ "entries": [
+  {
+   "url": "https://aera-headset-original.aura.build/",
+   "method": "GET",
+   "status": 200,
+   "contentType": "text/html; charset=utf-8",
+   "headers": {
+    "content-type": "text/html; charset=utf-8"
+   },
+   "resourceType": "document",
+   "passes": [
+    "desktop",
+    "mobile"
+   ],
+   "file": "assets/aera-headset-original.aura.build/index.html",
+   "size": 453956
+  },
+  {
+   "url": "https://cdn.tailwindcss.com/",
+   "method": "GET",
+   "status": 302,
+   "contentType": "",
+   "headers": {
+    "location": "/3.4.17"
+   },
+   "resourceType": "script",
+   "passes": [
+    "desktop",
+    "mobile"
+   ],
+   "size": 0,
+   "redirect": "https://cdn.tailwindcss.com/3.4.17",
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://cdn.tailwindcss.com/3.4.17",
+   "method": "GET",
+   "status": 200,
+   "contentType": "text/javascript",
+   "headers": {
+    "content-type": "text/javascript"
+   },
+   "resourceType": "script",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/cdn.tailwindcss.com/3.4.17.js",
+   "size": 407279,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/loaders/GLTFLoader.js",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/javascript; charset=utf-8",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "*",
+    "content-type": "application/javascript; charset=utf-8",
+    "timing-allow-origin": "*",
+    "x-jsd-version": "0.180.0",
+    "x-jsd-version-type": "version"
+   },
+   "resourceType": "script",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/loaders/GLTFLoader.js",
+   "size": 114739,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/lights/RectAreaLightUniformsLib.js",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/javascript; charset=utf-8",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "*",
+    "content-type": "application/javascript; charset=utf-8",
+    "timing-allow-origin": "*",
+    "x-jsd-version": "0.180.0",
+    "x-jsd-version-type": "version"
+   },
+   "resourceType": "script",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/lights/RectAreaLightUniformsLib.js",
+   "size": 1014,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/utils/BufferGeometryUtils.js",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/javascript; charset=utf-8",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "*",
+    "content-type": "application/javascript; charset=utf-8",
+    "timing-allow-origin": "*",
+    "x-jsd-version": "0.180.0",
+    "x-jsd-version-type": "version"
+   },
+   "resourceType": "script",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/utils/BufferGeometryUtils.js",
+   "size": 35539,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://esm.sh/react-dom@18.3.1/client?external=react",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/javascript; charset=utf-8",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "X-ESM-Path, X-TypeScript-Types",
+    "content-type": "application/javascript; charset=utf-8",
+    "priority": "u=1,i=?0",
+    "x-esm-path": "/react-dom@18.3.1/X-ZXJlYWN0/es2022/client.mjs",
+    "x-typescript-types": "https://esm.sh/@types/react-dom@~18.3.7/X-ZXJlYWN0/client.d.ts"
+   },
+   "resourceType": "script",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/esm.sh/react-dom@18.3.1/client__q7b920d9f.js",
+   "size": 237,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://esm.sh/react@18.3.1",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/javascript; charset=utf-8",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "X-ESM-Path, X-TypeScript-Types",
+    "content-type": "application/javascript; charset=utf-8",
+    "priority": "u=1,i=?0",
+    "x-esm-path": "/react@18.3.1/es2022/react.mjs",
+    "x-typescript-types": "https://esm.sh/@types/react@~18.3.26/index.d.ts"
+   },
+   "resourceType": "script",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/esm.sh/react@18.3.1.js",
+   "size": 134,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/javascript; charset=utf-8",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "*",
+    "content-type": "application/javascript; charset=utf-8",
+    "timing-allow-origin": "*",
+    "x-jsd-version": "0.180.0",
+    "x-jsd-version-type": "version"
+   },
+   "resourceType": "script",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+   "size": 603113,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://esm.sh/react@18.3.1/jsx-runtime",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/javascript; charset=utf-8",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "X-ESM-Path, X-TypeScript-Types",
+    "content-type": "application/javascript; charset=utf-8",
+    "priority": "u=1,i=?0",
+    "x-esm-path": "/react@18.3.1/es2022/jsx-runtime.mjs",
+    "x-typescript-types": "https://esm.sh/@types/react@~18.3.26/jsx-runtime.d.ts"
+   },
+   "resourceType": "script",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/esm.sh/react@18.3.1/jsx-runtime.js",
+   "size": 199,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/lights/RectAreaLightTexturesLib.js",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/javascript; charset=utf-8",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "*",
+    "content-type": "application/javascript; charset=utf-8",
+    "timing-allow-origin": "*",
+    "x-jsd-version": "0.180.0",
+    "x-jsd-version-type": "version"
+   },
+   "resourceType": "script",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/lights/RectAreaLightTexturesLib.js",
+   "size": 314770,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://esm.sh/react@18.3.1/es2022/react.mjs",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/javascript; charset=utf-8",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "application/javascript; charset=utf-8",
+    "priority": "u=1,i=?0"
+   },
+   "resourceType": "script",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/esm.sh/react@18.3.1/es2022/react.mjs",
+   "size": 8708,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://esm.sh/react-dom@18.3.1/X-ZXJlYWN0/es2022/client.mjs",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/javascript; charset=utf-8",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "application/javascript; charset=utf-8",
+    "priority": "u=1,i=?0"
+   },
+   "resourceType": "script",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/esm.sh/react-dom@18.3.1/X-ZXJlYWN0/es2022/client.mjs",
+   "size": 1344,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://esm.sh/react@18.3.1/es2022/jsx-runtime.mjs",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/javascript; charset=utf-8",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "application/javascript; charset=utf-8",
+    "priority": "u=1,i=?0"
+   },
+   "resourceType": "script",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/esm.sh/react@18.3.1/es2022/jsx-runtime.mjs",
+   "size": 2192,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://esm.sh/react-dom@18.3.1/X-ZXJlYWN0/es2022/react-dom.mjs",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/javascript; charset=utf-8",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "application/javascript; charset=utf-8",
+    "priority": "u=1,i=?0"
+   },
+   "resourceType": "script",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/esm.sh/react-dom@18.3.1/X-ZXJlYWN0/es2022/react-dom.mjs",
+   "size": 131730,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.core.js",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/javascript; charset=utf-8",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "*",
+    "content-type": "application/javascript; charset=utf-8",
+    "priority": "u=1,i=?0",
+    "timing-allow-origin": "*",
+    "x-jsd-version": "0.180.0",
+    "x-jsd-version-type": "version"
+   },
+   "resourceType": "script",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/cdn.jsdelivr.net/npm/three@0.180.0/build/three.core.js",
+   "size": 1403455,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://esm.sh/scheduler@%5E0.23.2?target=es2022",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/javascript; charset=utf-8",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "X-ESM-Path, X-TypeScript-Types",
+    "content-type": "application/javascript; charset=utf-8",
+    "priority": "u=1,i=?0",
+    "x-esm-path": "/scheduler@0.23.2/es2022/scheduler.mjs",
+    "x-typescript-types": "https://esm.sh/@types/scheduler@~0.23.0/index.d.ts"
+   },
+   "resourceType": "script",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/esm.sh/scheduler@^0.23.2__q784fb815.js",
+   "size": 154,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://esm.sh/scheduler@0.23.2/es2022/scheduler.mjs",
+   "method": "GET",
+   "status": 200,
+   "contentType": "application/javascript; charset=utf-8",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "application/javascript; charset=utf-8",
+    "priority": "u=1,i=?0"
+   },
+   "resourceType": "script",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/esm.sh/scheduler@0.23.2/es2022/scheduler.mjs",
+   "size": 6020,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/846991e4-92d0-4bde-976b-f4a76a367a77_original.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "image/jpeg",
+    "priority": "u=3,i",
+    "sb-gateway-mode": "direct",
+    "sb-gateway-version": "1",
+    "sb-project-ref": "hoirqrkdgbmvpwutwuwj",
+    "sb-request-id": "01a19e88-40b5-78b8-96d0-39a74ec024c9",
+    "x-robots-tag": "none",
+    "x-smart-cdn": "true"
+   },
+   "resourceType": "image",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/846991e4-92d0-4bde-976b-f4a76a367a77_original.jpg",
+   "size": 122408,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/34d03477-c1d3-4322-9c89-9aad5f931fb3_original.webp",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/webp",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "image/webp",
+    "priority": "u=3,i",
+    "sb-gateway-mode": "direct",
+    "sb-gateway-version": "1",
+    "sb-project-ref": "hoirqrkdgbmvpwutwuwj",
+    "sb-request-id": "01a19e88-40b4-70ad-b16b-fdeb52343dd9",
+    "x-robots-tag": "none",
+    "x-smart-cdn": "true"
+   },
+   "resourceType": "image",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/34d03477-c1d3-4322-9c89-9aad5f931fb3_original.webp",
+   "size": 806684,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/6d0ccd71-4f28-4f7c-a19f-847d7565fe9f_original.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "image/jpeg",
+    "priority": "u=1,i",
+    "sb-gateway-mode": "direct",
+    "sb-gateway-version": "1",
+    "sb-project-ref": "hoirqrkdgbmvpwutwuwj",
+    "sb-request-id": "01a19e88-40b7-7322-8ba8-963b440d0893",
+    "x-robots-tag": "none",
+    "x-smart-cdn": "true"
+   },
+   "resourceType": "image",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/6d0ccd71-4f28-4f7c-a19f-847d7565fe9f_original.jpg",
+   "size": 443276,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4de89b61-edd1-4acc-b0a8-f990bd0749a5_original.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "image/jpeg",
+    "priority": "u=3,i",
+    "sb-gateway-mode": "direct",
+    "sb-gateway-version": "1",
+    "sb-project-ref": "hoirqrkdgbmvpwutwuwj",
+    "sb-request-id": "01a19e88-40b6-793a-a5ee-b51913626458",
+    "x-robots-tag": "none",
+    "x-smart-cdn": "true"
+   },
+   "resourceType": "image",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4de89b61-edd1-4acc-b0a8-f990bd0749a5_original.jpg",
+   "size": 185130,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/803f4ac2-5085-4931-9eec-d1b95a008c77_original.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "image/jpeg",
+    "priority": "u=3,i",
+    "sb-gateway-mode": "direct",
+    "sb-gateway-version": "1",
+    "sb-project-ref": "hoirqrkdgbmvpwutwuwj",
+    "sb-request-id": "01a19e88-40b8-753b-8303-ac114076924e",
+    "x-robots-tag": "none",
+    "x-smart-cdn": "true"
+   },
+   "resourceType": "image",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/803f4ac2-5085-4931-9eec-d1b95a008c77_original.jpg",
+   "size": 165550,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/8b2840cf-8bde-4195-91c0-968a65574088_original.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "image/jpeg",
+    "priority": "u=1,i",
+    "sb-gateway-mode": "direct",
+    "sb-gateway-version": "1",
+    "sb-project-ref": "hoirqrkdgbmvpwutwuwj",
+    "sb-request-id": "01a19e88-40b6-7a7d-aae7-141f8d0c9f9e",
+    "x-robots-tag": "none",
+    "x-smart-cdn": "true"
+   },
+   "resourceType": "image",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/8b2840cf-8bde-4195-91c0-968a65574088_original.jpg",
+   "size": 52997,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/021ef67a-dea0-48ec-973a-935bfe63fc1f_original.webp",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/webp",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "image/webp",
+    "priority": "u=1,i",
+    "sb-gateway-mode": "direct",
+    "sb-gateway-version": "1",
+    "sb-project-ref": "hoirqrkdgbmvpwutwuwj",
+    "sb-request-id": "01a19e88-40b5-7316-bcae-da0cf1b02493",
+    "x-robots-tag": "none",
+    "x-smart-cdn": "true"
+   },
+   "resourceType": "image",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/021ef67a-dea0-48ec-973a-935bfe63fc1f_original.webp",
+   "size": 1404604,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/d6175cb4-2dae-4158-ae8b-678b40e6749f_original.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "image/jpeg",
+    "priority": "u=1,i",
+    "sb-gateway-mode": "direct",
+    "sb-gateway-version": "1",
+    "sb-project-ref": "hoirqrkdgbmvpwutwuwj",
+    "sb-request-id": "01a19e88-40bb-7204-b150-0f8011bf3c6c",
+    "x-robots-tag": "none",
+    "x-smart-cdn": "true"
+   },
+   "resourceType": "image",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/d6175cb4-2dae-4158-ae8b-678b40e6749f_original.jpg",
+   "size": 576770,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/a8db09ca-68a3-4873-a5af-0d2a65646093_original.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "image/jpeg",
+    "priority": "u=3,i",
+    "sb-gateway-mode": "direct",
+    "sb-gateway-version": "1",
+    "sb-project-ref": "hoirqrkdgbmvpwutwuwj",
+    "sb-request-id": "01a19e88-40be-7670-9a6d-64045f75aa63",
+    "x-robots-tag": "none",
+    "x-smart-cdn": "true"
+   },
+   "resourceType": "image",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/a8db09ca-68a3-4873-a5af-0d2a65646093_original.jpg",
+   "size": 181972,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/19ebb5f4-a6fb-4b58-bc5d-65a8199bf7f5_original.webp",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/webp",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "image/webp",
+    "priority": "u=3,i",
+    "sb-gateway-mode": "direct",
+    "sb-gateway-version": "1",
+    "sb-project-ref": "hoirqrkdgbmvpwutwuwj",
+    "sb-request-id": "01a19e88-40b4-7d34-a0d0-bd860bc313c6",
+    "x-robots-tag": "none",
+    "x-smart-cdn": "true"
+   },
+   "resourceType": "image",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/19ebb5f4-a6fb-4b58-bc5d-65a8199bf7f5_original.webp",
+   "size": 1591568,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4660f202-595c-4f94-8f40-2430e9865d8b_original.webp",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/webp",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "image/webp",
+    "priority": "u=1,i",
+    "sb-gateway-mode": "direct",
+    "sb-gateway-version": "1",
+    "sb-project-ref": "hoirqrkdgbmvpwutwuwj",
+    "sb-request-id": "01a19e88-40be-71bd-a06f-dffd0d6bc79a",
+    "x-robots-tag": "none",
+    "x-smart-cdn": "true"
+   },
+   "resourceType": "image",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4660f202-595c-4f94-8f40-2430e9865d8b_original.webp",
+   "size": 1766286,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/348f7070-f9f5-4638-9bfd-90315ba06f52_original.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "image/jpeg",
+    "priority": "u=3,i",
+    "sb-gateway-mode": "direct",
+    "sb-gateway-version": "1",
+    "sb-project-ref": "hoirqrkdgbmvpwutwuwj",
+    "sb-request-id": "01a19e88-40bf-7cdc-831b-a65256074369",
+    "x-robots-tag": "none",
+    "x-smart-cdn": "true"
+   },
+   "resourceType": "image",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/348f7070-f9f5-4638-9bfd-90315ba06f52_original.jpg",
+   "size": 176651,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/e66b12a4-526b-40ee-a57b-9795dbb4f230_original.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "image/jpeg",
+    "priority": "u=3,i",
+    "sb-gateway-mode": "direct",
+    "sb-gateway-version": "1",
+    "sb-project-ref": "hoirqrkdgbmvpwutwuwj",
+    "sb-request-id": "01a19e88-40c2-7980-b754-8e20beddccaa",
+    "x-robots-tag": "none",
+    "x-smart-cdn": "true"
+   },
+   "resourceType": "image",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/e66b12a4-526b-40ee-a57b-9795dbb4f230_original.jpg",
+   "size": 244116,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/d59a6c70-e7cb-4569-8821-574c6f6b4cd9_original.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "image/jpeg",
+    "priority": "u=3,i",
+    "sb-gateway-mode": "direct",
+    "sb-gateway-version": "1",
+    "sb-project-ref": "hoirqrkdgbmvpwutwuwj",
+    "sb-request-id": "01a19e88-40b4-7e09-9356-3f62f730be94",
+    "x-robots-tag": "none",
+    "x-smart-cdn": "true"
+   },
+   "resourceType": "image",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/d59a6c70-e7cb-4569-8821-574c6f6b4cd9_original.jpg",
+   "size": 313375,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/2b2caf89-a138-474d-a06e-97a64590fa0a_original.webp",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/webp",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "image/webp",
+    "priority": "u=3,i",
+    "sb-gateway-mode": "direct",
+    "sb-gateway-version": "1",
+    "sb-project-ref": "hoirqrkdgbmvpwutwuwj",
+    "sb-request-id": "01a19e88-40b6-72a1-bde6-5b60a81969b9",
+    "x-robots-tag": "none",
+    "x-smart-cdn": "true"
+   },
+   "resourceType": "image",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/2b2caf89-a138-474d-a06e-97a64590fa0a_original.webp",
+   "size": 1532814,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/54441c26-54a7-4879-a4ab-913dd7e193d4_original.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "image/jpeg",
+    "priority": "u=1,i",
+    "sb-gateway-mode": "direct",
+    "sb-gateway-version": "1",
+    "sb-project-ref": "hoirqrkdgbmvpwutwuwj",
+    "sb-request-id": "01a19e88-40c9-7b6f-97f7-5af6212b361b",
+    "x-robots-tag": "none",
+    "x-smart-cdn": "true"
+   },
+   "resourceType": "image",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/54441c26-54a7-4879-a4ab-913dd7e193d4_original.jpg",
+   "size": 483840,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/01cabf6c-32a0-4e9b-9aa8-1143ddeec638_original.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "image/jpeg",
+    "priority": "u=3,i",
+    "sb-gateway-mode": "direct",
+    "sb-gateway-version": "1",
+    "sb-project-ref": "hoirqrkdgbmvpwutwuwj",
+    "sb-request-id": "01a19e88-40c4-75df-b595-3873cbcaa746",
+    "x-robots-tag": "none",
+    "x-smart-cdn": "true"
+   },
+   "resourceType": "image",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/01cabf6c-32a0-4e9b-9aa8-1143ddeec638_original.jpg",
+   "size": 249080,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/8fdfa0f3-60ff-4df9-b907-eab92d798522_original.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "image/jpeg",
+    "priority": "u=3,i",
+    "sb-gateway-mode": "direct",
+    "sb-gateway-version": "1",
+    "sb-project-ref": "hoirqrkdgbmvpwutwuwj",
+    "sb-request-id": "01a19e88-40c6-7b79-b9ed-276d4ffaa83d",
+    "x-robots-tag": "none",
+    "x-smart-cdn": "true"
+   },
+   "resourceType": "image",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/8fdfa0f3-60ff-4df9-b907-eab92d798522_original.jpg",
+   "size": 396303,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/fbc21610-dfa8-43d7-ae0e-7485195bff25_original.svg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/svg+xml",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-disposition": "attachment",
+    "content-type": "image/svg+xml",
+    "priority": "u=1,i",
+    "sb-gateway-mode": "direct",
+    "sb-gateway-version": "1",
+    "sb-project-ref": "hoirqrkdgbmvpwutwuwj",
+    "sb-request-id": "01a19e88-3ee4-72d3-b613-da83483cedfd",
+    "x-robots-tag": "none",
+    "x-smart-cdn": "true"
+   },
+   "resourceType": "fetch",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/fbc21610-dfa8-43d7-ae0e-7485195bff25_original.svg",
+   "size": 2000105,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/29e6e101-5c68-46f2-a2cd-80121e118fcf_original.webp",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/webp",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "image/webp",
+    "priority": "u=1,i",
+    "sb-gateway-mode": "direct",
+    "sb-gateway-version": "1",
+    "sb-project-ref": "hoirqrkdgbmvpwutwuwj",
+    "sb-request-id": "01a19e88-42a4-7d72-886a-c4d6b572b3aa",
+    "x-robots-tag": "none",
+    "x-smart-cdn": "true"
+   },
+   "resourceType": "image",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/29e6e101-5c68-46f2-a2cd-80121e118fcf_original.webp",
+   "size": 6880,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/7ca58d8f-5fbc-4ea8-a4c7-dcf8bfd455ed_original.webp",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/webp",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "image/webp",
+    "priority": "u=1,i",
+    "sb-gateway-mode": "direct",
+    "sb-gateway-version": "1",
+    "sb-project-ref": "hoirqrkdgbmvpwutwuwj",
+    "sb-request-id": "01a19e88-42a3-786f-a032-1d2bd99f4954",
+    "x-robots-tag": "none",
+    "x-smart-cdn": "true"
+   },
+   "resourceType": "image",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/7ca58d8f-5fbc-4ea8-a4c7-dcf8bfd455ed_original.webp",
+   "size": 17732,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/8757cd6e-6397-401a-8480-537503bdefaa_original.svg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/svg+xml",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-disposition": "attachment",
+    "content-type": "image/svg+xml",
+    "priority": "u=1,i",
+    "sb-gateway-mode": "direct",
+    "sb-gateway-version": "1",
+    "sb-project-ref": "hoirqrkdgbmvpwutwuwj",
+    "sb-request-id": "01a19e88-3ee1-7cc7-bccb-3e513de71cde",
+    "x-robots-tag": "none",
+    "x-smart-cdn": "true"
+   },
+   "resourceType": "fetch",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/8757cd6e-6397-401a-8480-537503bdefaa_original.svg",
+   "size": 2266625,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/21da8985-e507-434c-88df-71d0a42c9621_original.webp",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/webp",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "image/webp",
+    "priority": "u=1,i",
+    "sb-gateway-mode": "direct",
+    "sb-gateway-version": "1",
+    "sb-project-ref": "hoirqrkdgbmvpwutwuwj",
+    "sb-request-id": "01a19e88-42a7-73c7-9c37-0219fb466b0e",
+    "x-robots-tag": "none",
+    "x-smart-cdn": "true"
+   },
+   "resourceType": "image",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/21da8985-e507-434c-88df-71d0a42c9621_original.webp",
+   "size": 1551314,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/6c837535-8386-4924-af38-b1aaf69ab3bd_original.svg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/svg+xml",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-disposition": "attachment",
+    "content-type": "image/svg+xml",
+    "priority": "u=1,i",
+    "sb-gateway-mode": "direct",
+    "sb-gateway-version": "1",
+    "sb-project-ref": "hoirqrkdgbmvpwutwuwj",
+    "sb-request-id": "01a19e88-42a6-7400-b067-cfecb6bfc4f4",
+    "x-robots-tag": "none",
+    "x-smart-cdn": "true"
+   },
+   "resourceType": "image",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/6c837535-8386-4924-af38-b1aaf69ab3bd_original.svg",
+   "size": 824,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/8231c197-6f8b-494b-bb2b-306aa321a19d_original.svg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/svg+xml",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-disposition": "attachment",
+    "content-type": "image/svg+xml",
+    "priority": "u=1,i",
+    "sb-gateway-mode": "direct",
+    "sb-gateway-version": "1",
+    "sb-project-ref": "hoirqrkdgbmvpwutwuwj",
+    "sb-request-id": "01a19e88-3eeb-76b5-8bb3-120ed6065733",
+    "x-robots-tag": "none",
+    "x-smart-cdn": "true"
+   },
+   "resourceType": "fetch",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/8231c197-6f8b-494b-bb2b-306aa321a19d_original.svg",
+   "size": 4000105,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/eec84ef0-1988-4b36-a398-3825ebdc416a_original.svg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/svg+xml",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-disposition": "attachment",
+    "content-type": "image/svg+xml",
+    "priority": "u=1,i",
+    "sb-gateway-mode": "direct",
+    "sb-gateway-version": "1",
+    "sb-project-ref": "hoirqrkdgbmvpwutwuwj",
+    "sb-request-id": "01a19e88-3ef5-76cb-8a46-2fc67be5cf96",
+    "x-robots-tag": "none",
+    "x-smart-cdn": "true"
+   },
+   "resourceType": "fetch",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/eec84ef0-1988-4b36-a398-3825ebdc416a_original.svg",
+   "size": 4000105,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/b5eaec19-9650-4d25-a2aa-35b6f14d50b2_original.svg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/svg+xml",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-disposition": "attachment",
+    "content-type": "image/svg+xml",
+    "priority": "u=1,i",
+    "sb-gateway-mode": "direct",
+    "sb-gateway-version": "1",
+    "sb-project-ref": "hoirqrkdgbmvpwutwuwj",
+    "sb-request-id": "01a19e88-3ee7-753d-bb15-979aeb1b7518",
+    "x-robots-tag": "none",
+    "x-smart-cdn": "true"
+   },
+   "resourceType": "fetch",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/b5eaec19-9650-4d25-a2aa-35b6f14d50b2_original.svg",
+   "size": 4000105,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/c5d11640-1ac4-4c69-9dc1-1a7d33d97482_original.svg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/svg+xml",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-disposition": "attachment",
+    "content-type": "image/svg+xml",
+    "priority": "u=1,i",
+    "sb-gateway-mode": "direct",
+    "sb-gateway-version": "1",
+    "sb-project-ref": "hoirqrkdgbmvpwutwuwj",
+    "sb-request-id": "01a19e88-4b90-7cdc-835c-5287551267ec",
+    "x-robots-tag": "none",
+    "x-smart-cdn": "true"
+   },
+   "resourceType": "other",
+   "passes": [
+    "desktop",
+    "mobile"
+   ],
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/c5d11640-1ac4-4c69-9dc1-1a7d33d97482_original.svg",
+   "size": 209,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/2724bf57-6210-4736-b1fa-50b9df7b039d_original.svg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/svg+xml",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-disposition": "attachment",
+    "content-type": "image/svg+xml",
+    "priority": "u=1,i",
+    "sb-gateway-mode": "direct",
+    "sb-gateway-version": "1",
+    "sb-project-ref": "hoirqrkdgbmvpwutwuwj",
+    "sb-request-id": "01a19e88-48a6-7f7c-88b1-21e5bfee03e4",
+    "x-robots-tag": "none",
+    "x-smart-cdn": "true"
+   },
+   "resourceType": "fetch",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/2724bf57-6210-4736-b1fa-50b9df7b039d_original.svg",
+   "size": 1459349,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4e945c7b-eccb-43a9-a2c7-51d74ed1c0cd_original.svg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/svg+xml",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-disposition": "attachment",
+    "content-type": "image/svg+xml",
+    "priority": "u=1,i",
+    "sb-gateway-mode": "direct",
+    "sb-gateway-version": "1",
+    "sb-project-ref": "hoirqrkdgbmvpwutwuwj",
+    "sb-request-id": "01a19e88-48a2-77f5-8c8e-3ba6e7d2c7b7",
+    "x-robots-tag": "none",
+    "x-smart-cdn": "true"
+   },
+   "resourceType": "fetch",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4e945c7b-eccb-43a9-a2c7-51d74ed1c0cd_original.svg",
+   "size": 2000105,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/abaf07e3-ae7a-4a3c-8d0e-ab84b90e5dc9_original.svg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/svg+xml",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-disposition": "attachment",
+    "content-type": "image/svg+xml",
+    "priority": "u=1,i",
+    "sb-gateway-mode": "direct",
+    "sb-gateway-version": "1",
+    "sb-project-ref": "hoirqrkdgbmvpwutwuwj",
+    "sb-request-id": "01a19e88-48a1-7932-9a60-6f41210d56fb",
+    "x-robots-tag": "none",
+    "x-smart-cdn": "true"
+   },
+   "resourceType": "fetch",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/abaf07e3-ae7a-4a3c-8d0e-ab84b90e5dc9_original.svg",
+   "size": 4000105,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/e0a17677-3f1c-4eb9-9a80-eccfa4530853_original.svg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/svg+xml",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-disposition": "attachment",
+    "content-type": "image/svg+xml",
+    "priority": "u=1,i",
+    "sb-gateway-mode": "direct",
+    "sb-gateway-version": "1",
+    "sb-project-ref": "hoirqrkdgbmvpwutwuwj",
+    "sb-request-id": "01a19e88-48b5-7038-ba59-3a2fbc161f6e",
+    "x-robots-tag": "none",
+    "x-smart-cdn": "true"
+   },
+   "resourceType": "fetch",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/e0a17677-3f1c-4eb9-9a80-eccfa4530853_original.svg",
+   "size": 4000105,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/8fa40ba2-83c0-40ef-bae6-2b4c19d950bf_original.svg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/svg+xml",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-disposition": "attachment",
+    "content-type": "image/svg+xml",
+    "priority": "u=1,i",
+    "sb-gateway-mode": "direct",
+    "sb-gateway-version": "1",
+    "sb-project-ref": "hoirqrkdgbmvpwutwuwj",
+    "sb-request-id": "01a19e88-48ae-71b3-a27b-b2ff324097e2",
+    "x-robots-tag": "none",
+    "x-smart-cdn": "true"
+   },
+   "resourceType": "fetch",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/8fa40ba2-83c0-40ef-bae6-2b4c19d950bf_original.svg",
+   "size": 4000105,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/320850bb-2851-4ad8-b440-d0e65461baa1_original.svg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/svg+xml",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-disposition": "attachment",
+    "content-type": "image/svg+xml",
+    "priority": "u=1,i",
+    "sb-gateway-mode": "direct",
+    "sb-gateway-version": "1",
+    "sb-project-ref": "hoirqrkdgbmvpwutwuwj",
+    "sb-request-id": "01a19e88-48ae-75cc-84e9-7f877099bd25",
+    "x-robots-tag": "none",
+    "x-smart-cdn": "true"
+   },
+   "resourceType": "fetch",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/320850bb-2851-4ad8-b440-d0e65461baa1_original.svg",
+   "size": 4000105,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/59b33f87-ac6e-4813-ba86-8975e5a60295_original.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "image/jpeg",
+    "priority": "u=3,i",
+    "sb-gateway-mode": "direct",
+    "sb-gateway-version": "1",
+    "sb-project-ref": "hoirqrkdgbmvpwutwuwj",
+    "sb-request-id": "01a19e88-8897-7b87-91f5-0fc0b9e1d757",
+    "x-robots-tag": "none",
+    "x-smart-cdn": "true"
+   },
+   "resourceType": "image",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/59b33f87-ac6e-4813-ba86-8975e5a60295_original.jpg",
+   "size": 874726,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/6fdcbb4a-8970-43ad-ba48-53c66b2b9d2c_original.jpg",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/jpeg",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "image/jpeg",
+    "priority": "u=3,i",
+    "sb-gateway-mode": "direct",
+    "sb-gateway-version": "1",
+    "sb-project-ref": "hoirqrkdgbmvpwutwuwj",
+    "sb-request-id": "01a19e88-88a7-74f9-96ea-dbb926642407",
+    "x-robots-tag": "none",
+    "x-smart-cdn": "true"
+   },
+   "resourceType": "image",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/6fdcbb4a-8970-43ad-ba48-53c66b2b9d2c_original.jpg",
+   "size": 842394,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/72a78bbe-e584-4ab0-a50e-1746e32ef861_original.webp",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/webp",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "image/webp",
+    "priority": "u=3,i",
+    "sb-gateway-mode": "direct",
+    "sb-gateway-version": "1",
+    "sb-project-ref": "hoirqrkdgbmvpwutwuwj",
+    "sb-request-id": "01a19e88-9797-7a64-a476-c90fdc0bc3d1",
+    "x-robots-tag": "none",
+    "x-smart-cdn": "true"
+   },
+   "resourceType": "image",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/72a78bbe-e584-4ab0-a50e-1746e32ef861_original.webp",
+   "size": 369774,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/877166f5-3f5e-42f4-9bd6-9ce56deff9af_original.webp",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/webp",
+   "headers": {
+    "access-control-allow-origin": "*",
+    "content-type": "image/webp",
+    "priority": "u=3,i",
+    "sb-gateway-mode": "direct",
+    "sb-gateway-version": "1",
+    "sb-project-ref": "hoirqrkdgbmvpwutwuwj",
+    "sb-request-id": "01a19e88-9832-754e-b01c-0b460c76a29d",
+    "x-robots-tag": "none",
+    "x-smart-cdn": "true"
+   },
+   "resourceType": "image",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/877166f5-3f5e-42f4-9bd6-9ce56deff9af_original.webp",
+   "size": 2318932,
+   "modes": [
+    "cors"
+   ]
+  },
+  {
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3BJWPvMvEq6NnWomWUpPdVMx6Ys/hf_20260920_194148_ec79c9d5-4fe4-4d9b-9ca1-68750614cef2.mp4",
+   "method": "GET",
+   "status": 200,
+   "contentType": "video/mp4",
+   "headers": {
+    "content-type": "video/mp4",
+    "x-amz-version-id": "null",
+    "x-amz-server-side-encryption": "AES256",
+    "x-amz-storage-class": "INTELLIGENT_TIERING",
+    "x-robots-tag": "noindex, nofollow"
+   },
+   "resourceType": "media",
+   "passes": [
+    "mobile"
+   ],
+   "file": "assets/d8j0ntlcm91z4.cloudfront.net/user_3BJWPvMvEq6NnWomWUpPdVMx6Ys/hf_20260920_194148_ec79c9d5-4fe4-4d9b-9ca1-68750614cef2.mp4",
+   "size": 5644318,
+   "modes": [
+    "no-cors"
+   ]
+  },
+  {
+   "url": "https://aera-headset-original.aura.build/favicon.ico",
+   "method": "GET",
+   "status": 200,
+   "contentType": "image/vnd.microsoft.icon",
+   "headers": {
+    "cache-status": "\"Netlify Edge\"; fwd=miss; fwd-status=200; stored",
+    "content-type": "image/vnd.microsoft.icon",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "x-nf-request-id": "01M6F8N2EDXZABVHD07MHDSG4D"
+   },
+   "resourceType": "other",
+   "passes": [
+    "mobile"
+   ],
+   "file": "assets/aera-headset-original.aura.build/favicon.ico",
+   "size": 696
+  }
+ ],
+ "adapter": {
+  "name": "aura-html",
+  "notes": [
+   "site extraído do iframe srcdoc; 3 scripts do Aura removidos"
+  ]
+ },
+ "videos": {
+  "posters": {
+   "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/7d1ade93-e4ab-4030-ac88-f9721cc9aae7_original.mp4": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/2b2caf89-a138-474d-a06e-97a64590fa0a_original.webp"
+  },
+  "onlineHosts": []
+ }
+}

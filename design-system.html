@@ -1,0 +1,1870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#08090c">
+  <title>AERA 01 Design System</title>
+  <link rel="icon" href="assets/overview/favicon.svg">
+  <link rel="stylesheet" href="assets/overview/source-styles.css">
+  <style id="ds-catalog-styles">
+    /* Global layout & theme tokens */
+    :root {
+      --ds-sidebar-width: 230px;
+      --ds-header-height: 72px;
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .ds-layout {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100svh;
+      position: relative;
+    }
+    .ds-layout > .header {
+      position: relative;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 12px 24px;
+      flex-shrink: 0;
+      pointer-events: auto;
+      opacity: 1;
+      visibility: visible;
+      translate: none;
+      transform: none;
+      background: rgba(8, 9, 12, 0.88);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--line);
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .ds-layout .nav-island {
+      background: #18191cde;
+      border: 1px solid #ffffff15;
+      border-radius: 30px;
+      height: 46px;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+    .ds-layout .nav-island nav {
+      display: flex !important;
+      align-items: center;
+      gap: 24px;
+      font-size: 13px;
+    }
+    .ds-layout .nav-island nav a {
+      color: #9c9da7;
+      text-decoration: none;
+      padding: 12px 0;
+      position: relative;
+      transition: color 0.25s;
+    }
+    .ds-layout .nav-island nav a:hover {
+      color: #fff;
+    }
+    .ds-layout .nav-island nav a[aria-current="page"] {
+      color: #fff;
+      font-weight: 500;
+    }
+    .ds-layout .nav-island nav a[aria-current="page"]:after {
+      content: '';
+      position: absolute;
+      height: 1px;
+      background: #fff;
+      bottom: 8px;
+      left: 0;
+      width: 100%;
+      transform: scaleX(1);
+    }
+    .ds-layout .header-badge {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: #8da2ba;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      padding: 6px 14px;
+      background: rgba(255, 255, 255, 0.04);
+      text-transform: uppercase;
+    }
+    .ds-view {
+      flex: 1;
+      min-height: 0;
+      width: 100%;
+      position: relative;
+    }
+    .ds-view[hidden] {
+      display: none !important;
+    }
+    #overview-frame {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      background: var(--paper);
+    }
+
+    /* Principal animated background across the whole Components view */
+    #view-components {
+      display: flex;
+      overflow: hidden;
+      position: relative;
+      background: #08090c;
+    }
+    .ds-comp-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .ds-comp-bg .pov-horizon {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 115%, #6c80943b, transparent 58%),
+                  radial-gradient(ellipse at 15% 35%, #738da413, transparent 48%),
+                  linear-gradient(#06090e, #111923 70%, #080c12);
+      opacity: 0.85;
+    }
+    .ds-comp-bg .visor-atmosphere {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 50%, #17202b60, transparent 69%);
+      opacity: 0.55;
+    }
+    .ds-comp-bg .spatial-haze {
+      position: absolute;
+      inset: -15% -12% -12%;
+      border-radius: 40%;
+      filter: blur(48px);
+      opacity: 0.25;
+      background: radial-gradient(ellipse at 15% 22%, #96bdfb28, transparent 34%),
+                  radial-gradient(ellipse at 86% 45%, #a8c4ff1d, transparent 37%),
+                  radial-gradient(ellipse at 65% 89%, #8dafef21, transparent 38%);
+      animation: spatial-air 24s ease-in-out infinite alternate;
+    }
+
+    /* Sticky Left Sidebar with ONLY group names */
+    .ds-sidebar {
+      width: var(--ds-sidebar-width);
+      flex-shrink: 0;
+      position: sticky;
+      top: 0;
+      height: 100%;
+      overflow-y: auto;
+      padding: 32px 18px;
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      background: rgba(8, 10, 15, 0.65);
+      z-index: 20;
+    }
+    .ds-sidebar-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .ds-sidebar-nav a {
+      display: block;
+      padding: 9px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      color: #8fa0b5;
+      text-decoration: none;
+      transition: color 0.2s, background 0.2s, transform 0.2s;
+    }
+    .ds-sidebar-nav a:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.06);
+      transform: translateX(3px);
+    }
+    .ds-sidebar-nav a.active {
+      color: #ffffff;
+      background: rgba(180, 210, 255, 0.12);
+      font-weight: 500;
+    }
+
+    /* Scrollable Catalog Content */
+    .ds-content-area {
+      flex: 1;
+      min-width: 0;
+      height: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;
+      padding: 48px clamp(24px, 4.5vw, 68px) 160px;
+      position: relative;
+      z-index: 10;
+      scroll-behavior: smooth;
+    }
+    .ds-group-section {
+      margin-bottom: 96px;
+      scroll-margin-top: 32px;
+    }
+    .ds-group-header {
+      margin-bottom: 28px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 16px;
+    }
+    .ds-group-eyebrow {
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #7b8fa7;
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+    .ds-group-title {
+      font-size: 32px;
+      font-weight: 500;
+      letter-spacing: -0.04em;
+      color: #f0f4fa;
+      margin: 0 0 8px;
+    }
+    .ds-group-desc {
+      font-size: 13px;
+      line-height: 1.6;
+      color: #92a2b7;
+      margin: 0;
+      max-width: 760px;
+    }
+
+    /* 1. Typography Component Format (3 aligned columns per horizontal row) */
+    .ds-type-table {
+      display: flex;
+      flex-direction: column;
+    }
+    .ds-type-row {
+      display: grid;
+      grid-template-columns: 210px 1fr 180px;
+      gap: 32px;
+      align-items: center;
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      position: relative;
+    }
+    .ds-type-left {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .ds-type-role {
+      font-size: 13px;
+      font-weight: 500;
+      color: #eef3fa;
+    }
+    .ds-type-font {
+      font-size: 11px;
+      color: #78899f;
+      line-height: 1.4;
+    }
+    .ds-type-selector {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 10px;
+      color: #63758d;
+      margin-top: 3px;
+    }
+    .ds-type-center {
+      min-width: 0;
+      overflow: hidden;
+    }
+    .ds-type-right {
+      text-align: right;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 11px;
+      color: #9db2cc;
+      white-space: nowrap;
+    }
+
+    /* 2. Colors Component Format */
+    .ds-color-family {
+      margin-bottom: 40px;
+    }
+    .ds-color-family-title {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #8da4bf;
+      margin: 0 0 16px;
+      font-weight: 500;
+    }
+    .ds-color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 16px;
+    }
+    .ds-color-card {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      padding: 14px 16px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 14px;
+      position: relative;
+    }
+    .ds-color-swatch-wrap {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      position: relative;
+    }
+    .ds-color-swatch {
+      width: 100%;
+      height: 100%;
+    }
+    .ds-color-info {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      min-width: 0;
+    }
+    .ds-color-label {
+      font-size: 13px;
+      font-weight: 500;
+      color: #eef3f9;
+    }
+    .ds-color-value {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 11px;
+      color: #92a9c4;
+    }
+    .ds-color-token {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 10px;
+      color: #6377e6;
+    }
+    .ds-color-use {
+      font-size: 11px;
+      color: #6e8095;
+      line-height: 1.35;
+    }
+    .ds-state-family-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding: 18px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 16px;
+    }
+    .ds-state-pill {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+      min-width: 110px;
+      padding: 12px 10px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .ds-state-swatch {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+    .ds-state-name {
+      font-size: 11px;
+      font-weight: 500;
+      color: #cad8e9;
+    }
+    .ds-state-val {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 9px;
+      color: #798fa8;
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    /* 3. Backgrounds Component Format (Large live specimens) */
+    .ds-bg-specimen {
+      margin-bottom: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 24px;
+      overflow: hidden;
+      background: #08090c;
+    }
+    .ds-bg-specimen-header {
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(14, 18, 25, 0.85);
+      backdrop-filter: blur(12px);
+    }
+    .ds-bg-specimen-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: #e8edf5;
+    }
+    .ds-bg-specimen-meta {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 11px;
+      color: #798ea6;
+    }
+    .ds-bg-specimen-canvas {
+      position: relative;
+      height: 380px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ds-bg-specimen-canvas .hero-wordmark {
+      position: absolute;
+      inset: 40px 4% 40px;
+      pointer-events: auto;
+    }
+
+    /* 4. Surfaces Component Format */
+    .ds-surface-specimen {
+      margin-bottom: 36px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 24px;
+      overflow: hidden;
+      background: #080a0f;
+    }
+    .ds-surface-canvas {
+      position: relative;
+      padding: 48px clamp(20px, 4vw, 56px);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* 5. Icons Component Format (Direct 5-per-row grid without decorative cards) */
+    .ds-icon-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 32px 18px;
+      padding: 24px 0;
+    }
+    .ds-icon-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      text-align: center;
+    }
+    .ds-icon-item .spatial-icon {
+      width: 32px;
+      height: 32px;
+      color: #edf2f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ds-icon-item .spatial-icon svg {
+      width: 100%;
+      height: 100%;
+    }
+    .ds-icon-name {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 11px;
+      color: #7e91a9;
+    }
+
+    /* 6 - 10. Complete Component Specimens */
+    .ds-component-item {
+      margin-bottom: 44px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      overflow: hidden;
+      background: rgba(14, 18, 25, 0.45);
+    }
+    .ds-component-header {
+      padding: 14px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgba(10, 13, 19, 0.7);
+    }
+    .ds-component-title {
+      font-size: 14px;
+      font-weight: 500;
+      color: #edf2f9;
+    }
+    .ds-component-selector {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 11px;
+      color: #6a7f98;
+    }
+    .ds-component-stage {
+      position: relative;
+      padding: 36px clamp(16px, 3.5vw, 44px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: radial-gradient(ellipse at 50% 50%, rgba(28, 38, 52, 0.35), transparent 75%);
+    }
+
+    @media (max-width: 900px) {
+      :root {
+        --ds-sidebar-width: 180px;
+      }
+      .ds-type-row {
+        grid-template-columns: 160px 1fr 140px;
+        gap: 20px;
+      }
+      .ds-icon-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="ds-layout">
+    <header class="header" id="header">
+      <div class="nav-island">
+        <a class="brand" href="#overview" aria-label="AERA Design System">AERA<span>™</span></a>
+        <nav aria-label="Design system views">
+          <a href="#overview" data-ds-view="overview" aria-current="page">Overview</a>
+          <a href="#components" data-ds-view="components">Components</a>
+        </nav>
+      </div>
+      <span class="header-badge">AERA 01 System</span>
+    </header>
+
+    <!-- Overview View (Approved Phase 1) -->
+    <main class="ds-view" id="view-overview">
+      <iframe id="overview-frame" src="assets/overview/index.html" title="AERA 01 Design System Overview"></iframe>
+    </main>
+
+    <!-- Components View (Phase 2 Catalog) -->
+    <section class="ds-view" id="view-components" hidden aria-label="Components catalog">
+      <!-- Live Principal Background -->
+      <div class="ds-comp-bg" aria-hidden="true">
+        <div class="pov-horizon"></div>
+        <div class="visor-atmosphere"></div>
+        <div class="spatial-haze"></div>
+      </div>
+
+      <!-- Sticky Left Sidebar with ONLY Group Names -->
+      <aside class="ds-sidebar">
+        <nav class="ds-sidebar-nav" aria-label="Component groups">
+          <a href="#comp-typography">Typography</a>
+          <a href="#comp-colors">Colors</a>
+          <a href="#comp-backgrounds">Backgrounds</a>
+          <a href="#comp-surfaces">Surfaces</a>
+          <a href="#comp-icons">Icons</a>
+          <a href="#comp-actions">Actions</a>
+          <a href="#comp-navigation">Navigation</a>
+          <a href="#comp-inputs">Inputs &amp; Controls</a>
+          <a href="#comp-cards">Cards &amp; Containers</a>
+          <a href="#comp-overlays">Overlays &amp; Modals</a>
+        </nav>
+      </aside>
+
+      <!-- Scrollable Main Content Area -->
+      <div class="ds-content-area" id="ds-content-area">
+
+        <!-- 1. TYPOGRAPHY -->
+        <section class="ds-group-section" id="comp-typography">
+          <div class="ds-group-header">
+            <span class="ds-group-eyebrow">Design System Core</span>
+            <h2 class="ds-group-title">Typography</h2>
+            <p class="ds-group-desc">Every distinct type style declared in the AERA 01 system, ordered from strongest to smallest. Each style is presented in three aligned columns: observed role and font family, large live sample using original inner HTML and styling, and declared source CSS sizes.</p>
+          </div>
+
+          <div class="ds-type-table">
+            <!-- Row 1: Brand Wordmark -->
+            <div class="ds-type-row" data-selector=".footer-brand">
+              <div class="ds-type-left">
+                <span class="ds-type-role">Brand Wordmark</span>
+                <span class="ds-type-font">Arial, Helvetica, sans-serif 700</span>
+                <span class="ds-type-selector">.footer-brand</span>
+              </div>
+              <div class="ds-type-center">
+                <a class="footer-brand" style="display:inline-block;letter-spacing:-0.055em;background:linear-gradient(160deg,#5d6d82,#edf4fd 40%,#758eae 75%,#b6c8df);background-clip:text;-webkit-background-clip:text;color:transparent;">AERA<span style="font-size:2.8vw;vertical-align:super">™</span></a>
+              </div>
+              <div class="ds-type-right">31.7vw | 30vw | 29vw</div>
+            </div>
+
+            <!-- Row 2: Display 1 -->
+            <div class="ds-type-row" data-selector=".intro-headline, .launch-close h2">
+              <div class="ds-type-left">
+                <span class="ds-type-role">Display 1</span>
+                <span class="ds-type-font">Arial, Helvetica, sans-serif 500</span>
+                <span class="ds-type-selector">.intro-headline</span>
+              </div>
+              <div class="ds-type-center">
+                <h2 class="intro-headline" style="font-size:clamp(45px, 6.2vw, 96px);line-height:0.94;letter-spacing:-0.065em;font-weight:500;color:#e4eaf3;margin:0;">Lorem ipsum dolor.</h2>
+              </div>
+              <div class="ds-type-right">clamp(58px, 8.3vw, 120px) | clamp(45px, 7.5vw, 142px) | 16vw | 11vw | 9.6vw</div>
+            </div>
+
+            <!-- Row 3: Hero Headline Mask -->
+            <div class="ds-type-row" data-selector=".hero-headlines .headline-block">
+              <div class="ds-type-left">
+                <span class="ds-type-role">Hero Headline Mask</span>
+                <span class="ds-type-font">Arial, Helvetica, sans-serif 600</span>
+                <span class="ds-type-selector">.headline-block</span>
+              </div>
+              <div class="ds-type-center">
+                <div class="headline-block" style="font-size:clamp(28px, 3.8vw, 50px);font-weight:600;line-height:0.96;letter-spacing:-0.055em;color:#e4e7eb;width:100%;">
+                  <div class="headline-mask"><div class="headline-roll"><span>OBSIDIAN GLASS.</span></div></div>
+                  <div class="headline-mask"><div class="headline-roll"><span>SPATIAL DEPTH.</span></div></div>
+                </div>
+              </div>
+              <div class="ds-type-right">5.1vw | 4.5vw | clamp(24px, 3vw, 50px) | 8.4vw</div>
+            </div>
+
+            <!-- Row 4: Section Title Focus -->
+            <div class="ds-type-row" data-selector=".aera-chapter-title, .section-heading h2">
+              <div class="ds-type-left">
+                <span class="ds-type-role">Section Title Focus</span>
+                <span class="ds-type-font">Arial, Helvetica, sans-serif 500</span>
+                <span class="ds-type-selector">.aera-chapter-title</span>
+              </div>
+              <div class="ds-type-center">
+                <h2 class="aera-chapter-title title-in-focus" style="font-size:clamp(32px, 3.8vw, 54px);font-weight:500;letter-spacing:-0.045em;line-height:1.1;color:#f0f2f8;margin:0;">
+                  <span class="aera-title-word" style="--word-order:0">Lorem</span> <span class="aera-title-word" style="--word-order:1">ipsum</span> <span class="aera-title-word" style="--word-order:2">dolor</span> <span class="aera-title-word" style="--word-order:3">sit.</span>
+                </h2>
+              </div>
+              <div class="ds-type-right">clamp(40px, 5.5vw, 88px) | clamp(26px, 3.7vw, 58px) | 33px</div>
+            </div>
+
+            <!-- Row 5: Subheading Serif -->
+            <div class="ds-type-row" data-selector=".serif-line, .serif">
+              <div class="ds-type-left">
+                <span class="ds-type-role">Subheading Serif</span>
+                <span class="ds-type-font">Georgia, 'Times New Roman', serif 400</span>
+                <span class="ds-type-selector">.serif-line</span>
+              </div>
+              <div class="ds-type-center">
+                <p class="serif-line" style="font-size:clamp(20px, 2.2vw, 32px);color:#9a9ca9;letter-spacing:-0.045em;margin:0;">Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+              </div>
+              <div class="ds-type-right">35px | 26px | 22px | 20px | 17px</div>
+            </div>
+
+            <!-- Row 6: Annotation Heading -->
+            <div class="ds-type-row" data-selector=".optical-annotation-copy h2">
+              <div class="ds-type-left">
+                <span class="ds-type-role">Annotation Heading</span>
+                <span class="ds-type-font">Arial, Helvetica, sans-serif 500</span>
+                <span class="ds-type-selector">.optical-annotation-copy h2</span>
+              </div>
+              <div class="ds-type-center">
+                <h2 style="font-size:clamp(24px, 2.6vw, 42px);font-weight:500;letter-spacing:-0.045em;line-height:1.06;color:#f1f3f5;margin:0;">Lorem ipsum, consectetur adipiscing.</h2>
+              </div>
+              <div class="ds-type-right">clamp(36px, 3.4vw, 54px) | clamp(32px, 2.8vw, 44px) | 30px | 27px</div>
+            </div>
+
+            <!-- Row 7: Feature Heading -->
+            <div class="ds-type-row" data-selector=".home-feature strong, .spectrum-card strong">
+              <div class="ds-type-left">
+                <span class="ds-type-role">Feature Heading</span>
+                <span class="ds-type-font">Arial, Helvetica, sans-serif 450</span>
+                <span class="ds-type-selector">.home-feature strong</span>
+              </div>
+              <div class="ds-type-center">
+                <strong style="font-size:clamp(18px, 2.1svh, 26px);font-weight:450;letter-spacing:-0.04em;line-height:1.08;color:#eff4fc;">Your world. With more room.</strong>
+              </div>
+              <div class="ds-type-right">clamp(18px, 2.5svh, 29px) | clamp(18px, 2.1svh, 24px) | 24px</div>
+            </div>
+
+            <!-- Row 8: Body Large -->
+            <div class="ds-type-row" data-selector=".optical-annotation-copy p, .optics-story p">
+              <div class="ds-type-left">
+                <span class="ds-type-role">Body Large</span>
+                <span class="ds-type-font">Arial, Helvetica, sans-serif 400</span>
+                <span class="ds-type-selector">.optical-annotation-copy p</span>
+              </div>
+              <div class="ds-type-center">
+                <p style="font-size:clamp(18px, 1.8vw, 24px);font-weight:400;line-height:1.48;letter-spacing:-0.018em;color:#adb4be;margin:0;max-width:650px;">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum sed ut perspiciatis.</p>
+              </div>
+              <div class="ds-type-right">clamp(24px, 2.03vw, 30px) | 24px | 20px | 17px</div>
+            </div>
+
+            <!-- Row 9: Body Regular -->
+            <div class="ds-type-row" data-selector=".section-heading > p, .dialog-copy p">
+              <div class="ds-type-left">
+                <span class="ds-type-role">Body Regular</span>
+                <span class="ds-type-font">Arial, Helvetica, sans-serif 400</span>
+                <span class="ds-type-selector">.section-heading &gt; p</span>
+              </div>
+              <div class="ds-type-center">
+                <p style="font-size:16px;line-height:1.65;color:#9da4b3;margin:0;max-width:620px;">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+              </div>
+              <div class="ds-type-right">18px | 17px | 16px | 14px | 13px</div>
+            </div>
+
+            <!-- Row 10: Button Text -->
+            <div class="ds-type-row" data-selector=".bright-button, .buy-now-button">
+              <div class="ds-type-left">
+                <span class="ds-type-role">Button Text</span>
+                <span class="ds-type-font">Arial, Helvetica, sans-serif 500</span>
+                <span class="ds-type-selector">.buy-now-button</span>
+              </div>
+              <div class="ds-type-center">
+                <span style="font-size:14px;font-weight:500;letter-spacing:-0.015em;color:#f4f5f8;display:inline-flex;align-items:center;gap:12px;">Buy Now <span>↗</span></span>
+              </div>
+              <div class="ds-type-right">14px | 13px | 12px | 11px</div>
+            </div>
+
+            <!-- Row 11: Technical Eyebrow -->
+            <div class="ds-type-row" data-selector=".eyebrow, .visor-eyebrow">
+              <div class="ds-type-left">
+                <span class="ds-type-role">Technical Eyebrow</span>
+                <span class="ds-type-font">Arial, Helvetica, sans-serif 500</span>
+                <span class="ds-type-selector">.eyebrow</span>
+              </div>
+              <div class="ds-type-center">
+                <span class="eyebrow" style="font-size:10px;letter-spacing:0.24em;color:#979eaf;text-transform:uppercase;">AERA 01 · SPATIAL SYSTEM SPECIFICATION</span>
+              </div>
+              <div class="ds-type-right">12px | 10px | 9px | 8px</div>
+            </div>
+
+            <!-- Row 12: Micro Caption -->
+            <div class="ds-type-row" data-selector=".spatial-home .home-app small, .shop-note">
+              <div class="ds-type-left">
+                <span class="ds-type-role">Micro Caption</span>
+                <span class="ds-type-font">Arial, Helvetica, sans-serif 400</span>
+                <span class="ds-type-selector">.home-app small</span>
+              </div>
+              <div class="ds-type-center">
+                <small style="font-size:10px;color:#7f8996;letter-spacing:0.02em;">Concept collection · checkout is not available</small>
+              </div>
+              <div class="ds-type-right">clamp(9px, 1.17svh, 13px) | 10px | 8px | 6px</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. COLORS -->
+        <section class="ds-group-section" id="comp-colors">
+          <div class="ds-group-header">
+            <span class="ds-group-eyebrow">Design System Core</span>
+            <h2 class="ds-group-title">Colors</h2>
+            <p class="ds-group-desc">Colors classified strictly by observed function in Overview. Swatches are rendered directly on their actual underlying surfaces, documenting declared token names and verified roles.</p>
+          </div>
+
+          <!-- Brand and Accent -->
+          <div class="ds-color-family">
+            <h3 class="ds-color-family-title">Brand and Accent</h3>
+            <div class="ds-color-grid">
+              <div class="ds-color-card">
+                <div class="ds-color-swatch-wrap" style="background:#000;"><div class="ds-color-swatch" style="background:#08090c;"></div></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-label">Obsidian Canvas</span>
+                  <span class="ds-color-value">#08090c</span>
+                  <span class="ds-color-token">--paper</span>
+                  <span class="ds-color-use">Deep void canvas for the spatial headset experience</span>
+                </div>
+              </div>
+              <div class="ds-color-card">
+                <div class="ds-color-swatch-wrap" style="background:#08090c;"><div class="ds-color-swatch" style="background:#f0f1f4;"></div></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-label">Luminous Ink</span>
+                  <span class="ds-color-value">#f0f1f4</span>
+                  <span class="ds-color-token">--ink</span>
+                  <span class="ds-color-use">Primary high-contrast typographic ink and wordmarks</span>
+                </div>
+              </div>
+              <div class="ds-color-card">
+                <div class="ds-color-swatch-wrap" style="background:#08090c;"><div class="ds-color-swatch" style="background:#5a68c9;"></div></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-label">Electric Indigo</span>
+                  <span class="ds-color-value">#5a68c9</span>
+                  <span class="ds-color-token">--blue</span>
+                  <span class="ds-color-use">Primary brand tint and interactive accent highlights</span>
+                </div>
+              </div>
+              <div class="ds-color-card">
+                <div class="ds-color-swatch-wrap" style="background:#08090c;"><div class="ds-color-swatch" style="background:#edf4fd;"></div></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-label">Chrome Specular</span>
+                  <span class="ds-color-value">#edf4fd</span>
+                  <span class="ds-color-use">Polished metallic specular reflection on 3D wordmark &amp; buttons</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Surfaces -->
+          <div class="ds-color-family">
+            <h3 class="ds-color-family-title">Surfaces</h3>
+            <div class="ds-color-grid">
+              <div class="ds-color-card">
+                <div class="ds-color-swatch-wrap" style="background:#08090c;"><div class="ds-color-swatch" style="background:linear-gradient(145deg, #141a21f2, #0c1117f7);"></div></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-label">Spatial Window Fill</span>
+                  <span class="ds-color-value">linear-gradient(145deg, #141a21f2, #0c1117f7)</span>
+                  <span class="ds-color-use">Obsidian glass fill of the primary AERA OS desktop window</span>
+                </div>
+              </div>
+              <div class="ds-color-card">
+                <div class="ds-color-swatch-wrap" style="background:#08090c;"><div class="ds-color-swatch" style="background:#18191cde;"></div></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-label">Nav Island Surface</span>
+                  <span class="ds-color-value">#18191cde</span>
+                  <span class="ds-color-use">Frosted blur backdrop of the floating navigation island</span>
+                </div>
+              </div>
+              <div class="ds-color-card">
+                <div class="ds-color-swatch-wrap" style="background:#08090c;"><div class="ds-color-swatch" style="background:#101720;"></div></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-label">Modal Drawer Night</span>
+                  <span class="ds-color-value">#101720</span>
+                  <span class="ds-color-use">Surface for product inspection and bag drawer dialogs</span>
+                </div>
+              </div>
+              <div class="ds-color-card">
+                <div class="ds-color-swatch-wrap" style="background:#08090c;"><div class="ds-color-swatch" style="background:#111821ed;"></div></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-label">Dock Frosted Pill</span>
+                  <span class="ds-color-value">#111821ed</span>
+                  <span class="ds-color-use">Elevated bottom app launcher dock backdrop</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Text and Icons -->
+          <div class="ds-color-family">
+            <h3 class="ds-color-family-title">Text and Icons</h3>
+            <div class="ds-color-grid">
+              <div class="ds-color-card">
+                <div class="ds-color-swatch-wrap" style="background:#0c1117;"><div class="ds-color-swatch" style="background:#9c9da7;"></div></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-label">Technical Grey</span>
+                  <span class="ds-color-value">#9c9da7</span>
+                  <span class="ds-color-token">--grey</span>
+                  <span class="ds-color-use">Secondary copy, subtitles, and metadata labels</span>
+                </div>
+              </div>
+              <div class="ds-color-card">
+                <div class="ds-color-swatch-wrap" style="background:#0c1117;"><div class="ds-color-swatch" style="background:#adb4be;"></div></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-label">Subtle Slate Copy</span>
+                  <span class="ds-color-value">#adb4be</span>
+                  <span class="ds-color-use">Paragraph copy in optical annotations and modal stories</span>
+                </div>
+              </div>
+              <div class="ds-color-card">
+                <div class="ds-color-swatch-wrap" style="background:#0c1117;"><div class="ds-color-swatch" style="background:#7f8996;"></div></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-label">Muted Caption Grey</span>
+                  <span class="ds-color-value">#7f8996</span>
+                  <span class="ds-color-use">App description micro-labels and footnotes</span>
+                </div>
+              </div>
+              <div class="ds-color-card">
+                <div class="ds-color-swatch-wrap" style="background:#0c1117;"><div class="ds-color-swatch" style="background:#b8ffcc;"></div></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-label">Active Signal Phosphor</span>
+                  <span class="ds-color-value">#b8ffcc</span>
+                  <span class="ds-color-use">Pulsing live status indicator on spatial utilities</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Borders -->
+          <div class="ds-color-family">
+            <h3 class="ds-color-family-title">Borders</h3>
+            <div class="ds-color-grid">
+              <div class="ds-color-card">
+                <div class="ds-color-swatch-wrap" style="background:#08090c;"><div class="ds-color-swatch" style="background:#ffffff21;"></div></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-label">Subtle Divider Line</span>
+                  <span class="ds-color-value">#ffffff21</span>
+                  <span class="ds-color-token">--line</span>
+                  <span class="ds-color-use">Separators between navigation sections and cards</span>
+                </div>
+              </div>
+              <div class="ds-color-card">
+                <div class="ds-color-swatch-wrap" style="background:#08090c;"><div class="ds-color-swatch" style="background:#cbd4df2b;"></div></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-label">Glass Hairline Border</span>
+                  <span class="ds-color-value">#cbd4df2b</span>
+                  <span class="ds-color-use">Perimeter border for frosted spatial OS window cards</span>
+                </div>
+              </div>
+              <div class="ds-color-card">
+                <div class="ds-color-swatch-wrap" style="background:#08090c;"><div class="ds-color-swatch" style="background:#8da8cb63;"></div></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-label">Card Contour Border</span>
+                  <span class="ds-color-value">#8da8cb63</span>
+                  <span class="ds-color-use">Hairline boundary around interactive launcher cards</span>
+                </div>
+              </div>
+              <div class="ds-color-card">
+                <div class="ds-color-swatch-wrap" style="background:#08090c;"><div class="ds-color-swatch" style="background:#dceaffb3;"></div></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-label">Gaze Glow Border</span>
+                  <span class="ds-color-value">#dceaffb3</span>
+                  <span class="ds-color-use">Cyan-white perimeter glow when card receives gaze focus</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive States -->
+          <div class="ds-color-family">
+            <h3 class="ds-color-family-title">Interactive States Family</h3>
+            <div class="ds-state-family-row">
+              <div class="ds-state-pill">
+                <div class="ds-state-swatch" style="background:rgba(255, 255, 255, 0.05);"></div>
+                <span class="ds-state-name">Default</span>
+                <span class="ds-state-val">rgba(255, 255, 255, 0.05)</span>
+              </div>
+              <div class="ds-state-pill">
+                <div class="ds-state-swatch" style="background:rgba(255, 255, 255, 0.12);"></div>
+                <span class="ds-state-name">Hover</span>
+                <span class="ds-state-val">rgba(255, 255, 255, 0.12)</span>
+              </div>
+              <div class="ds-state-pill">
+                <div class="ds-state-swatch" style="background:#21344c;"></div>
+                <span class="ds-state-name">Active / Pressed</span>
+                <span class="ds-state-val">#21344c</span>
+              </div>
+              <div class="ds-state-pill">
+                <div class="ds-state-swatch" style="background:rgba(214, 233, 255, 0.15);"></div>
+                <span class="ds-state-name">Selected</span>
+                <span class="ds-state-val">rgba(214, 233, 255, 0.15)</span>
+              </div>
+              <div class="ds-state-pill">
+                <div class="ds-state-swatch" style="background:rgba(255, 255, 255, 0.05);opacity:0.38;"></div>
+                <span class="ds-state-name">Disabled</span>
+                <span class="ds-state-val">opacity: 0.38</span>
+              </div>
+              <div class="ds-state-pill">
+                <div class="ds-state-swatch" style="background:transparent;outline:2px solid #bac0ff;outline-offset:2px;"></div>
+                <span class="ds-state-name">Focus</span>
+                <span class="ds-state-val">outline: 2px solid #bac0ff</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Overlays -->
+          <div class="ds-color-family">
+            <h3 class="ds-color-family-title">Overlays</h3>
+            <div class="ds-color-grid">
+              <div class="ds-color-card">
+                <div class="ds-color-swatch-wrap" style="background:url('assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4660f202-595c-4f94-8f40-2430e9865d8b_original.webp') center/cover;"><div class="ds-color-swatch" style="background:rgba(0, 0, 0, 0.72);backdrop-filter:blur(8px);"></div></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-label">Modal Fog Veil</span>
+                  <span class="ds-color-value">rgba(0, 0, 0, 0.72)</span>
+                  <span class="ds-color-use">Backdrop fog filter behind interactive dialog modals</span>
+                </div>
+              </div>
+              <div class="ds-color-card">
+                <div class="ds-color-swatch-wrap" style="background:#08090c;"><div class="ds-color-swatch" style="background:radial-gradient(ellipse at 50% 50%, #17202b60, transparent 69%);"></div></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-label">Atmospheric Glow</span>
+                  <span class="ds-color-value">radial-gradient(#17202b60, transparent)</span>
+                  <span class="ds-color-use">Soft radial illumination behind floating spatial windows</span>
+                </div>
+              </div>
+              <div class="ds-color-card">
+                <div class="ds-color-swatch-wrap" style="background:url('assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/8fdfa0f3-60ff-4df9-b907-eab92d798522_original.jpg') center/cover;"><div class="ds-color-swatch" style="background:linear-gradient(180deg, #0002, transparent 42%, #0008);"></div></div>
+                <div class="ds-color-info">
+                  <span class="ds-color-label">Cinema Vignette</span>
+                  <span class="ds-color-value">linear-gradient(180deg, #0002, #0008)</span>
+                  <span class="ds-color-use">Top/bottom gradient mask over full-screen cinema playback</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. BACKGROUNDS -->
+        <section class="ds-group-section" id="comp-backgrounds">
+          <div class="ds-group-header">
+            <span class="ds-group-eyebrow">Design System Core</span>
+            <h2 class="ds-group-title">Backgrounds</h2>
+            <p class="ds-group-desc">Every distinct background environment in Overview rendered as a full live specimen using its real HTML, WebGL, video, and animation layers.</p>
+          </div>
+
+          <!-- Specimen 1: Hero Studio & 3D Chrome Wordmark -->
+          <div class="ds-bg-specimen">
+            <div class="ds-bg-specimen-header">
+              <span class="ds-bg-specimen-title">Hero Studio &amp; 3D Chrome Wordmark</span>
+              <span class="ds-bg-specimen-meta">WebGL Ribbon Shader · Three.js · Radial Studio Falloff</span>
+            </div>
+            <div class="ds-bg-specimen-canvas" style="background: radial-gradient(ellipse at 50% 47%, #11151b 0%, #080a0e 47%, #030405 83%);">
+              <div class="hero-wordmark" id="ds-hero-wordmark-mount">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1963.45 790.53" preserveAspectRatio="none" fill="currentColor" aria-hidden="true">
+                  <g class="aera-letter" data-letter="a-first"><path d="M401.86 0.00L519.53 790.53L309.08 790.53L298.83 648.44L225.10 648.44L212.89 790.53L0.00 790.53L104.49 0.00ZM292.97 508.30Q277.34 374.02 261.72 176.76Q230.47 403.32 222.66 508.30Z"></path></g>
+                  <g class="aera-letter" data-letter="e"><path d="M548.69 0.00L891.46 0.00L891.46 158.20L754.25 158.20L754.25 308.11L882.67 308.11L882.67 458.50L754.25 458.50L754.25 632.32L905.13 632.32L905.13 790.53L548.69 790.53Z"></path></g>
+                  <g class="aera-letter" data-letter="r"><path d="M958.21 0.00L1103.72 0.00Q1249.23 0.00 1300.74 11.23Q1352.26 22.46 1384.73 68.60Q1417.20 114.75 1417.20 215.82Q1417.20 308.11 1394.25 339.84Q1371.30 371.58 1303.92 377.93Q1364.95 393.07 1385.95 418.46Q1406.95 443.85 1412.07 465.09Q1417.20 486.33 1417.20 582.03L1417.20 790.53L1226.28 790.53L1226.28 527.83Q1226.28 464.36 1216.27 449.22Q1206.26 434.08 1163.78 434.08L1163.78 790.53L958.21 790.53ZM1163.78 135.25L1163.78 311.04Q1198.45 311.04 1212.37 301.51Q1226.28 291.99 1226.28 239.75L1226.28 196.29Q1226.28 158.69 1212.85 146.97Q1199.43 135.25 1163.78 135.25Z"></path></g>
+                  <g class="aera-letter" data-letter="a-last"><path d="M1845.77 0.00L1963.45 790.53L1753.00 790.53L1742.74 648.44L1669.01 648.44L1656.80 790.53L1443.91 790.53L1548.41 0.00ZM1736.88 508.30Q1721.26 374.02 1705.63 176.76Q1674.38 403.32 1666.57 508.30Z"></path></g>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- Specimen 2: Visor Spatial Atmosphere & Animated Haze -->
+          <div class="ds-bg-specimen">
+            <div class="ds-bg-specimen-header">
+              <span class="ds-bg-specimen-title">Visor Spatial Atmosphere &amp; Animated Haze</span>
+              <span class="ds-bg-specimen-meta">CSS Keyframe Animation · Perspective Grid · Diffuse Radial Gradients</span>
+            </div>
+            <div class="ds-bg-specimen-canvas" style="background:#08090c;">
+              <div class="visor-atmosphere" style="opacity:0.65;"></div>
+              <div class="spatial-haze" style="opacity:0.85;animation:spatial-air 24s ease-in-out infinite alternate;"></div>
+              <div class="room-grid" style="opacity:0.45;"></div>
+              <div style="position:relative;z-index:2;text-align:center;">
+                <span class="visor-eyebrow">AERA SPATIAL DESKTOP ATMOSPHERE</span>
+                <h3 style="font-size:28px;font-weight:400;margin:12px 0 0;color:#f0f2f8;">Live Animated Spatial Haze</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Specimen 3: POV Horizon & Ambient Cinema Stage -->
+          <div class="ds-bg-specimen">
+            <div class="ds-bg-specimen-header">
+              <span class="ds-bg-specimen-title">POV Horizon &amp; Ambient Cinema Stage</span>
+              <span class="ds-bg-specimen-meta">Dual Horizon Bloom · Contrast Horizon Line</span>
+            </div>
+            <div class="ds-bg-specimen-canvas" style="background:#05070a;">
+              <div class="pov-horizon" style="opacity:1;"></div>
+              <div style="position:relative;z-index:2;text-align:center;">
+                <span class="visor-eyebrow">IMMERSIVE HORIZON ARCHITECTURE</span>
+                <h3 style="font-size:32px;font-weight:400;margin:14px 0 0;color:#f0f4fa;">Beyond the everyday</h3>
+              </div>
+            </div>
+          </div>
+
+          <!-- Specimen 4: Immersive Campaign Film Reel -->
+          <div class="ds-bg-specimen">
+            <div class="ds-bg-specimen-header">
+              <span class="ds-bg-specimen-title">Immersive Campaign Film Reel</span>
+              <span class="ds-bg-specimen-meta">HTML5 Video · Vignette Film Shade · Aspect Cover</span>
+            </div>
+            <div class="ds-bg-specimen-canvas" style="height:420px;background:#000;">
+              <div class="reel-panel" style="position:absolute;inset:0;width:100%;height:100%;">
+                <video src="assets/overview/assets/d8j0ntlcm91z4.cloudfront.net/user_3BJWPvMvEq6NnWomWUpPdVMx6Ys/hf_20260920_194148_ec79c9d5-4fe4-4d9b-9ca1-68750614cef2.mp4" autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;"></video>
+                <div class="tour-film-shade" style="position:absolute;inset:0;background:linear-gradient(#05070b55,transparent 40%,#05070ba1);"></div>
+                <div class="tour-film-title" style="position:absolute;left:32px;bottom:32px;color:#f2f5fb;">
+                  <span style="font-size:9px;letter-spacing:0.15em;text-transform:uppercase;">AERA ORIGINAL FILM</span>
+                  <h2 style="font-size:36px;font-weight:400;letter-spacing:-0.04em;margin:8px 0 0;">Beyond the everyday</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Specimen 5: Collection Spectrum Dynamic Aura -->
+          <div class="ds-bg-specimen">
+            <div class="ds-bg-specimen-header">
+              <span class="ds-bg-specimen-title">Collection Spectrum Tone Aura</span>
+              <span class="ds-bg-specimen-meta">HSL Tone Mapping · 3D Elliptical Story Orbit</span>
+            </div>
+            <div class="ds-bg-specimen-canvas" style="background:#080b12;">
+              <div style="position:absolute;inset:0;background:radial-gradient(ellipse at 50% 54%, hsl(210 40% 18% / .75), transparent 64%);"></div>
+              <div class="story-orbit" style="opacity:0.75;transform:scale(1);">
+                <i></i><i></i><i></i>
+              </div>
+              <div style="position:relative;z-index:2;text-align:center;">
+                <span class="shop-eyebrow">THE AERA COLLECTION</span>
+                <h3 style="font-size:32px;font-weight:400;margin:12px 0 0;color:#eef2f8;">Dynamic Perspective Aura</h3>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. SURFACES -->
+        <section class="ds-group-section" id="comp-surfaces">
+          <div class="ds-group-header">
+            <span class="ds-group-eyebrow">Design System Core</span>
+            <h2 class="ds-group-title">Surfaces</h2>
+            <p class="ds-group-desc">Recurring surfaces shown live on their actual backgrounds, preserving authentic opacity, blur filters, gradient masks, rims, and specular highlights.</p>
+          </div>
+
+          <!-- Surface 1: Glass Navigation Island -->
+          <div class="ds-surface-specimen">
+            <div class="ds-bg-specimen-header">
+              <span class="ds-bg-specimen-title">Frosted Navigation Island</span>
+              <span class="ds-bg-specimen-meta">.nav-island · backdrop-filter: blur(24px) · 30px pill</span>
+            </div>
+            <div class="ds-surface-canvas" style="background: radial-gradient(ellipse at 50% 50%, #17202b80, #08090c 70%);">
+              <div class="nav-island" style="display:flex;align-items:center;gap:28px;">
+                <a class="brand" href="#overview" style="color:#fff;">AERA<span>™</span></a>
+                <nav style="display:flex;gap:24px;font-size:14px;">
+                  <a href="#overview" style="color:#fff;">Overview</a>
+                  <a href="#components" style="color:#9c9da7;">Components</a>
+                  <a href="#explore" style="color:#9c9da7;">Explore ↗</a>
+                </nav>
+              </div>
+            </div>
+          </div>
+
+          <!-- Surface 2: Spatial Home OS Window -->
+          <div class="ds-surface-specimen">
+            <div class="ds-bg-specimen-header">
+              <span class="ds-bg-specimen-title">Spatial Home OS Window Surface</span>
+              <span class="ds-bg-specimen-meta">.spatial-home .home-window · backdrop-filter: blur(40px) · #141a21f2</span>
+            </div>
+            <div class="ds-surface-canvas" style="background: radial-gradient(ellipse at 50% 50%, #22324960, #06080d 75%);">
+              <div class="spatial-home" style="position:relative;inset:auto;width:100%;max-width:780px;">
+                <div class="home-window" style="min-height:0;padding-bottom:28px;">
+                  <header class="home-toolbar">
+                    <span class="home-os-label">AERA OS</span>
+                    <h3 id="ds-preview-home-title">Home Workspace</h3>
+                    <div class="home-user">
+                      <button id="ds-preview-win-size" type="button" aria-label="Expand">↗</button>
+                      <time>09:41</time>
+                      <img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/8b2840cf-8bde-4195-91c0-968a65574088_original.jpg" alt="User avatar">
+                    </div>
+                  </header>
+                  <div class="home-utilities" style="margin-bottom:14px;">
+                    <label class="home-search">
+                      <span aria-hidden="true">◎</span>
+                      <input type="search" placeholder="Find an app or experience" autocomplete="off">
+                    </label>
+                    <span class="home-status"><i class="live-dot"></i> Your personal space</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Surface 3: Spatial Rail & Dock Glass -->
+          <div class="ds-surface-specimen">
+            <div class="ds-bg-specimen-header">
+              <span class="ds-bg-specimen-title">Spatial Rail &amp; Dock Glass</span>
+              <span class="ds-bg-specimen-meta">.home-dock · .home-rail · #111821ed · blur(48px)</span>
+            </div>
+            <div class="ds-surface-canvas" style="background: radial-gradient(ellipse at 50% 50%, #1e2c3e60, #08090c 75%);gap:32px;">
+              <nav class="home-rail" style="position:relative;inset:auto;transform:none;" aria-label="Rail preview">
+                <button type="button" aria-pressed="true" aria-label="Home">▣</button>
+                <button type="button" aria-pressed="false" aria-label="Browser">◎</button>
+                <button type="button" aria-pressed="false" aria-label="Gallery">◉</button>
+                <button type="button" aria-pressed="false" aria-label="Notes">N</button>
+              </nav>
+              <nav class="home-dock" style="position:relative;inset:auto;transform:none;" aria-label="Dock preview">
+                <button type="button" aria-pressed="true">Home</button>
+                <button type="button" aria-pressed="false">Work</button>
+                <button type="button" aria-pressed="false">Watch</button>
+                <button type="button" aria-pressed="false">Play</button>
+              </nav>
+            </div>
+          </div>
+
+          <!-- Surface 4: Frosted Workspace Panel -->
+          <div class="ds-surface-specimen">
+            <div class="ds-bg-specimen-header">
+              <span class="ds-bg-specimen-title">Frosted Workspace Panel</span>
+              <span class="ds-bg-specimen-meta">.vr-app-panel · #0d1722ab · border-radius: 21px</span>
+            </div>
+            <div class="ds-surface-canvas" style="background: #080b12;">
+              <div class="vr-app-panel" style="position:relative;width:100%;max-width:680px;height:auto;padding:28px;background:#0d1722ab;border:1px solid #dcecff1f;border-radius:21px;">
+                <div class="vr-app-subhead"><span>YOUR NEXT BIG IDEA</span><span role="status">Saved on this device</span></div>
+                <h4 style="font-size:28px;font-weight:400;margin:18px 0 12px;color:#edf2f8;">Make room for what moves you.</h4>
+                <p style="font-size:13px;color:#9eb0c6;line-height:1.6;margin:0 0 20px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore.</p>
+                <button type="button" style="padding:10px 18px;border-radius:20px;background:#acc9ef10;border:1px solid #b1c9e23d;color:#dce7f6;font-size:11px;">Continue in Focus Mode ↗</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Surface 5: Frosted Modal Dialog Surface -->
+          <div class="ds-surface-specimen">
+            <div class="ds-bg-specimen-header">
+              <span class="ds-bg-specimen-title">Frosted Modal Dialog Surface</span>
+              <span class="ds-bg-specimen-meta">#story-dialog · #101720 · border: 1px solid #c2d4ee30 · 24px radius</span>
+            </div>
+            <div class="ds-surface-canvas" style="background: radial-gradient(ellipse at 50% 50%, #202b3945, #050609 80%);">
+              <div style="position:relative;width:100%;max-width:720px;border-radius:24px;background:#0d131d;border:1px solid #c2d4ee30;box-shadow:0 30px 90px #000a;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;">
+                <div style="height:260px;background:#151b23;overflow:hidden;">
+                  <img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/348f7070-f9f5-4638-9bfd-90315ba06f52_original.jpg" alt="AERA Headset" style="width:100%;height:100%;object-fit:cover;">
+                </div>
+                <div style="padding:28px 24px;display:flex;flex-direction:column;justify-content:center;">
+                  <span class="eyebrow" style="font-size:9px;letter-spacing:0.2em;color:#7e8e9f;">SPECIFICATION</span>
+                  <h3 style="font-size:24px;font-weight:450;margin:10px 0 6px;color:#f1f5fb;">AERA Headset</h3>
+                  <p style="font-size:12px;color:#92a2b5;line-height:1.5;margin:0 0 16px;">Silver / Light knit finish with dual 4K micro-OLED optical modules.</p>
+                  <strong style="font-size:18px;color:#fff;">CAD $1,499</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. ICONS -->
+        <section class="ds-group-section" id="comp-icons">
+          <div class="ds-group-header">
+            <span class="ds-group-eyebrow">Design System Core</span>
+            <h2 class="ds-group-title">Icons</h2>
+            <p class="ds-group-desc">Every authentic SVG icon extracted directly from Overview, rendered in a 5-per-row aligned grid with no decorative outer cards. Class identifiers are listed immediately beneath each symbol.</p>
+          </div>
+
+          <div class="ds-icon-grid">
+            <!-- Icon 1: Desktop -->
+            <div class="ds-icon-item">
+              <span class="spatial-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4"/></svg></span>
+              <span class="ds-icon-name">desktop</span>
+            </div>
+
+            <!-- Icon 2: Browser -->
+            <div class="ds-icon-item">
+              <span class="spatial-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m16 8-2.5 5.5L8 16l2.5-5.5L16 8Z"/></svg></span>
+              <span class="ds-icon-name">browser</span>
+            </div>
+
+            <!-- Icon 3: Notes -->
+            <div class="ds-icon-item">
+              <span class="spatial-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span>
+              <span class="ds-icon-name">notes</span>
+            </div>
+
+            <!-- Icon 4: Gallery -->
+            <div class="ds-icon-item">
+              <span class="spatial-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8" cy="8" r="1"/><path d="m5 18 5-6 3 3 3-4 3 7"/></svg></span>
+              <span class="ds-icon-name">gallery</span>
+            </div>
+
+            <!-- Icon 5: Cinema -->
+            <div class="ds-icon-item">
+              <span class="spatial-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="m8 4 12 8-12 8V4Z"/></svg></span>
+              <span class="ds-icon-name">cinema</span>
+            </div>
+
+            <!-- Icon 6: Orbit -->
+            <div class="ds-icon-item">
+              <span class="spatial-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"/><ellipse cx="12" cy="12" rx="12" ry="4" transform="rotate(-35 12 12)"/></svg></span>
+              <span class="ds-icon-name">orbit</span>
+            </div>
+
+            <!-- Icon 7: Home -->
+            <div class="ds-icon-item">
+              <span class="spatial-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 9-8 9 8M5 10v11h5v-7h4v7h5V10"/></svg></span>
+              <span class="ds-icon-name">home</span>
+            </div>
+
+            <!-- Icon 8: Work -->
+            <div class="ds-icon-item">
+              <span class="spatial-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="14" rx="3"/><path d="M8 7V4h8v3M3 12c6 4 12 4 18 0M10 13v3h4v-3"/></svg></span>
+              <span class="ds-icon-name">work</span>
+            </div>
+
+            <!-- Icon 9: Watch -->
+            <div class="ds-icon-item">
+              <span class="spatial-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 7 8 5-8 5V7Z"/></svg></span>
+              <span class="ds-icon-name">watch</span>
+            </div>
+
+            <!-- Icon 10: Play -->
+            <div class="ds-icon-item">
+              <span class="spatial-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 5h8c4 0 5 6 6 13 0 3-3 3-6-1H8c-3 4-6 4-6 1C3 11 4 5 8 5Z"/><path d="M6 10h5M8.5 7.5v5M16 9h.01M18 12h.01"/></svg></span>
+              <span class="ds-icon-name">play</span>
+            </div>
+
+            <!-- Icon 11: Search -->
+            <div class="ds-icon-item">
+              <span class="spatial-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="7.5"/><path d="m16 16 5 5"/></svg></span>
+              <span class="ds-icon-name">search</span>
+            </div>
+
+            <!-- Icon 12: Arrow -->
+            <div class="ds-icon-item">
+              <span class="spatial-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18 18 6M7 6h11v11"/></svg></span>
+              <span class="ds-icon-name">arrow</span>
+            </div>
+
+            <!-- Icon 13: Chevron -->
+            <div class="ds-icon-item">
+              <span class="spatial-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 5 7 7-7 7"/></svg></span>
+              <span class="ds-icon-name">chevron</span>
+            </div>
+
+            <!-- Icon 14: Brand Favicon -->
+            <div class="ds-icon-item">
+              <span class="spatial-icon" aria-hidden="true"><img src="assets/overview/favicon.svg" alt="AERA Brand Symbol" style="width:24px;height:24px;"></span>
+              <span class="ds-icon-name">favicon-brand</span>
+            </div>
+
+            <!-- Icon 15: Optical Annotation Target -->
+            <div class="ds-icon-item">
+              <span class="spatial-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" style="width:24px;height:24px;"><circle cx="12" cy="12" r="9" stroke="#c3d8e7" stroke-width="1.2" fill="none"/><circle cx="12" cy="12" r="3" fill="#d2e8f6"/></svg>
+              </span>
+              <span class="ds-icon-name">annotation-target</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6. ACTIONS -->
+        <section class="ds-group-section" id="comp-actions">
+          <div class="ds-group-header">
+            <span class="ds-group-eyebrow">Component Units</span>
+            <h2 class="ds-group-title">Actions</h2>
+            <p class="ds-group-desc">Primary and secondary interactive button components, including the live WebGL2 procedural chromatic metal button with liquid cursor distortion.</p>
+          </div>
+
+          <!-- Component 1: Buy Now Chromatic Metal Button -->
+          <div class="ds-component-item">
+            <div class="ds-component-header">
+              <span class="ds-component-title">Buy Now Chromatic Metal Button</span>
+              <span class="ds-component-selector">#buy-now-root · WebGL2 MetalFx</span>
+            </div>
+            <div class="ds-component-stage" style="padding:48px;">
+              <div id="ds-buy-now-mount" style="position:relative;display:inline-flex;">
+                <div class="buy-now-button buy-now-fallback" style="background:#16171b;border:1px solid #b6bdce70;border-radius:26px;height:48px;padding:0 25px;display:inline-flex;align-items:center;color:#f4f5f8;font-size:14px;font-weight:500;">Buy Now</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Component 2: Bright Button CTA -->
+          <div class="ds-component-item">
+            <div class="ds-component-header">
+              <span class="ds-component-title">Bright Button CTA</span>
+              <span class="ds-component-selector">.bright-button · #edf0ff · 30px pill</span>
+            </div>
+            <div class="ds-component-stage">
+              <a class="bright-button" href="#comp-actions" style="pointer-events:auto;">Explore AERA <span>↗</span></a>
+            </div>
+          </div>
+
+          <!-- Component 3: Outline Button -->
+          <div class="ds-component-item">
+            <div class="ds-component-header">
+              <span class="ds-component-title">Outline Button</span>
+              <span class="ds-component-selector">.outline-button · border: 1px solid #ffffff35</span>
+            </div>
+            <div class="ds-component-stage">
+              <button class="outline-button" type="button">Preview Connection <span>↗</span></button>
+            </div>
+          </div>
+
+          <!-- Component 4: AERA Big Play -->
+          <div class="ds-component-item">
+            <div class="ds-component-header">
+              <span class="ds-component-title">AERA Big Play</span>
+              <span class="ds-component-selector">.aera-big-play · 76px frosted circle</span>
+            </div>
+            <div class="ds-component-stage">
+              <button class="aera-big-play" type="button" style="position:relative;left:auto;top:auto;transform:none;">
+                <span aria-hidden="true">▷</span>
+                <strong>Play</strong>
+                <small>Immersive demo · 00:19</small>
+              </button>
+            </div>
+          </div>
+
+          <!-- Component 5: Story Action Button -->
+          <div class="ds-component-item">
+            <div class="ds-component-header">
+              <span class="ds-component-title">Story Action Button</span>
+              <span class="ds-component-selector">.story-action · #16171b · 28px pill</span>
+            </div>
+            <div class="ds-component-stage">
+              <button class="story-action" type="button">Explore Perspective <span>↗</span></button>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7. NAVIGATION -->
+        <section class="ds-group-section" id="comp-navigation">
+          <div class="ds-group-header">
+            <span class="ds-group-eyebrow">Component Units</span>
+            <h2 class="ds-group-title">Navigation</h2>
+            <p class="ds-group-desc">Spatial dock bars, shortcut rails, carousel paginators, and navigation headers.</p>
+          </div>
+
+          <!-- Component 1: Top Navigation Island -->
+          <div class="ds-component-item">
+            <div class="ds-component-header">
+              <span class="ds-component-title">Navigation Island</span>
+              <span class="ds-component-selector">.nav-island</span>
+            </div>
+            <div class="ds-component-stage">
+              <div class="nav-island">
+                <a class="brand" href="#overview" style="color:#fff;">AERA<span>™</span></a>
+                <nav>
+                  <a href="#comp-navigation" style="color:#fff;">Experience</a>
+                  <a href="#comp-navigation" style="color:#9c9da7;">Connection</a>
+                  <a href="#comp-navigation" style="color:#9c9da7;">Overview <span>↗</span></a>
+                </nav>
+              </div>
+            </div>
+          </div>
+
+          <!-- Component 2: Spatial Home Dock -->
+          <div class="ds-component-item">
+            <div class="ds-component-header">
+              <span class="ds-component-title">Spatial Home Dock</span>
+              <span class="ds-component-selector">.home-dock · 4-category pill bar</span>
+            </div>
+            <div class="ds-component-stage">
+              <nav class="home-dock" style="position:relative;bottom:auto;left:auto;transform:none;" aria-label="Dock navigation preview">
+                <button type="button" aria-pressed="true"><span class="spatial-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="m3 11 9-8 9 8M5 10v11h5v-7h4v7h5V10"/></svg></span>Home</button>
+                <button type="button" aria-pressed="false"><span class="spatial-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="7" width="18" height="14" rx="3"/><path d="M8 7V4h8v3M3 12c6 4 12 4 18 0M10 13v3h4v-3"/></svg></span>Work</button>
+                <button type="button" aria-pressed="false"><span class="spatial-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="12" cy="12" r="10"/><path d="m9 7 8 5-8 5V7Z"/></svg></span>Watch</button>
+                <button type="button" aria-pressed="false"><span class="spatial-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M8 5h8c4 0 5 6 6 13 0 3-3 3-6-1H8c-3 4-6 4-6 1C3 11 4 5 8 5Z"/></svg></span>Play</button>
+              </nav>
+            </div>
+          </div>
+
+          <!-- Component 3: Spectrum Navigation Ticks -->
+          <div class="ds-component-item">
+            <div class="ds-component-header">
+              <span class="ds-component-title">Spectrum Carousel Navigation</span>
+              <span class="ds-component-selector">.spectrum-navigation · 5-tick pagination</span>
+            </div>
+            <div class="ds-component-stage">
+              <div class="spectrum-navigation" style="position:relative;inset:auto;width:100%;max-width:540px;">
+                <span class="spectrum-hint">SCROLL TO DISCOVER</span>
+                <div class="spectrum-ticks" role="group" aria-label="Ticks preview">
+                  <button type="button" aria-pressed="true"><i aria-hidden="true"></i></button>
+                  <button type="button" aria-pressed="false"><i aria-hidden="true"></i></button>
+                  <button type="button" aria-pressed="false"><i aria-hidden="true"></i></button>
+                  <button type="button" aria-pressed="false"><i aria-hidden="true"></i></button>
+                  <button type="button" aria-pressed="false"><i aria-hidden="true"></i></button>
+                </div>
+                <span class="spectrum-count">01 / 05</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Component 4: Footer Signoff & Back to Top -->
+          <div class="ds-component-item">
+            <div class="ds-component-header">
+              <span class="ds-component-title">Footer Signoff &amp; Back to Top</span>
+              <span class="ds-component-selector">.footer-signoff · .back-top</span>
+            </div>
+            <div class="ds-component-stage">
+              <div class="footer-signoff" style="width:100%;max-width:640px;">
+                <span>LOREM IPSUM. DOLOR SIT.</span>
+                <a class="back-top" href="#header" style="color:#9dadc3;">Back to the beginning <span>↑</span></a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 8. INPUTS & CONTROLS -->
+        <section class="ds-group-section" id="comp-inputs">
+          <div class="ds-group-header">
+            <span class="ds-group-eyebrow">Component Units</span>
+            <h2 class="ds-group-title">Inputs &amp; Controls</h2>
+            <p class="ds-group-desc">Search inputs, text areas, range sliders, segmented finish selectors, and device pairing buttons.</p>
+          </div>
+
+          <!-- Component 1: Spatial Search Bar -->
+          <div class="ds-component-item">
+            <div class="ds-component-header">
+              <span class="ds-component-title">Spatial Search Bar</span>
+              <span class="ds-component-selector">.home-search · SVG icon · 50px pill</span>
+            </div>
+            <div class="ds-component-stage">
+              <div class="home-search" style="max-width:440px;width:100%;height:46px;">
+                <span class="spatial-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="10.5" cy="10.5" r="7.5"/><path d="m16 16 5 5"/></svg></span>
+                <input type="search" placeholder="Find an app or experience" autocomplete="off" style="color:#fff;">
+              </div>
+            </div>
+          </div>
+
+          <!-- Component 2: Workspace Project Name Input -->
+          <div class="ds-component-item">
+            <div class="ds-component-header">
+              <span class="ds-component-title">Workspace Project Name Input</span>
+              <span class="ds-component-selector">#vr-project · Border-bottom underline</span>
+            </div>
+            <div class="ds-component-stage">
+              <div style="max-width:380px;width:100%;">
+                <span class="vr-project-label" style="display:block;font-size:10px;color:#9eafc5;margin-bottom:8px;">Workspace name</span>
+                <input type="text" value="My creative space" style="width:100%;background:transparent;border:0;border-bottom:1px solid #bfd6ef3b;padding:8px 0;color:#e4edfb;font-size:22px;">
+              </div>
+            </div>
+          </div>
+
+          <!-- Component 3: Notes Editor Textarea -->
+          <div class="ds-component-item">
+            <div class="ds-component-header">
+              <span class="ds-component-title">Notes Editor Textarea</span>
+              <span class="ds-component-selector">#vr-note · Georgia serif</span>
+            </div>
+            <div class="ds-component-stage">
+              <div style="max-width:540px;width:100%;padding:22px;border-radius:18px;background:linear-gradient(130deg, #283448, #182435);border:1px solid #dcecff1f;">
+                <div class="vr-app-subhead"><span>YOUR NEXT BIG IDEA</span><span role="status">Saved on this device</span></div>
+                <textarea style="width:100%;height:80px;resize:none;margin:16px 0;background:transparent;border:0;color:#edf2f8;font-family:Georgia,serif;font-size:20px;line-height:1.5;">Make something that moves people.</textarea>
+                <div class="vr-note-footer"><span>5 words</span><button type="button" style="padding:6px 12px;border-radius:16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:#dce7f6;font-size:11px;">Download note ↓</button></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Component 4: Spatial Checklist Checkboxes -->
+          <div class="ds-component-item">
+            <div class="ds-component-header">
+              <span class="ds-component-title">Spatial Checklist Checkboxes</span>
+              <span class="ds-component-selector">.vr-tasks label</span>
+            </div>
+            <div class="ds-component-stage">
+              <div class="vr-tasks" style="display:flex;flex-direction:column;gap:14px;">
+                <label style="display:flex;align-items:center;gap:12px;font-size:13px;color:#c9d4e3;cursor:pointer;"><input type="checkbox" checked style="width:16px;height:16px;accent-color:#bfd7ed;"> Make room for a new idea</label>
+                <label style="display:flex;align-items:center;gap:12px;font-size:13px;color:#c9d4e3;cursor:pointer;"><input type="checkbox" style="width:16px;height:16px;accent-color:#bfd7ed;"> Explore a different perspective</label>
+                <label style="display:flex;align-items:center;gap:12px;font-size:13px;color:#c9d4e3;cursor:pointer;"><input type="checkbox" style="width:16px;height:16px;accent-color:#bfd7ed;"> Take a moment for yourself</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Component 5: Cinema Timeline Scrub Slider -->
+          <div class="ds-component-item">
+            <div class="ds-component-header">
+              <span class="ds-component-title">Cinema Timeline Scrub Slider</span>
+              <span class="ds-component-selector">.cinema-timeline · input[type=range]</span>
+            </div>
+            <div class="ds-component-stage">
+              <div class="cinema-timeline" style="max-width:540px;width:100%;display:flex;align-items:center;gap:14px;color:#c4cddd;font-variant-numeric:tabular-nums;">
+                <span>0:04</span>
+                <input type="range" min="0" max="1000" value="210" style="flex:1;accent-color:#dceaff;cursor:pointer;">
+                <span>0:19</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Component 6: Controller Finish Switch -->
+          <div class="ds-component-item">
+            <div class="ds-component-header">
+              <span class="ds-component-title">Controller Finish Switch</span>
+              <span class="ds-component-selector">#shop-variants button</span>
+            </div>
+            <div class="ds-component-stage">
+              <div id="shop-variants" style="display:flex;gap:10px;">
+                <button type="button" aria-pressed="true"><i aria-hidden="true"></i>Silver</button>
+                <button type="button" aria-pressed="false"><i aria-hidden="true"></i>Graphite</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Component 7: Pairing Platform Selector -->
+          <div class="ds-component-item">
+            <div class="ds-component-header">
+              <span class="ds-component-title">Pairing Platform Selector</span>
+              <span class="ds-component-selector">.pair-options button</span>
+            </div>
+            <div class="ds-component-stage">
+              <div class="pair-options" style="max-width:440px;width:100%;display:flex;gap:12px;">
+                <button type="button" aria-pressed="true" style="flex:1;"><span>▱</span>Mac</button>
+                <button type="button" aria-pressed="false" style="flex:1;"><span>⊞</span>Windows PC</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 9. CARDS & CONTAINERS -->
+        <section class="ds-group-section" id="comp-cards">
+          <div class="ds-group-header">
+            <span class="ds-group-eyebrow">Component Units</span>
+            <h2 class="ds-group-title">Cards &amp; Containers</h2>
+            <p class="ds-group-desc">Spatial launcher app cards with gaze highlight, feature banners, streaming cards, and 3D product collection cards.</p>
+          </div>
+
+          <!-- Component 1: Spatial OS App Card -->
+          <div class="ds-component-item">
+            <div class="ds-component-header">
+              <span class="ds-component-title">Spatial OS App Card (with Gaze Highlight)</span>
+              <span class="ds-component-selector">.home-app · [data-spatial-highlight]</span>
+            </div>
+            <div class="ds-component-stage" style="gap:24px;">
+              <div class="spatial-home" style="position:relative;inset:auto;display:flex;gap:18px;">
+                <!-- Idle card -->
+                <button class="home-app" type="button" style="width:145px;height:165px;position:relative;">
+                  <span class="home-app-art"><img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4660f202-595c-4f94-8f40-2430e9865d8b_original.webp" alt="Browser app"></span>
+                  <strong>Browser</strong>
+                  <small>Web &amp; Spatial Sites</small>
+                </button>
+                <!-- Highlighted card -->
+                <button class="home-app" type="button" data-spatial-highlight style="width:145px;height:165px;position:relative;">
+                  <span class="home-app-art"><img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/54441c26-54a7-4879-a4ab-913dd7e193d4_original.jpg" alt="Cinema app"></span>
+                  <strong>Cinema</strong>
+                  <small>Private Screen</small>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Component 2: Home Feature Story Card -->
+          <div class="ds-component-item">
+            <div class="ds-component-header">
+              <span class="ds-component-title">Home Feature Story Card</span>
+              <span class="ds-component-selector">.home-feature · 17px rounded corner</span>
+            </div>
+            <div class="ds-component-stage">
+              <div class="spatial-home" style="position:relative;inset:auto;width:100%;max-width:340px;">
+                <button class="home-feature home-feature-watch" type="button" style="width:100%;height:148px;position:relative;display:block;">
+                  <img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/54441c26-54a7-4879-a4ab-913dd7e193d4_original.jpg" alt="Cinema">
+                  <span>
+                    <small>DOLOR SIT AMET</small>
+                    <strong>Consectetur adipiscing.</strong>
+                    <em>Cinema <span>↗</span></em>
+                  </span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Component 3: AERA Cinema Movie Card -->
+          <div class="ds-component-item">
+            <div class="ds-component-header">
+              <span class="ds-component-title">AERA Cinema Movie Card</span>
+              <span class="ds-component-selector">.aera-cinema-card · 22px border radius</span>
+            </div>
+            <div class="ds-component-stage">
+              <button class="aera-cinema-card" type="button" style="width:280px;height:240px;position:relative;display:block;">
+                <img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/21da8985-e507-434c-88df-71d0a42c9621_original.webp" alt="Interstellar">
+                <span>
+                  <small>01 / FILM-INSPIRED ARTWORK</small>
+                  <strong>Interstellar</strong>
+                  <em>Sci-Fi Spatial Demo</em>
+                </span>
+                <i aria-hidden="true">▷</i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Component 4: Streaming Service Card -->
+          <div class="ds-component-item">
+            <div class="ds-component-header">
+              <span class="ds-component-title">Streaming Service Card</span>
+              <span class="ds-component-selector">.aera-service · Netflix SVG</span>
+            </div>
+            <div class="ds-component-stage">
+              <button class="aera-service netflix" type="button" style="width:280px;position:relative;" aria-label="Preview Netflix">
+                <span class="aera-service-brand">
+                  <img src="assets/overview/netflix.svg" alt="Netflix" class="aera-service-logo" style="width:115px;height:32px;">
+                </span>
+                <span>Explore in AERA <i aria-hidden="true">↗</i></span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Component 5: Collection Spectrum Product Card -->
+          <div class="ds-component-item">
+            <div class="ds-component-header">
+              <span class="ds-component-title">Collection Spectrum Product Card</span>
+              <span class="ds-component-selector">.spectrum-card · 20px radius · 3/4 aspect</span>
+            </div>
+            <div class="ds-component-stage">
+              <div class="spectrum-card" style="position:relative;width:240px;height:320px;cursor:default;">
+                <span class="card-picture">
+                  <img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/348f7070-f9f5-4638-9bfd-90315ba06f52_original.jpg" alt="AERA Headset">
+                </span>
+                <span class="card-caption">
+                  <strong>AERA Headset</strong>Silver / Light knit
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 10. OVERLAYS & MODALS -->
+        <section class="ds-group-section" id="comp-overlays">
+          <div class="ds-group-header">
+            <span class="ds-group-eyebrow">Component Units</span>
+            <h2 class="ds-group-title">Overlays &amp; Modals</h2>
+            <p class="ds-group-desc">Spatial annotation callouts with dynamic SVG leaders, product detail dialogues, shopping bag drawers, and device pairing sheets.</p>
+          </div>
+
+          <!-- Component 1: Optical Annotation Callout -->
+          <div class="ds-component-item">
+            <div class="ds-component-header">
+              <span class="ds-component-title">Optical Annotation Callout</span>
+              <span class="ds-component-selector">aside.optical-annotation · SVG leader line</span>
+            </div>
+            <div class="ds-component-stage" style="padding:48px 24px;">
+              <aside class="optical-annotation" style="position:relative;opacity:1;visibility:visible;inset:auto;width:100%;max-width:580px;">
+                <div class="optical-annotation-copy" style="position:relative;inset:auto;transform:none;">
+                  <h2 style="font-size:28px;">Lorem ipsum,<br>consectetur adipiscing.</h2>
+                  <p style="font-size:16px;">Lorem ipsum dolor sit amet, consectetur <strong>adipiscing</strong> and <strong>elit sed do eiusmod</strong> tempor incididunt ut labore et dolore magna aliqua.</p>
+                </div>
+              </aside>
+            </div>
+          </div>
+
+          <!-- Component 2: Product Detail Dialog Content -->
+          <div class="ds-component-item">
+            <div class="ds-component-header">
+              <span class="ds-component-title">Product Detail Dialog Content</span>
+              <span class="ds-component-selector">#story-dialog · Two-column product sheet</span>
+            </div>
+            <div class="ds-component-stage">
+              <div style="width:100%;max-width:680px;border-radius:24px;background:#0d131d;border:1px solid #c2d4ee30;overflow:hidden;display:grid;grid-template-columns:1fr 1.2fr;">
+                <div style="background:#151b23;overflow:hidden;">
+                  <img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/846991e4-92d0-4bde-976b-f4a76a367a77_original.jpg" alt="Charging Dock" style="width:100%;height:100%;object-fit:cover;">
+                </div>
+                <div style="padding:32px 28px;display:flex;flex-direction:column;">
+                  <span style="font-size:11px;color:#748297;">02 / 05</span>
+                  <h2 style="font-size:28px;font-weight:450;margin:12px 0 16px;color:#fff;">Charging Dock</h2>
+                  <div class="shop-price-row" style="margin-bottom:14px;padding-bottom:14px;">
+                    <div><strong style="font-size:22px;color:#fff;">CAD $129</strong></div>
+                    <span class="shop-finish">Satin silver</span>
+                  </div>
+                  <p style="font-size:13px;color:#98a8bd;line-height:1.6;margin:0 0 20px;">A place to pause. Ready for what’s next.</p>
+                  <button class="story-action shop-add" type="button" style="align-self:flex-start;">Add to bag <span>＋</span></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Component 3: Bag Drawer Sheet -->
+          <div class="ds-component-item">
+            <div class="ds-component-header">
+              <span class="ds-component-title">Bag Drawer Sheet</span>
+              <span class="ds-component-selector">#shop-bag-dialog · Bag contents state</span>
+            </div>
+            <div class="ds-component-stage">
+              <div style="width:100%;max-width:540px;padding:36px 30px;background:#101720;color:#f1f5fb;border:1px solid #d6e4ff30;border-radius:25px;">
+                <span class="eyebrow">THE AERA COLLECTION</span>
+                <h2 style="font-size:32px;letter-spacing:-0.04em;margin:12px 0 20px;">Your bag.</h2>
+                <div class="shop-bag-row">
+                  <img src="assets/overview/assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/348f7070-f9f5-4638-9bfd-90315ba06f52_original.jpg" alt="AERA Headset">
+                  <div>
+                    <h3 style="font-size:16px;margin:0 0 6px;">AERA Headset</h3>
+                    <p style="font-size:12px;color:#9eacbf;margin:0 0 4px;">Silver / Light knit · Quantity: 1</p>
+                    <p class="bag-line-price" style="font-size:13px;color:#e3eeff;font-weight:500;">CAD $1,499</p>
+                  </div>
+                </div>
+                <div class="shop-bag-total" style="display:flex;justify-content:space-between;border-top:1px solid #cde0ff30;padding:16px 0;margin-top:14px;font-size:16px;">
+                  <span>Demo subtotal</span>
+                  <strong>CAD $1,499</strong>
+                </div>
+                <button class="story-action" type="button" style="margin-top:16px;">Continue exploring ↗</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Component 4: Device Pairing Dialog -->
+          <div class="ds-component-item">
+            <div class="ds-component-header">
+              <span class="ds-component-title">Device Pairing Dialog</span>
+              <span class="ds-component-selector">.pair-dialog · 6-digit confirmation</span>
+            </div>
+            <div class="ds-component-stage">
+              <div class="pair-dialog" style="position:relative;width:100%;max-width:480px;padding:32px;">
+                <span class="eyebrow">AERA LINK / CONNECTION PREVIEW</span>
+                <h2 style="font-size:32px;margin:14px 0 12px;">Make room<br>for your desktop.</h2>
+                <p class="pair-intro" style="font-size:12px;">Choose a computer and connection to preview the AERA Link experience.</p>
+                <div class="pair-confirmation" style="margin:18px 0;padding:16px 0;">
+                  <span>CONFIRM ON BOTH DEVICES</span>
+                  <strong>482 019</strong>
+                  <p>Example pairing code</p>
+                </div>
+                <button class="bright-button" type="button" style="width:100%;justify-content:center;">Preview connection <span>↗</span></button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </section>
+  </div>
+
+  <!-- Standalone WebGL2 MetalFx & Three.js Chrome Wordmark Scripts -->
+  <script src="assets/overview/metal-fx-standalone.js"></script>
+  <script src="assets/overview/chrome-wordmark-standalone.js"></script>
+
+  <script>
+    (function () {
+      var overviewLink = document.querySelector('[data-ds-view="overview"]');
+      var componentsLink = document.querySelector('[data-ds-view="components"]');
+      var overviewView = document.getElementById('view-overview');
+      var componentsView = document.getElementById('view-components');
+      var chromeMounted = false;
+      var metalMounted = false;
+
+      function initComponentSpecimens() {
+        if (!chromeMounted && window.mountAeraChromeWordmark) {
+          var wordmarkMount = document.getElementById('ds-hero-wordmark-mount');
+          if (wordmarkMount) {
+            window.mountAeraChromeWordmark(wordmarkMount);
+            chromeMounted = true;
+          }
+        }
+        if (!metalMounted && window.mountAeraMetalFx) {
+          var buyNowMount = document.getElementById('ds-buy-now-mount');
+          if (buyNowMount) {
+            window.mountAeraMetalFx(buyNowMount, {
+              preset: 'chromatic',
+              variant: 'button',
+              theme: 'dark',
+              strength: 0.95,
+              glowGain: 0.7,
+              borderRadius: 26,
+              ringCssPx: 1.8,
+              innerShadow: true
+            });
+            metalMounted = true;
+          }
+        }
+      }
+
+      function syncRoute() {
+        var hash = window.location.hash;
+        if (hash.indexOf('#comp-') === 0 || hash === '#components') {
+          overviewView.hidden = true;
+          componentsView.hidden = false;
+          overviewLink.removeAttribute('aria-current');
+          componentsLink.setAttribute('aria-current', 'page');
+          initComponentSpecimens();
+
+          // Scroll to specific component anchor if targeted
+          if (hash.indexOf('#comp-') === 0) {
+            var target = document.querySelector(hash);
+            if (target) {
+              setTimeout(function () {
+                target.scrollIntoView({ behavior: 'smooth' });
+              }, 60);
+            }
+          }
+        } else {
+          if (hash !== '#overview') {
+            try {
+              history.replaceState(null, '', '#overview');
+            } catch (e) {
+              window.location.hash = '#overview';
+            }
+          }
+          overviewView.hidden = false;
+          componentsView.hidden = true;
+          overviewLink.setAttribute('aria-current', 'page');
+          componentsLink.removeAttribute('aria-current');
+        }
+      }
+
+      window.addEventListener('hashchange', syncRoute);
+      syncRoute();
+
+      // Sidebar scrollspy
+      var contentArea = document.getElementById('ds-content-area');
+      var sidebarLinks = document.querySelectorAll('.ds-sidebar-nav a');
+      var sections = document.querySelectorAll('.ds-group-section');
+
+      if (contentArea && sections.length) {
+        contentArea.addEventListener('scroll', function () {
+          var scrollPos = contentArea.scrollTop + 140;
+          sections.forEach(function (sec) {
+            if (sec.offsetTop <= scrollPos && (sec.offsetTop + sec.offsetHeight) > scrollPos) {
+              sidebarLinks.forEach(function (l) {
+                l.classList.toggle('active', l.getAttribute('href') === '#' + sec.id);
+              });
+            }
+          });
+        }, { passive: true });
+      }
+    })();
+  </script>
+</body>
+</html>

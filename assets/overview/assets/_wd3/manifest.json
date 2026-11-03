@@ -1,0 +1,821 @@
+{
+ "entryUrl": "https://aera-headset-original.aura.build/",
+ "capturedAt": "2026-11-02T23:11:17+00:00",
+ "indexHtml": {
+  "kind": "arquivo",
+  "description": "site vivo aberto com duplo clique (file://): um runtime faz o papel do Service Worker; imagens e vídeos que a página só exibe são lidos de assets/, o resto (CSS, JS, fontes, dados, imagens de WebGL) vai embutido no index.html"
+ },
+ "files": [
+  {
+   "url": "https://aera-headset-original.aura.build/favicon.ico",
+   "file": "assets/aera-headset-original.aura.build/favicon.ico",
+   "type": "image/vnd.microsoft.icon",
+   "resourceType": "other",
+   "size": 696,
+   "status": 200,
+   "party": "first",
+   "passes": [
+    "mobile"
+   ]
+  },
+  {
+   "url": "https://aera-headset-original.aura.build/",
+   "file": "assets/aera-headset-original.aura.build/index.html",
+   "type": "text/html",
+   "resourceType": "document",
+   "size": 453956,
+   "status": 200,
+   "party": "first",
+   "passes": [
+    "desktop",
+    "mobile"
+   ]
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.core.js",
+   "file": "assets/cdn.jsdelivr.net/npm/three@0.180.0/build/three.core.js",
+   "type": "application/javascript",
+   "resourceType": "script",
+   "size": 1403455,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "library": {
+    "name": "three",
+    "version": "0.180.0"
+   },
+   "role": "library"
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+   "file": "assets/cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js",
+   "type": "application/javascript",
+   "resourceType": "script",
+   "size": 603113,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "library": {
+    "name": "three",
+    "version": "0.180.0"
+   },
+   "role": "library"
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/lights/RectAreaLightTexturesLib.js",
+   "file": "assets/cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/lights/RectAreaLightTexturesLib.js",
+   "type": "application/javascript",
+   "resourceType": "script",
+   "size": 314770,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "library": {
+    "name": "three",
+    "version": "0.180.0"
+   },
+   "role": "library"
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/lights/RectAreaLightUniformsLib.js",
+   "file": "assets/cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/lights/RectAreaLightUniformsLib.js",
+   "type": "application/javascript",
+   "resourceType": "script",
+   "size": 1014,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "library": {
+    "name": "three",
+    "version": "0.180.0"
+   },
+   "role": "library"
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/loaders/GLTFLoader.js",
+   "file": "assets/cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/loaders/GLTFLoader.js",
+   "type": "application/javascript",
+   "resourceType": "script",
+   "size": 114739,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "library": {
+    "name": "three",
+    "version": "0.180.0"
+   },
+   "role": "library"
+  },
+  {
+   "url": "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/utils/BufferGeometryUtils.js",
+   "file": "assets/cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/utils/BufferGeometryUtils.js",
+   "type": "application/javascript",
+   "resourceType": "script",
+   "size": 35539,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "library": {
+    "name": "three",
+    "version": "0.180.0"
+   },
+   "role": "library"
+  },
+  {
+   "url": "https://cdn.tailwindcss.com/3.4.17",
+   "file": "assets/cdn.tailwindcss.com/3.4.17.js",
+   "type": "text/javascript",
+   "resourceType": "script",
+   "size": 407279,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "library": {
+    "name": "tailwindcss (Play CDN)",
+    "version": "3.4.17"
+   },
+   "role": "library"
+  },
+  {
+   "url": "https://d8j0ntlcm91z4.cloudfront.net/user_3BJWPvMvEq6NnWomWUpPdVMx6Ys/hf_20260920_194148_ec79c9d5-4fe4-4d9b-9ca1-68750614cef2.mp4",
+   "file": "assets/d8j0ntlcm91z4.cloudfront.net/user_3BJWPvMvEq6NnWomWUpPdVMx6Ys/hf_20260920_194148_ec79c9d5-4fe4-4d9b-9ca1-68750614cef2.mp4",
+   "type": "video/mp4",
+   "resourceType": "media",
+   "size": 5644318,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile"
+   ]
+  },
+  {
+   "url": "https://esm.sh/react-dom@18.3.1/X-ZXJlYWN0/es2022/client.mjs",
+   "file": "assets/esm.sh/react-dom@18.3.1/X-ZXJlYWN0/es2022/client.mjs",
+   "type": "application/javascript",
+   "resourceType": "script",
+   "size": 1344,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "library": {
+    "name": "react-dom",
+    "version": "18.3.1"
+   },
+   "role": "library"
+  },
+  {
+   "url": "https://esm.sh/react-dom@18.3.1/X-ZXJlYWN0/es2022/react-dom.mjs",
+   "file": "assets/esm.sh/react-dom@18.3.1/X-ZXJlYWN0/es2022/react-dom.mjs",
+   "type": "application/javascript",
+   "resourceType": "script",
+   "size": 131730,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "library": {
+    "name": "react-dom",
+    "version": "18.3.1"
+   },
+   "role": "library"
+  },
+  {
+   "url": "https://esm.sh/react-dom@18.3.1/client?external=react",
+   "file": "assets/esm.sh/react-dom@18.3.1/client__q7b920d9f.js",
+   "type": "application/javascript",
+   "resourceType": "script",
+   "size": 237,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "library": {
+    "name": "react-dom",
+    "version": "18.3.1"
+   },
+   "role": "library"
+  },
+  {
+   "url": "https://esm.sh/react@18.3.1",
+   "file": "assets/esm.sh/react@18.3.1.js",
+   "type": "application/javascript",
+   "resourceType": "script",
+   "size": 134,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "library": {
+    "name": "react",
+    "version": "18.3.1"
+   },
+   "role": "library"
+  },
+  {
+   "url": "https://esm.sh/react@18.3.1/es2022/jsx-runtime.mjs",
+   "file": "assets/esm.sh/react@18.3.1/es2022/jsx-runtime.mjs",
+   "type": "application/javascript",
+   "resourceType": "script",
+   "size": 2192,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "library": {
+    "name": "react",
+    "version": "18.3.1"
+   },
+   "role": "library"
+  },
+  {
+   "url": "https://esm.sh/react@18.3.1/es2022/react.mjs",
+   "file": "assets/esm.sh/react@18.3.1/es2022/react.mjs",
+   "type": "application/javascript",
+   "resourceType": "script",
+   "size": 8708,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "library": {
+    "name": "react",
+    "version": "18.3.1"
+   },
+   "role": "library"
+  },
+  {
+   "url": "https://esm.sh/react@18.3.1/jsx-runtime",
+   "file": "assets/esm.sh/react@18.3.1/jsx-runtime.js",
+   "type": "application/javascript",
+   "resourceType": "script",
+   "size": 199,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "library": {
+    "name": "react",
+    "version": "18.3.1"
+   },
+   "role": "library"
+  },
+  {
+   "url": "https://esm.sh/scheduler@0.23.2/es2022/scheduler.mjs",
+   "file": "assets/esm.sh/scheduler@0.23.2/es2022/scheduler.mjs",
+   "type": "application/javascript",
+   "resourceType": "script",
+   "size": 6020,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "role": "third-party"
+  },
+  {
+   "url": "https://esm.sh/scheduler@%5E0.23.2?target=es2022",
+   "file": "assets/esm.sh/scheduler@^0.23.2__q784fb815.js",
+   "type": "application/javascript",
+   "resourceType": "script",
+   "size": 154,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ],
+   "role": "third-party"
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/01cabf6c-32a0-4e9b-9aa8-1143ddeec638_original.jpg",
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/01cabf6c-32a0-4e9b-9aa8-1143ddeec638_original.jpg",
+   "type": "image/jpeg",
+   "resourceType": "image",
+   "size": 249080,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/021ef67a-dea0-48ec-973a-935bfe63fc1f_original.webp",
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/021ef67a-dea0-48ec-973a-935bfe63fc1f_original.webp",
+   "type": "image/webp",
+   "resourceType": "image",
+   "size": 1404604,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/19ebb5f4-a6fb-4b58-bc5d-65a8199bf7f5_original.webp",
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/19ebb5f4-a6fb-4b58-bc5d-65a8199bf7f5_original.webp",
+   "type": "image/webp",
+   "resourceType": "image",
+   "size": 1591568,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/21da8985-e507-434c-88df-71d0a42c9621_original.webp",
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/21da8985-e507-434c-88df-71d0a42c9621_original.webp",
+   "type": "image/webp",
+   "resourceType": "image",
+   "size": 1551314,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/2724bf57-6210-4736-b1fa-50b9df7b039d_original.svg",
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/2724bf57-6210-4736-b1fa-50b9df7b039d_original.svg",
+   "type": "image/svg+xml",
+   "resourceType": "fetch",
+   "size": 1459349,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/29e6e101-5c68-46f2-a2cd-80121e118fcf_original.webp",
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/29e6e101-5c68-46f2-a2cd-80121e118fcf_original.webp",
+   "type": "image/webp",
+   "resourceType": "image",
+   "size": 6880,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/2b2caf89-a138-474d-a06e-97a64590fa0a_original.webp",
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/2b2caf89-a138-474d-a06e-97a64590fa0a_original.webp",
+   "type": "image/webp",
+   "resourceType": "image",
+   "size": 1532814,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/320850bb-2851-4ad8-b440-d0e65461baa1_original.svg",
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/320850bb-2851-4ad8-b440-d0e65461baa1_original.svg",
+   "type": "image/svg+xml",
+   "resourceType": "fetch",
+   "size": 4000105,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/348f7070-f9f5-4638-9bfd-90315ba06f52_original.jpg",
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/348f7070-f9f5-4638-9bfd-90315ba06f52_original.jpg",
+   "type": "image/jpeg",
+   "resourceType": "image",
+   "size": 176651,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/34d03477-c1d3-4322-9c89-9aad5f931fb3_original.webp",
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/34d03477-c1d3-4322-9c89-9aad5f931fb3_original.webp",
+   "type": "image/webp",
+   "resourceType": "image",
+   "size": 806684,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4660f202-595c-4f94-8f40-2430e9865d8b_original.webp",
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4660f202-595c-4f94-8f40-2430e9865d8b_original.webp",
+   "type": "image/webp",
+   "resourceType": "image",
+   "size": 1766286,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4de89b61-edd1-4acc-b0a8-f990bd0749a5_original.jpg",
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4de89b61-edd1-4acc-b0a8-f990bd0749a5_original.jpg",
+   "type": "image/jpeg",
+   "resourceType": "image",
+   "size": 185130,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4e945c7b-eccb-43a9-a2c7-51d74ed1c0cd_original.svg",
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/4e945c7b-eccb-43a9-a2c7-51d74ed1c0cd_original.svg",
+   "type": "image/svg+xml",
+   "resourceType": "fetch",
+   "size": 2000105,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/54441c26-54a7-4879-a4ab-913dd7e193d4_original.jpg",
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/54441c26-54a7-4879-a4ab-913dd7e193d4_original.jpg",
+   "type": "image/jpeg",
+   "resourceType": "image",
+   "size": 483840,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/59b33f87-ac6e-4813-ba86-8975e5a60295_original.jpg",
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/59b33f87-ac6e-4813-ba86-8975e5a60295_original.jpg",
+   "type": "image/jpeg",
+   "resourceType": "image",
+   "size": 874726,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/6c837535-8386-4924-af38-b1aaf69ab3bd_original.svg",
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/6c837535-8386-4924-af38-b1aaf69ab3bd_original.svg",
+   "type": "image/svg+xml",
+   "resourceType": "image",
+   "size": 824,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/6d0ccd71-4f28-4f7c-a19f-847d7565fe9f_original.jpg",
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/6d0ccd71-4f28-4f7c-a19f-847d7565fe9f_original.jpg",
+   "type": "image/jpeg",
+   "resourceType": "image",
+   "size": 443276,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/6fdcbb4a-8970-43ad-ba48-53c66b2b9d2c_original.jpg",
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/6fdcbb4a-8970-43ad-ba48-53c66b2b9d2c_original.jpg",
+   "type": "image/jpeg",
+   "resourceType": "image",
+   "size": 842394,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/72a78bbe-e584-4ab0-a50e-1746e32ef861_original.webp",
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/72a78bbe-e584-4ab0-a50e-1746e32ef861_original.webp",
+   "type": "image/webp",
+   "resourceType": "image",
+   "size": 369774,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/7ca58d8f-5fbc-4ea8-a4c7-dcf8bfd455ed_original.webp",
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/7ca58d8f-5fbc-4ea8-a4c7-dcf8bfd455ed_original.webp",
+   "type": "image/webp",
+   "resourceType": "image",
+   "size": 17732,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/803f4ac2-5085-4931-9eec-d1b95a008c77_original.jpg",
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/803f4ac2-5085-4931-9eec-d1b95a008c77_original.jpg",
+   "type": "image/jpeg",
+   "resourceType": "image",
+   "size": 165550,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/8231c197-6f8b-494b-bb2b-306aa321a19d_original.svg",
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/8231c197-6f8b-494b-bb2b-306aa321a19d_original.svg",
+   "type": "image/svg+xml",
+   "resourceType": "fetch",
+   "size": 4000105,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/846991e4-92d0-4bde-976b-f4a76a367a77_original.jpg",
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/846991e4-92d0-4bde-976b-f4a76a367a77_original.jpg",
+   "type": "image/jpeg",
+   "resourceType": "image",
+   "size": 122408,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/8757cd6e-6397-401a-8480-537503bdefaa_original.svg",
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/8757cd6e-6397-401a-8480-537503bdefaa_original.svg",
+   "type": "image/svg+xml",
+   "resourceType": "fetch",
+   "size": 2266625,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/877166f5-3f5e-42f4-9bd6-9ce56deff9af_original.webp",
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/877166f5-3f5e-42f4-9bd6-9ce56deff9af_original.webp",
+   "type": "image/webp",
+   "resourceType": "image",
+   "size": 2318932,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/8b2840cf-8bde-4195-91c0-968a65574088_original.jpg",
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/8b2840cf-8bde-4195-91c0-968a65574088_original.jpg",
+   "type": "image/jpeg",
+   "resourceType": "image",
+   "size": 52997,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/8fa40ba2-83c0-40ef-bae6-2b4c19d950bf_original.svg",
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/8fa40ba2-83c0-40ef-bae6-2b4c19d950bf_original.svg",
+   "type": "image/svg+xml",
+   "resourceType": "fetch",
+   "size": 4000105,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/8fdfa0f3-60ff-4df9-b907-eab92d798522_original.jpg",
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/8fdfa0f3-60ff-4df9-b907-eab92d798522_original.jpg",
+   "type": "image/jpeg",
+   "resourceType": "image",
+   "size": 396303,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/a8db09ca-68a3-4873-a5af-0d2a65646093_original.jpg",
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/a8db09ca-68a3-4873-a5af-0d2a65646093_original.jpg",
+   "type": "image/jpeg",
+   "resourceType": "image",
+   "size": 181972,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/abaf07e3-ae7a-4a3c-8d0e-ab84b90e5dc9_original.svg",
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/abaf07e3-ae7a-4a3c-8d0e-ab84b90e5dc9_original.svg",
+   "type": "image/svg+xml",
+   "resourceType": "fetch",
+   "size": 4000105,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/b5eaec19-9650-4d25-a2aa-35b6f14d50b2_original.svg",
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/b5eaec19-9650-4d25-a2aa-35b6f14d50b2_original.svg",
+   "type": "image/svg+xml",
+   "resourceType": "fetch",
+   "size": 4000105,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/c5d11640-1ac4-4c69-9dc1-1a7d33d97482_original.svg",
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/c5d11640-1ac4-4c69-9dc1-1a7d33d97482_original.svg",
+   "type": "image/svg+xml",
+   "resourceType": "other",
+   "size": 209,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "desktop",
+    "mobile"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/d59a6c70-e7cb-4569-8821-574c6f6b4cd9_original.jpg",
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/d59a6c70-e7cb-4569-8821-574c6f6b4cd9_original.jpg",
+   "type": "image/jpeg",
+   "resourceType": "image",
+   "size": 313375,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/d6175cb4-2dae-4158-ae8b-678b40e6749f_original.jpg",
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/d6175cb4-2dae-4158-ae8b-678b40e6749f_original.jpg",
+   "type": "image/jpeg",
+   "resourceType": "image",
+   "size": 576770,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/e0a17677-3f1c-4eb9-9a80-eccfa4530853_original.svg",
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/e0a17677-3f1c-4eb9-9a80-eccfa4530853_original.svg",
+   "type": "image/svg+xml",
+   "resourceType": "fetch",
+   "size": 4000105,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/e66b12a4-526b-40ee-a57b-9795dbb4f230_original.jpg",
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/e66b12a4-526b-40ee-a57b-9795dbb4f230_original.jpg",
+   "type": "image/jpeg",
+   "resourceType": "image",
+   "size": 244116,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/eec84ef0-1988-4b36-a398-3825ebdc416a_original.svg",
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/eec84ef0-1988-4b36-a398-3825ebdc416a_original.svg",
+   "type": "image/svg+xml",
+   "resourceType": "fetch",
+   "size": 4000105,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ]
+  },
+  {
+   "url": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/fbc21610-dfa8-43d7-ae0e-7485195bff25_original.svg",
+   "file": "assets/hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/fbc21610-dfa8-43d7-ae0e-7485195bff25_original.svg",
+   "type": "image/svg+xml",
+   "resourceType": "fetch",
+   "size": 2000105,
+   "status": 200,
+   "party": "third",
+   "passes": [
+    "mobile",
+    "desktop"
+   ]
+  }
+ ]
+}

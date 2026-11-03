@@ -1,0 +1,97 @@
+{
+ "builders": [
+  "aura (aura-html)",
+  "react"
+ ],
+ "libraries": [
+  {
+   "name": "react",
+   "version": "18.3.1",
+   "sources": [
+    "https://esm.sh/react@18.3.1",
+    "https://esm.sh/react@18.3.1/jsx-runtime",
+    "https://esm.sh/react@18.3.1/es2022/react.mjs",
+    "https://esm.sh/react@18.3.1/es2022/jsx-runtime.mjs"
+   ]
+  },
+  {
+   "name": "react-dom",
+   "version": "18.3.1",
+   "sources": [
+    "https://esm.sh/react-dom@18.3.1/client?external=react",
+    "https://esm.sh/react-dom@18.3.1/X-ZXJlYWN0/es2022/client.mjs",
+    "https://esm.sh/react-dom@18.3.1/X-ZXJlYWN0/es2022/react-dom.mjs"
+   ]
+  },
+  {
+   "name": "tailwindcss (Play CDN)",
+   "version": "3.4.17",
+   "sources": [
+    "https://cdn.tailwindcss.com/3.4.17"
+   ]
+  },
+  {
+   "name": "three",
+   "version": "r180",
+   "sources": [
+    "página",
+    "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/loaders/GLTFLoader.js",
+    "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/lights/RectAreaLightUniformsLib.js",
+    "https://cdn.jsdelivr.net/npm/three@0.180.0/examples/jsm/utils/BufferGeometryUtils.js",
+    "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js"
+   ]
+  }
+ ],
+ "runtime": {
+  "contexts": {
+   "webgl2": 3,
+   "2d": 52
+  },
+  "wasm": 0,
+  "workers": 0,
+  "webgpu": false,
+  "shadowRoots": 0,
+  "canvases": 5
+ },
+ "cssFeatures": [],
+ "fonts": {
+  "families": [],
+  "sources": []
+ },
+ "videos": [
+  {
+   "src": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/7d1ade93-e4ab-4030-ac88-f9721cc9aae7_original.mp4",
+   "kind": "conteúdo",
+   "reason": "tem controles",
+   "hosting": "próprio site",
+   "action": "trocado por imagem"
+  },
+  {
+   "src": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/7d1ade93-e4ab-4030-ac88-f9721cc9aae7_original.mp4",
+   "kind": "decorativo",
+   "reason": "curto, sem controles e sem som",
+   "hosting": "próprio site",
+   "action": "baixado"
+  },
+  {
+   "src": "https://hoirqrkdgbmvpwutwuwj.supabase.co/storage/v1/object/public/assets/assets/7d1ade93-e4ab-4030-ac88-f9721cc9aae7_original.mp4",
+   "kind": "conteúdo",
+   "reason": "tem controles",
+   "hosting": "próprio site",
+   "action": "trocado por imagem"
+  },
+  {
+   "src": "https://d8j0ntlcm91z4.cloudfront.net/user_3BJWPvMvEq6NnWomWUpPdVMx6Ys/hf_20260920_194148_ec79c9d5-4fe4-4d9b-9ca1-68750614cef2.mp4",
+   "kind": "decorativo",
+   "reason": "curto, sem controles e sem som",
+   "hosting": "próprio site",
+   "action": "baixado"
+  }
+ ],
+ "files": {
+  "text": 2,
+  "application": 15,
+  "image": 39,
+  "video": 1
+ }
+}

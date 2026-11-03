@@ -1,0 +1,51 @@
+/**
+ * AERA 01 Design Tokens — CSS Custom Properties
+ * Source: AERA Spatial Headset Experience
+ */
+
+:root {
+  /* Canvas & Base Colors */
+  --aera-color-paper: #08090c;
+  --aera-color-ink: #f0f1f4;
+  --aera-color-grey: #9c9da7;
+  --aera-color-slate: #adb4be;
+  --aera-color-caption: #7f8996;
+
+  /* Accents */
+  --aera-color-blue: #5a68c9;
+  --aera-color-focus: #bac0ff;
+  --aera-color-signal: #b8ffcc;
+  --aera-color-chrome: #edf4fd;
+
+  /* Surfaces */
+  --aera-surface-island: #18191cde;
+  --aera-surface-dialog: #101720;
+  --aera-surface-dock: #111821ed;
+  --aera-surface-rail: #10161ee8;
+  --aera-surface-panel: #0d1722ab;
+  --aera-surface-window: linear-gradient(145deg, rgba(20, 26, 33, 0.95), rgba(12, 17, 23, 0.97));
+
+  /* Borders */
+  --aera-border-line: #ffffff21;
+  --aera-border-hairline: #cbd4df2b;
+  --aera-border-card: #8da8cb63;
+  --aera-border-gaze: #dceaffb3;
+
+  /* Typography */
+  --aera-font-sans: Arial, Helvetica, sans-serif;
+  --aera-font-serif: Georgia, 'Times New Roman', serif;
+  --aera-font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* Radii */
+  --aera-radius-sm: 8px;
+  --aera-radius-md: 16px;
+  --aera-radius-lg: 24px;
+  --aera-radius-pill: 30px;
+  --aera-radius-window: 36px;
+
+  /* Shadows */
+  --aera-shadow-card: 0 8px 20px rgba(0, 0, 0, 0.2);
+  --aera-shadow-dock: 0 12px 38px rgba(0, 0, 0, 0.45);
+  --aera-shadow-window: 0 30px 86px rgba(0, 0, 0, 0.55);
+  --aera-shadow-gaze: 0 0 26px rgba(151, 187, 255, 0.45);
+}
